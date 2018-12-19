@@ -1,0 +1,17 @@
+<html>
+<head>
+    <title>{% block title %}默认标题{% endblock title %} - 悦跑测试平台</title>
+</head>
+<body>
+{% include './navigation.html' %}
+
+{% block content %}
+<div>这里是默认内容，所有模板继承自这个模板，如果不覆盖就显示这里的默认内容。</div>
+{% endblock content %}
+
+{% comment %} {% include './bottom.html' %}
+
+{% include './statistics.html' %} {% endcomment %}
+</body>
+
+</html>
