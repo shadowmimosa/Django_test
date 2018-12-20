@@ -28,18 +28,24 @@ def login(request):
     :return:
     """
     if request.method == 'POST':
-        username = request.POST.get('account')
+        account = request.POST.get('account')
         password = request.POST.get('password')
 
-        if UserInfo.objects.filter(username__exact=username).filter(
-                password__exact=password).count() == 1:
-            logger.info('{username} 登录成功'.format(username=username))
+        if '@thejoyrun.com' in account:
+            check_status = UserInfo.objects.filter(
+                email__exact=account).filter(password__exact=password).count()
+        else:
+            check_status = UserInfo.objects.filter(
+                username__exact=account).filter(
+                    password__exact=password).count()
+
+        if check_status == 1:
+            logger.info('{username} 登录成功'.format(username=account))
             request.session["login_status"] = True
-            request.session["now_account"] = username
+            request.session["now_account"] = account
             return HttpResponseRedirect(reverse('index'))
         else:
-            logger.info(
-                '{username} 登录失败, 请检查用户名或者密码'.format(username=username))
+            logger.info('{username} 登录失败, 请检查用户名或者密码'.format(username=account))
             request.session["login_status"] = False
             msg = "用户名或密码错误！"
             ret = {"msg": msg}
