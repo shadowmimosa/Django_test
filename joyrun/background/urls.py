@@ -1,14 +1,20 @@
 from django.urls import path
 from django.views.generic import RedirectView
 
-from . import views
+from .activator import process
+
+app_name = 'background'
 
 urlpatterns = [
-    path('', views.index, name='index'),
-    path('index/', views.index, name='index'),
-    path('favicon.ico/',
+    path('', RedirectView.as_view(url='/index/')),
+    path('favicon.ico',
          RedirectView.as_view(url='/static/background/images/favicon.ico')),
-    path('login/', views.login, name='login'),
-    path('register/', views.register, name='register'),
-    path('image/', views.image, name='image')
+    path('<str:function>/', process, name='function'),
+    path('<str:app>/<str:function>/', process, name='app'),
+
+    # path('', views.index, name='index'),
+    # path('index/', views.index, name='index'),
+    # path('login/', views.login, name='login'),
+    # path('register/', views.register, name='register'),
+    # path('image/', views.image, name='image')
 ]

@@ -6,7 +6,7 @@
 
 {% block login_title %}用户注册{% endblock login_title %}
 
-{% block login_action %} {% url 'register' %} {% endblock login_action %}
+{% block login_action %} {% url 'background:function' 'register' %} {% endblock login_action %}
 
 {% block login_input %}请输入用户名{% endblock login_input %}
 
@@ -20,14 +20,14 @@
 {% block confirm_password %}
             <div class="form-group mg-t20">
                 <i class="icon-lock icon_font"></i>
-                <input type="confirm_password" class="login_input" name="confirm_password" id="confirm_password" placeholder="确认密码">
+                <input type="password" class="login_input" name="repassword" id="repassword" placeholder="确认密码">
             </div>
 {% endblock confirm_password %}
 
 {% block login_sign %}{% endblock login_sign %}
 
 {% block login_jump %}
-     240px" href="{% url 'login' %}">已有账号？点击登录
+     240px" href="{% url 'background:function' 'login' %}">已有账号？点击登录
 {% endblock login_jump %}
 
 {% block login_btn %}注 册{% endblock login_btn %}

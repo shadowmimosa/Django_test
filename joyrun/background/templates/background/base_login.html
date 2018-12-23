@@ -116,7 +116,7 @@
         <p class="text-center font16">{% block login_title %}用户登录{% endblock login_title %}</p>
         
         
-        <form action={% block login_action %}"{% url 'login' %}"{% endblock login_action %} role="form" method="POST" id="login_form">
+        <form action={% block login_action %}"{% url 'background:function' 'login' %}"{% endblock login_action %} role="form" method="POST" id="login_form">
             <div class="form-group mg-t20">
                 <i class="icon-user icon_font"></i>
                 <input type="text" class="login_input" name="account" id="account" placeholder="{% block login_input %}请输入用户名或工作邮箱{% endblock login_input %}">
@@ -137,7 +137,7 @@
                     <input type="checkbox"/>记住我的登录信息
                 </label>
             {% endblock login_sign %}
-                <a style="margin-left: {% block login_jump %}110px"  href="{% url 'register' %}">没有账号？点击注册{% endblock login_jump %}</a>
+                <a style="margin-left: {% block login_jump %}110px"  href="{% url 'background:function' 'register' %}">没有账号？点击注册{% endblock login_jump %}</a>
             </div>
             <button class="login_btn" id="login_submit" type="submit" value="Login" >{% block login_btn %}登 录{% endblock login_btn %}</button>
             
