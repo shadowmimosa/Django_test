@@ -5,7 +5,7 @@ from django.views.decorators.csrf import csrf_exempt
 def process(request, **kwargs):
     app = kwargs.pop('app', None)
     fun = kwargs.pop('function', None)
-    index = kwargs.pop('id', None)
+    index = kwargs.pop('index', None)
 
     if app:
         app = 'background'
@@ -14,14 +14,21 @@ def process(request, **kwargs):
     else:
         raise Exception
 
-    try:
-        app = __import__("%s.views" % app)
-        view = getattr(app, 'views')
-        fun = getattr(view, fun)
+    # try:
+    #     app = __import__("%s.views" % app)
+    #     view = getattr(app, 'views')
+    #     fun = getattr(view, fun)
 
-        # 执行view.py中的函数，并获取其返回值
-        result = fun(request, index) if index else fun(request)
-    except (ImportError, AttributeError):
-        raise Exception
+    #     # 执行view.py中的函数，并获取其返回值
+    #     result = fun(request, index) if index else fun(request)
+    # except (ImportError, AttributeError):
+    #     raise Exception
+
+    app = __import__("%s.views" % app)
+    view = getattr(app, 'views')
+    fun = getattr(view, fun)
+
+    # 执行view.py中的函数，并获取其返回值
+    result = fun(request, index) if index else fun(request)
 
     return result

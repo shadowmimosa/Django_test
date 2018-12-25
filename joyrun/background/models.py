@@ -40,12 +40,12 @@ class ProjectInfo(BaseTable):
 
 
 
-class MoudleInfo(BaseTable):
+class ModuleInfo(BaseTable):
     class Meta:
         verbose_name = '模块信息'
         db_table = 'TestClassInfo'
 
-    moudle_name = models.CharField('模块名称', max_length=50, null=False)
+    module_name = models.CharField('模块名称', max_length=50, null=False)
     test_user = models.CharField('测试负责人', max_length=50, null=False)
     simple_desc = models.CharField('简要描述', max_length=100, null=True)
 
@@ -60,13 +60,13 @@ class TestCaseInfo(BaseTable):
         db_table = 'TestCaseInfo'
 
     type = models.IntegerField('test/config', default=1)
-    name = models.CharField('用例/配置名称', max_length=50, null=False)
+    name = models.CharField('用例/配置名称', max_length=120, null=False)
     belong_project = models.CharField('所属项目', max_length=50, null=False)
     include = models.CharField('前置config/test', max_length=1024, null=True)
     author = models.CharField('编写人员', max_length=20, null=False)
     request = models.TextField('请求信息', null=False)
 
-    belong_module = models.ForeignKey(MoudleInfo, on_delete=models.CASCADE)
+    belong_module = models.ForeignKey(ModuleInfo, on_delete=models.CASCADE)
 
     objects = TestCaseInfoManager()
 
@@ -105,3 +105,4 @@ class EnvInfo(BaseTable):
     simple_desc = models.CharField(max_length=50, null=False)
 
     objects = EnvInfoManager()
+    

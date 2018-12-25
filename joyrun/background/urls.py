@@ -10,7 +10,7 @@ urlpatterns = [
     path('favicon.ico',
          RedirectView.as_view(url='/static/background/images/favicon.ico')),
     path('<str:function>/', process, name='function'),
-    path('<str:app>/<str:function>/', process, name='app'),
+    path('<str:function>/<int:index>/', process, name='list'),
 
     # path('', views.index, name='index'),
     # path('index/', views.index, name='index'),

@@ -140,8 +140,8 @@ class TestCaseInfoManager(models.Manager):
         obj.request = kwargs
         obj.save()
 
-    def get_case_name(self, name, module_name, belong_project):
-        return self.filter(belong_module__id=module_name).filter(
+    def get_case_name(self, name, module_id, belong_project):
+        return self.filter(belong_module=module_id).filter(
             name__exact=name).filter(
                 belong_project__exact=belong_project).count()
 
