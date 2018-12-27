@@ -35,6 +35,8 @@ class ProjectInfo(BaseTable):
     # responsible_name = models.CharField('负责人', max_length=20, null=False)
     submitted_personnel = models.CharField('提交人员', max_length=20, null=False)
     simple_desc = models.CharField('简要描述', max_length=120, null=True)
+    root_path = models.CharField('项目路径', max_length=120, null=False)
+
     
     objects = ProjectInfoManager()
 
@@ -48,8 +50,11 @@ class ModuleInfo(BaseTable):
     module_name = models.CharField('模块名称', max_length=50, null=False)
     test_user = models.CharField('测试负责人', max_length=50, null=False)
     simple_desc = models.CharField('简要描述', max_length=100, null=True)
+    folder_path = models.CharField('模块路径', max_length=120, null=False)
+
 
     belong_project = models.ForeignKey(ProjectInfo, on_delete=models.CASCADE)
+
 
     objects = ModuleInfoManager()
 
@@ -65,6 +70,8 @@ class TestCaseInfo(BaseTable):
     include = models.CharField('前置config/test', max_length=1024, null=True)
     author = models.CharField('编写人员', max_length=20, null=False)
     request = models.TextField('请求信息', null=False)
+    file_path = models.CharField('用例文件路径', max_length=120, null=False)
+
 
     belong_module = models.ForeignKey(ModuleInfo, on_delete=models.CASCADE)
 
@@ -105,4 +112,3 @@ class EnvInfo(BaseTable):
     simple_desc = models.CharField(max_length=50, null=False)
 
     objects = EnvInfoManager()
-    

@@ -8,7 +8,8 @@ from django.views.decorators.csrf import csrf_exempt
 
 from background.models import UserInfo, ProjectInfo, ModuleInfo, TestCaseInfo, EnvInfo, TestReports, TestSuite
 from .utils.operation import add_project_data, del_project_data
-from .utils.common import project_info_logic, initial_testcase
+from .utils.common import project_info_logic, initial_testcase, set_filter_session, init_filter_session, case_info_logic, get_ajax_msg
+from .utils.pagination import get_pager_info
 
 logger = logging.getLogger()
 
@@ -159,78 +160,87 @@ def index(request):
         'total': total
     }
 
-    # init_filter_session(request)
+    init_filter_session(request)
 
     return render(request, 'background/index.html', manage_info)
 
 
+# @login_check
+# def project_list(request, pagenum):
+#     """
+#     项目列表
+#     :param request:
+#     :param id: str or int：当前页
+#     :return:
+#     """
+
+#     account = request.session["now_account"]
+#     if request.is_ajax():
+#         project_info = json.loads(request.body.decode('utf-8'))
+#         if 'mode' in project_info.keys():
+#             msg = del_project_data(project_info.pop('id'))
+#         else:
+#             msg = project_info_logic(type=False, **project_info)
+#         return HttpResponse(get_ajax_msg(msg, 'ok'))
+#     else:
+#         filter_query = set_filter_session(request)
+#         pro_list = get_pager_info(ProjectInfo, filter_query,
+#                                   '/api/project_list/', pagenum)
+#         manage_info = {
+#             'account': account,
+#             'project': pro_list[1],
+#             'page_list': pro_list[0],
+#             'info': filter_query,
+#             'sum': pro_list[2],
+#             'env': EnvInfo.objects.all().order_by('-create_time'),
+#             'project_all': ProjectInfo.objects.all().order_by('-update_time')
+#         }
+#         return render_to_response('project_list.html', manage_info)
+
+# @login_check
+# def module_list(request, pagenum):
+#     """
+#     模块列表
+#     :param request:
+#     :param id: str or int：当前页
+#     :return:
+#     """
+#     account = request.session["now_account"]
+#     if request.is_ajax():
+#         module_info = json.loads(request.body.decode('utf-8'))
+#         if 'mode' in module_info.keys():  # del module
+#             msg = del_module_data(module_info.pop('id'))
+#         else:
+#             msg = module_info_logic(type=False, **module_info)
+#         return HttpResponse(get_ajax_msg(msg, 'ok'))
+#     else:
+#         filter_query = set_filter_session(request)
+#         module_list = get_pager_info(ModuleInfo, filter_query,
+#                                      '/api/module_list/', pagenum)
+#         manage_info = {
+#             'account': account,
+#             'module': module_list[1],
+#             'page_list': module_list[0],
+#             'info': filter_query,
+#             'sum': module_list[2],
+#             'env': EnvInfo.objects.all().order_by('-create_time'),
+#             'project': ProjectInfo.objects.all().order_by('-update_time')
+#         }
+#         return render_to_response('module_list.html', manage_info)
+
+
 @login_check
-def project_list(request, id):
-    """
-    项目列表
-    :param request:
-    :param id: str or int：当前页
-    :return:
-    """
+def project_list(request, pagenum):
+    pass
 
-    account = request.session["now_account"]
-    if request.is_ajax():
-        project_info = json.loads(request.body.decode('utf-8'))
-        if 'mode' in project_info.keys():
-            msg = del_project_data(project_info.pop('id'))
-        else:
-            msg = project_info_logic(type=False, **project_info)
-        return HttpResponse(get_ajax_msg(msg, 'ok'))
-    else:
-        filter_query = set_filter_session(request)
-        pro_list = get_pager_info(ProjectInfo, filter_query,
-                                  '/api/project_list/', id)
-        manage_info = {
-            'account': account,
-            'project': pro_list[1],
-            'page_list': pro_list[0],
-            'info': filter_query,
-            'sum': pro_list[2],
-            'env': EnvInfo.objects.all().order_by('-create_time'),
-            'project_all': ProjectInfo.objects.all().order_by('-update_time')
-        }
-        return render_to_response('project_list.html', manage_info)
+
+def module_list(request, pagenum):
+    pass
 
 
 @login_check
-def module_list(request, id):
-    """
-    模块列表
-    :param request:
-    :param id: str or int：当前页
-    :return:
-    """
-    account = request.session["now_account"]
-    if request.is_ajax():
-        module_info = json.loads(request.body.decode('utf-8'))
-        if 'mode' in module_info.keys():  # del module
-            msg = del_module_data(module_info.pop('id'))
-        else:
-            msg = module_info_logic(type=False, **module_info)
-        return HttpResponse(get_ajax_msg(msg, 'ok'))
-    else:
-        filter_query = set_filter_session(request)
-        module_list = get_pager_info(ModuleInfo, filter_query,
-                                     '/api/module_list/', id)
-        manage_info = {
-            'account': account,
-            'module': module_list[1],
-            'page_list': module_list[0],
-            'info': filter_query,
-            'sum': module_list[2],
-            'env': EnvInfo.objects.all().order_by('-create_time'),
-            'project': ProjectInfo.objects.all().order_by('-update_time')
-        }
-        return render_to_response('module_list.html', manage_info)
-
-
 @login_check
-def test_list(request, id):
+def testcase_list(request, pagenum):
     """
     用例列表
     :param request:
@@ -239,56 +249,52 @@ def test_list(request, id):
     """
 
     account = request.session["now_account"]
+
+    filter_query = set_filter_session(request)
+    test_list = get_pager_info(TestCaseInfo, filter_query, '/testcase_list/',
+                               pagenum)
+    manage_info = {
+        'account': account,
+        'test': test_list[1],
+        'page_list': test_list[0],
+        'info': filter_query,
+        'env': EnvInfo.objects.all().order_by('-create_time'),
+        'project': ProjectInfo.objects.all().order_by('-update_time')
+    }
+    return render(request, 'background/testcase_list.html', manage_info)
+
+
+@login_check
+def add_case(request):
+    """
+    新增用例
+    :param request:
+    :return:
+    """
+    account = request.session["now_account"]
     if request.is_ajax():
-        test_info = json.loads(request.body.decode('utf-8'))
-
-        if test_info.get('mode') == 'del':
-            msg = del_test_data(test_info.pop('id'))
-        elif test_info.get('mode') == 'copy':
-            msg = copy_test_data(
-                test_info.get('data').pop('index'),
-                test_info.get('data').pop('name'))
-        return HttpResponse(get_ajax_msg(msg, 'ok'))
-
-    else:
-        filter_query = set_filter_session(request)
-        test_list = get_pager_info(TestCaseInfo, filter_query,
-                                   '/api/test_list/', id)
+        testcase_info = json.loads(request.body.decode('utf-8'))
+        msg = case_info_logic(**testcase_info)
+        return HttpResponse(get_ajax_msg(msg, '/testcase_list/1/'))
+    elif request.method == 'GET':
         manage_info = {
-            'account': account,
-            'test': test_list[1],
-            'page_list': test_list[0],
-            'info': filter_query,
-            'env': EnvInfo.objects.all().order_by('-create_time'),
-            'project': ProjectInfo.objects.all().order_by('-update_time')
+            'account':
+            account,
+            'project':
+            ProjectInfo.objects.all().values('project_name').order_by(
+                '-create_time')
         }
-        return render_to_response('test_list.html', manage_info)
+        return render(request, 'background/add_case.html', manage_info)
+
+
+def run_test(request):
+    
 
 
 def image(request):
 
     return HttpResponse("You're in my heart")
     return render(request, 'background/image.html')
-
-
-def init_filter_session(request, type=True):
-    """
-    init session
-    :param request:
-    :return:
-    """
-    if type:
-        request.session['user'] = ''
-        request.session['name'] = ''
-        request.session['project'] = 'All'
-        request.session['module'] = '请选择'
-        request.session['report_name'] = ''
-    else:
-        del request.session['user']
-        del request.session['name']
-        del request.session['project']
-        del request.session['module']
-        del request.session['report_name']
 
 
 path = 'D:\\test\\JoyrunTestOA\\thejoyrunTestcode'

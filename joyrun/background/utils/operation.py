@@ -5,8 +5,8 @@ from ..models import *
 from django.core.exceptions import ObjectDoesNotExist
 from django.db import DataError
 
-
 logger = logging.getLogger('background')
+
 
 def add_project_data(type, **kwargs):
     """
@@ -81,4 +81,48 @@ def del_project_data(id):
     except ObjectDoesNotExist:
         return '删除异常，请重试'
     logging.info('{project_name} 项目已删除'.format(project_name=project_name))
+    return 'ok'
+
+
+'''用例数据落地'''
+
+
+def add_case_data(type, **kwargs):
+    """
+    用例信息落地
+    :param type: boolean: true: 添加新用例， false: 更新用例
+    :param kwargs: dict
+    :return: ok or tips
+    """
+    case_info = kwargs.get('test').get('case_info')
+    case_opt = TestCaseInfo.objects
+    name = kwargs.get('test').get('name')
+    module = case_info.get('module')
+    project = case_info.get('project')
+    belong_module = ModuleInfo.objects.get_module_name(module, type=False)
+    config = case_info.get('config', '')
+    if config != '':
+        case_info.get('include')[0] = eval(config)
+
+    try:
+        if type:
+
+            if case_opt.get_case_name(name, module, project) < 1:
+                case_opt.insert_case(belong_module, **kwargs)
+                logger.info('{name}用例添加成功: {kwargs}'.format(
+                    name=name, kwargs=kwargs))
+            else:
+                return '用例或配置已存在，请重新编辑'
+        else:
+            index = case_info.get('test_index')
+            if name != case_opt.get_case_by_id(index, type=False) \
+                    and case_opt.get_case_name(name, module, project) > 0:
+                return '用例或配置已在该模块中存在，请重新命名'
+            case_opt.update_case(belong_module, **kwargs)
+            logger.info('{name}用例更新成功: {kwargs}'.format(
+                name=name, kwargs=kwargs))
+
+    except DataError:
+        logger.error('用例信息：{kwargs}过长！！'.format(kwargs=kwargs))
+        return '字段长度超长，请重新编辑'
     return 'ok'

@@ -5,7 +5,7 @@ from django.views.decorators.csrf import csrf_exempt
 def process(request, **kwargs):
     app = kwargs.pop('app', None)
     fun = kwargs.pop('function', None)
-    index = kwargs.pop('index', None)
+    index = kwargs.pop('pagenum', None)
 
     if app:
         app = 'background'
