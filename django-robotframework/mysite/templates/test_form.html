@@ -1,0 +1,25 @@
+<html>
+<head>
+<title>test us</title>
+</head>
+<body>
+<h1>Test Suite</h1>
+{{ debuglog }}
+<form action="" name="form1" method="post">
+<div class="field">
+{{ form.labs.errors }}
+<label for="id_subject">Select Lab:</label>
+{{ form.labs }}
+</div>
+<div class="field">
+{{ form.testsuite.errors }}
+<label for="id_subject">TestSuite:</label>
+{% for item in form.testsuite %}
+<p> aaaa </p>
+{{ item }}
+{% endfor %}
+</div>
+<input type="submit" value="Run">
+</form>
+</body>
+</html>

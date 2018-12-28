@@ -1,0 +1,516 @@
+Test Suite Start: Testcases, attrs: {'suites': [u'Aibcontent-Remote-Test', u'Corba PET', u'Release6'], 'tests': [], 'doc': u'', 'source': u'F:\\Study\\Nokia\\scripts\\remote-test\\src\\testcases', 'totaltests': 213, 'starttime': '20150314 22:03:39.468', 'longname': u'Testcases', 'id': 's1', 'metadata': {}}
+Test Suite Start: Aibcontent-Remote-Test, attrs: {'suites': [], 'tests': [u'Log server name'], 'doc': u'', 'source': u'F:\\Study\\Nokia\\scripts\\remote-test\\src\\testcases\\aibcontent-remote-test.html', 'totaltests': 1, 'starttime': '20150314 22:03:39.500', 'longname': u'Testcases.Aibcontent-Remote-Test', 'id': 's1-s1', 'metadata': {}}
+Starting test: Testcases.Aibcontent-Remote-Test.Log server name
+20150314 22:03:39.531 :  INFO : Running command '/bin/hostname 2>&1'
+20150314 22:03:39.562 :  INFO : ${out} = 系统找不到指定的路径。
+20150314 22:03:39.562 :  INFO : This test is executed in server: 系统找不到指定的路径。
+Ending test: Testcases.Aibcontent-Remote-Test.Log server name
+Test Suite End: Aibcontent-Remote-Test, attrs: {'status': 'PASS', 'suites': [], 'tests': [u'Log server name'], 'statistics': '1 critical test, 1 passed, 0 failed\n1 test total, 1 passed, 0 failed', 'doc': u'', 'elapsedtime': 62, 'source': u'F:\\Study\\Nokia\\scripts\\remote-test\\src\\testcases\\aibcontent-remote-test.html', 'totaltests': 1, 'starttime': '20150314 22:03:39.500', 'longname': u'Testcases.Aibcontent-Remote-Test', 'message': '', 'endtime': '20150314 22:03:39.562', 'id': 's1-s1', 'metadata': {}}
+Test Suite Start: Corba PET, attrs: {'suites': [u'CORBA NBI PET Test Suite'], 'tests': [], 'doc': u'NBI testcase init', 'source': u'F:\\Study\\Nokia\\scripts\\remote-test\\src\\testcases\\Corba_PET', 'totaltests': 12, 'starttime': '20150314 22:03:39.562', 'longname': u'Testcases.Corba PET', 'id': 's1-s2', 'metadata': {}}
+20150314 22:03:39.656 :  INFO : @{ACTIVEBACKEND_OMC} = [ 10.92.18.26 | omc | omc ]
+20150314 22:03:39.656 :  INFO : @{ACTIVEBACKEND_OMC} = [ 10.92.18.26 | omc | omc ]
+20150314 22:03:39.656 :  INFO : @{ACTIVEBACKEND} = [ 10.92.18.26 | root | arthur ]
+20150314 22:03:39.656 :  INFO : @{ACTIVEBACKEND} = [ 10.92.18.26 | root | arthur ]
+20150314 22:03:39.656 :  INFO : @{INACTIVEBACKEND_OMC} = [ 10.92.18.24 | omc | omc ]
+20150314 22:03:39.656 :  INFO : @{INACTIVEBACKEND_OMC} = [ 10.92.18.24 | omc | omc ]
+20150314 22:03:39.656 :  INFO : @{INACTIVEBACKEND} = [ 10.92.18.24 | root | arthur ]
+20150314 22:03:39.671 :  INFO : @{INACTIVEBACKEND} = [ 10.92.18.24 | root | arthur ]
+20150314 22:03:39.671 :  INFO : 10.92.18.24
+20150314 22:03:39.671 :  INFO : omc
+20150314 22:03:39.671 :  INFO : omc
+Test Suite Start: CORBA NBI PET Test Suite, attrs: {'suites': [], 'tests': [u'1NMS Peak(191_AlarmsPerSecond_5mins)', u'1NMS Peak(191_AlarmsPerSecond_5mins_log)', u'3NMS Peak(191_AlarmsPerSecond_5mins)', u'3NMS Peak(191_AlarmsPerSecond_5mins_log)', u'1NMS Burst(77_AlarmsPerSecond_1hours)', u'1NMS Burst(77_AlarmsPerSecond_1hours_log)', u'3NMS Burst(77_AlarmsPerSecond_1hours)', u'3NMS Burst(77_AlarmsPerSecond_1hours_log)', u'1NMS Normal(33_AlarmsPerSecond_3hours)', u'1NMS Normal(33_AlarmsPerSecond_3hours_log)', u'3NMS Normal(33_AlarmsPerSecond_3hours)', u'3NMS Normal(33_AlarmsPerSecond_3hours_log)'], 'doc': u'', 'source': u'F:\\Study\\Nokia\\scripts\\remote-test\\src\\testcases\\Corba_PET\\CORBA_NBI_PET_Test_Suite.html', 'totaltests': 12, 'starttime': '20150314 22:03:39.671', 'longname': u'Testcases.Corba PET.CORBA NBI PET Test Suite', 'id': 's1-s2-s1', 'metadata': {}}
+Starting test: Testcases.Corba PET.CORBA NBI PET Test Suite.1NMS Peak(191_AlarmsPerSecond_5mins)
+Ending test: Testcases.Corba PET.CORBA NBI PET Test Suite.1NMS Peak(191_AlarmsPerSecond_5mins)
+Starting test: Testcases.Corba PET.CORBA NBI PET Test Suite.1NMS Peak(191_AlarmsPerSecond_5mins_log)
+Ending test: Testcases.Corba PET.CORBA NBI PET Test Suite.1NMS Peak(191_AlarmsPerSecond_5mins_log)
+Starting test: Testcases.Corba PET.CORBA NBI PET Test Suite.3NMS Peak(191_AlarmsPerSecond_5mins)
+Ending test: Testcases.Corba PET.CORBA NBI PET Test Suite.3NMS Peak(191_AlarmsPerSecond_5mins)
+Starting test: Testcases.Corba PET.CORBA NBI PET Test Suite.3NMS Peak(191_AlarmsPerSecond_5mins_log)
+Ending test: Testcases.Corba PET.CORBA NBI PET Test Suite.3NMS Peak(191_AlarmsPerSecond_5mins_log)
+Starting test: Testcases.Corba PET.CORBA NBI PET Test Suite.1NMS Burst(77_AlarmsPerSecond_1hours)
+Ending test: Testcases.Corba PET.CORBA NBI PET Test Suite.1NMS Burst(77_AlarmsPerSecond_1hours)
+Starting test: Testcases.Corba PET.CORBA NBI PET Test Suite.1NMS Burst(77_AlarmsPerSecond_1hours_log)
+Ending test: Testcases.Corba PET.CORBA NBI PET Test Suite.1NMS Burst(77_AlarmsPerSecond_1hours_log)
+Starting test: Testcases.Corba PET.CORBA NBI PET Test Suite.3NMS Burst(77_AlarmsPerSecond_1hours)
+Ending test: Testcases.Corba PET.CORBA NBI PET Test Suite.3NMS Burst(77_AlarmsPerSecond_1hours)
+Starting test: Testcases.Corba PET.CORBA NBI PET Test Suite.3NMS Burst(77_AlarmsPerSecond_1hours_log)
+Ending test: Testcases.Corba PET.CORBA NBI PET Test Suite.3NMS Burst(77_AlarmsPerSecond_1hours_log)
+Starting test: Testcases.Corba PET.CORBA NBI PET Test Suite.1NMS Normal(33_AlarmsPerSecond_3hours)
+Ending test: Testcases.Corba PET.CORBA NBI PET Test Suite.1NMS Normal(33_AlarmsPerSecond_3hours)
+Starting test: Testcases.Corba PET.CORBA NBI PET Test Suite.1NMS Normal(33_AlarmsPerSecond_3hours_log)
+Ending test: Testcases.Corba PET.CORBA NBI PET Test Suite.1NMS Normal(33_AlarmsPerSecond_3hours_log)
+Starting test: Testcases.Corba PET.CORBA NBI PET Test Suite.3NMS Normal(33_AlarmsPerSecond_3hours)
+Ending test: Testcases.Corba PET.CORBA NBI PET Test Suite.3NMS Normal(33_AlarmsPerSecond_3hours)
+Starting test: Testcases.Corba PET.CORBA NBI PET Test Suite.3NMS Normal(33_AlarmsPerSecond_3hours_log)
+Ending test: Testcases.Corba PET.CORBA NBI PET Test Suite.3NMS Normal(33_AlarmsPerSecond_3hours_log)
+Test Suite End: CORBA NBI PET Test Suite, attrs: {'status': 'FAIL', 'suites': [], 'tests': [u'1NMS Peak(191_AlarmsPerSecond_5mins)', u'1NMS Peak(191_AlarmsPerSecond_5mins_log)', u'3NMS Peak(191_AlarmsPerSecond_5mins)', u'3NMS Peak(191_AlarmsPerSecond_5mins_log)', u'1NMS Burst(77_AlarmsPerSecond_1hours)', u'1NMS Burst(77_AlarmsPerSecond_1hours_log)', u'3NMS Burst(77_AlarmsPerSecond_1hours)', u'3NMS Burst(77_AlarmsPerSecond_1hours_log)', u'1NMS Normal(33_AlarmsPerSecond_3hours)', u'1NMS Normal(33_AlarmsPerSecond_3hours_log)', u'3NMS Normal(33_AlarmsPerSecond_3hours)', u'3NMS Normal(33_AlarmsPerSecond_3hours_log)'], 'statistics': '12 critical tests, 0 passed, 12 failed\n12 tests total, 0 passed, 12 failed', 'doc': u'', 'elapsedtime': 16, 'source': u'F:\\Study\\Nokia\\scripts\\remote-test\\src\\testcases\\Corba_PET\\CORBA_NBI_PET_Test_Suite.html', 'totaltests': 12, 'starttime': '20150314 22:03:39.671', 'longname': u'Testcases.Corba PET.CORBA NBI PET Test Suite', 'message': u"Parent suite setup failed:\nNo keyword with name 'Open Connection' found.", 'endtime': '20150314 22:03:39.687', 'id': 's1-s2-s1', 'metadata': {}}
+20150314 22:03:39.703 :  INFO : ${output} = None
+20150314 22:03:39.703 :  INFO : ${err} = None
+Test Suite End: Corba PET, attrs: {'status': 'FAIL', 'suites': [u'CORBA NBI PET Test Suite'], 'tests': [], 'statistics': '12 critical tests, 0 passed, 12 failed\n12 tests total, 0 passed, 12 failed', 'doc': u'NBI testcase init', 'elapsedtime': 156, 'source': u'F:\\Study\\Nokia\\scripts\\remote-test\\src\\testcases\\Corba_PET', 'totaltests': 12, 'starttime': '20150314 22:03:39.562', 'longname': u'Testcases.Corba PET', 'message': u"Suite setup failed:\nNo keyword with name 'Open Connection' found.\n\nAlso suite teardown failed:\nSeveral failures occurred:\n\n1) No keyword with name 'Switch Connection' found.\n\n2) No keyword with name 'Execute command' found.\n\n3) No keyword with name 'Execute command' found.\n\n4) No keyword with name 'Execute command' found.\n\n5) No keyword with name 'Close All Connections' found.", 'endtime': '20150314 22:03:39.718', 'id': 's1-s2', 'metadata': {}}
+Test Suite Start: Release6, attrs: {'suites': [u'CORBA NBI Alarm IRP Test Suite', u'CORBA NBI BCM IRP Test Suite', u'CORBA NBI CS IRP Test Suite', u'CORBA NBI DCA Security Test Suite', u'CORBA NBI EP IRP Test Suite', u'CORBA NBI KCM IRP Test Suite', u'CORBA NBI Notification IRP Test Suite', u'NBI 3GPP CORBA FM Configurable Filter Test Suite', u'NBI 3GPP CORBA FT IRP Test Suite', u'NBI 3GPP CORBA IUM Test Suite', u'NBI 3GPP CORBA Self Monitoring Test Suite'], 'tests': [], 'doc': u'NBI testcase init', 'source': u'F:\\Study\\Nokia\\scripts\\remote-test\\src\\testcases\\Release6', 'totaltests': 200, 'starttime': '20150314 22:03:39.718', 'longname': u'Testcases.Release6', 'id': 's1-s3', 'metadata': {}}
+20150314 22:03:39.828 :  INFO : 
+Argument types are:
+<type 'str'>
+20150314 22:03:39.828 :  INFO : ${DB_NODE_IP} = 10.92.18.21
+20150314 22:03:39.843 :  INFO : ${DB_NODE_IP} = 10.92.18.21
+20150314 22:03:39.843 :  INFO : 
+Argument types are:
+<type 'str'>
+20150314 22:03:39.843 :  INFO : ${WAS_NODE_IP} = 10.92.18.24
+20150314 22:03:39.843 :  INFO : ${WAS_NODE_IP} = 10.92.18.24
+20150314 22:03:39.843 :  INFO : 
+Argument types are:
+<type 'str'>
+20150314 22:03:39.843 :  INFO : ${DMGR_NODE_IP} = 10.92.18.24
+20150314 22:03:39.843 :  INFO : ${DMGR_NODE_IP} = 10.92.18.24
+20150314 22:03:39.843 :  INFO : 
+Argument types are:
+<type 'str'>
+20150314 22:03:39.843 :  INFO : ${NBI3GC_NODE_IP} = 10.92.18.26
+20150314 22:03:39.843 :  INFO : ${NBI3GC_NODE_IP} = 10.92.18.26
+20150314 22:03:39.843 :  INFO : @{ACTIVEBACKEND_OMC} = [ 10.92.18.26 | omc | omc ]
+20150314 22:03:39.843 :  INFO : @{ACTIVEBACKEND_OMC} = [ 10.92.18.26 | omc | omc ]
+20150314 22:03:39.843 :  INFO : @{ACTIVEBACKEND} = [ 10.92.18.26 | root | arthur ]
+20150314 22:03:39.859 :  INFO : @{ACTIVEBACKEND} = [ 10.92.18.26 | root | arthur ]
+20150314 22:03:39.859 :  INFO : @{ACTIVESMVM} = [ 10.92.18.24 | root | arthur ]
+20150314 22:03:39.859 :  INFO : @{ACTIVESMVM} = [ 10.92.18.24 | root | arthur ]
+20150314 22:03:39.859 :  INFO : @{WASNODE_OMC} = [ 10.92.18.24 | omc | omc ]
+20150314 22:03:39.859 :  INFO : @{WASNODE_OMC} = [ 10.92.18.24 | omc | omc ]
+20150314 22:03:39.859 :  INFO : @{WASNODE_ROOT} = [ 10.92.18.24 | root | arthur ]
+20150314 22:03:39.859 :  INFO : @{WASNODE_ROOT} = [ 10.92.18.24 | root | arthur ]
+20150314 22:03:39.875 :  INFO : 10.92.18.24
+20150314 22:03:39.875 :  INFO : root
+20150314 22:03:39.875 :  INFO : arthur
+Test Suite Start: CORBA NBI Alarm IRP Test Suite, attrs: {'suites': [], 'tests': [u'Alarm_Upload_RebuildList', u'Ack_alarmid_not_exist', u'Ack_reack_alarm', u'Ack_muti_ack_success', u'Ack_muti_ack_with_severity_success', u'Ack_id_length_limitation_success', u'Ack_particial_success', u'Unack_not_acked_alarm', u'Unack_muti_success', u'Unack_partial_alarm_invalid', u'Unack_invalid_alarm_information_id_list', u'Clear_already_cleared', u'Clear_nonexist_alarm_information_id', u'Clear_mix_success', u'Ack_Unack_Clear_null_userid', u'Setup_getAlarmListAndCount', u'GetAlarmListWithoutFilter', u'GetAlarmListWithFilter_h', u'GetAlarmListWithFilter_n', u'GetAlarmListWithFilter_i', u'GetAlarmListWithFilter_d', u'GetAlarmListWithFilter_error_h', u'getAlarmListWithFilter_Multi_Filter', u'GetAlarmList', u'GetAlarmList_null_b', u'GetAlarmList_wrong_b', u'GetAlarmList_FirstTime_after_NBI_restart', u'GetAlarmList_Max_Limit', u'GetAlarmList_work_after_fail', u'GetAlarmCountWithoutFilter', u'GetAlarmCountWithFilter', u'GetAlarmCountWithFilter_ErrorParameter', u'Get_IRP_versions', u'Get_notification_profile', u'Get_notification_profile_excpetion', u'Get_operation_profile', u'Get_operation_profile_exception'], 'doc': u'', 'source': u'F:\\Study\\Nokia\\scripts\\remote-test\\src\\testcases\\Release6\\CORBA_NBI_Alarm_IRP_Test_Suite.html', 'totaltests': 37, 'starttime': '20150314 22:03:39.875', 'longname': u'Testcases.Release6.CORBA NBI Alarm IRP Test Suite', 'id': 's1-s3-s1', 'metadata': {u'Author': u'danny.ma@nsn.com'}}
+Starting test: Testcases.Release6.CORBA NBI Alarm IRP Test Suite.Alarm_Upload_RebuildList
+Ending test: Testcases.Release6.CORBA NBI Alarm IRP Test Suite.Alarm_Upload_RebuildList
+Starting test: Testcases.Release6.CORBA NBI Alarm IRP Test Suite.Ack_alarmid_not_exist
+Ending test: Testcases.Release6.CORBA NBI Alarm IRP Test Suite.Ack_alarmid_not_exist
+Starting test: Testcases.Release6.CORBA NBI Alarm IRP Test Suite.Ack_reack_alarm
+Ending test: Testcases.Release6.CORBA NBI Alarm IRP Test Suite.Ack_reack_alarm
+Starting test: Testcases.Release6.CORBA NBI Alarm IRP Test Suite.Ack_muti_ack_success
+Ending test: Testcases.Release6.CORBA NBI Alarm IRP Test Suite.Ack_muti_ack_success
+Starting test: Testcases.Release6.CORBA NBI Alarm IRP Test Suite.Ack_muti_ack_with_severity_success
+Ending test: Testcases.Release6.CORBA NBI Alarm IRP Test Suite.Ack_muti_ack_with_severity_success
+Starting test: Testcases.Release6.CORBA NBI Alarm IRP Test Suite.Ack_id_length_limitation_success
+Ending test: Testcases.Release6.CORBA NBI Alarm IRP Test Suite.Ack_id_length_limitation_success
+Starting test: Testcases.Release6.CORBA NBI Alarm IRP Test Suite.Ack_particial_success
+Ending test: Testcases.Release6.CORBA NBI Alarm IRP Test Suite.Ack_particial_success
+Starting test: Testcases.Release6.CORBA NBI Alarm IRP Test Suite.Unack_not_acked_alarm
+Ending test: Testcases.Release6.CORBA NBI Alarm IRP Test Suite.Unack_not_acked_alarm
+Starting test: Testcases.Release6.CORBA NBI Alarm IRP Test Suite.Unack_muti_success
+Ending test: Testcases.Release6.CORBA NBI Alarm IRP Test Suite.Unack_muti_success
+Starting test: Testcases.Release6.CORBA NBI Alarm IRP Test Suite.Unack_partial_alarm_invalid
+Ending test: Testcases.Release6.CORBA NBI Alarm IRP Test Suite.Unack_partial_alarm_invalid
+Starting test: Testcases.Release6.CORBA NBI Alarm IRP Test Suite.Unack_invalid_alarm_information_id_list
+Ending test: Testcases.Release6.CORBA NBI Alarm IRP Test Suite.Unack_invalid_alarm_information_id_list
+Starting test: Testcases.Release6.CORBA NBI Alarm IRP Test Suite.Clear_already_cleared
+Ending test: Testcases.Release6.CORBA NBI Alarm IRP Test Suite.Clear_already_cleared
+Starting test: Testcases.Release6.CORBA NBI Alarm IRP Test Suite.Clear_nonexist_alarm_information_id
+Ending test: Testcases.Release6.CORBA NBI Alarm IRP Test Suite.Clear_nonexist_alarm_information_id
+Starting test: Testcases.Release6.CORBA NBI Alarm IRP Test Suite.Clear_mix_success
+Ending test: Testcases.Release6.CORBA NBI Alarm IRP Test Suite.Clear_mix_success
+Starting test: Testcases.Release6.CORBA NBI Alarm IRP Test Suite.Ack_Unack_Clear_null_userid
+Ending test: Testcases.Release6.CORBA NBI Alarm IRP Test Suite.Ack_Unack_Clear_null_userid
+Starting test: Testcases.Release6.CORBA NBI Alarm IRP Test Suite.Setup_getAlarmListAndCount
+Ending test: Testcases.Release6.CORBA NBI Alarm IRP Test Suite.Setup_getAlarmListAndCount
+Starting test: Testcases.Release6.CORBA NBI Alarm IRP Test Suite.GetAlarmListWithoutFilter
+Ending test: Testcases.Release6.CORBA NBI Alarm IRP Test Suite.GetAlarmListWithoutFilter
+Starting test: Testcases.Release6.CORBA NBI Alarm IRP Test Suite.GetAlarmListWithFilter_h
+Ending test: Testcases.Release6.CORBA NBI Alarm IRP Test Suite.GetAlarmListWithFilter_h
+Starting test: Testcases.Release6.CORBA NBI Alarm IRP Test Suite.GetAlarmListWithFilter_n
+Ending test: Testcases.Release6.CORBA NBI Alarm IRP Test Suite.GetAlarmListWithFilter_n
+Starting test: Testcases.Release6.CORBA NBI Alarm IRP Test Suite.GetAlarmListWithFilter_i
+Ending test: Testcases.Release6.CORBA NBI Alarm IRP Test Suite.GetAlarmListWithFilter_i
+Starting test: Testcases.Release6.CORBA NBI Alarm IRP Test Suite.GetAlarmListWithFilter_d
+Ending test: Testcases.Release6.CORBA NBI Alarm IRP Test Suite.GetAlarmListWithFilter_d
+Starting test: Testcases.Release6.CORBA NBI Alarm IRP Test Suite.GetAlarmListWithFilter_error_h
+Ending test: Testcases.Release6.CORBA NBI Alarm IRP Test Suite.GetAlarmListWithFilter_error_h
+Starting test: Testcases.Release6.CORBA NBI Alarm IRP Test Suite.getAlarmListWithFilter_Multi_Filter
+Ending test: Testcases.Release6.CORBA NBI Alarm IRP Test Suite.getAlarmListWithFilter_Multi_Filter
+Starting test: Testcases.Release6.CORBA NBI Alarm IRP Test Suite.GetAlarmList
+Ending test: Testcases.Release6.CORBA NBI Alarm IRP Test Suite.GetAlarmList
+Starting test: Testcases.Release6.CORBA NBI Alarm IRP Test Suite.GetAlarmList_null_b
+Ending test: Testcases.Release6.CORBA NBI Alarm IRP Test Suite.GetAlarmList_null_b
+Starting test: Testcases.Release6.CORBA NBI Alarm IRP Test Suite.GetAlarmList_wrong_b
+Ending test: Testcases.Release6.CORBA NBI Alarm IRP Test Suite.GetAlarmList_wrong_b
+Starting test: Testcases.Release6.CORBA NBI Alarm IRP Test Suite.GetAlarmList_FirstTime_after_NBI_restart
+Ending test: Testcases.Release6.CORBA NBI Alarm IRP Test Suite.GetAlarmList_FirstTime_after_NBI_restart
+Starting test: Testcases.Release6.CORBA NBI Alarm IRP Test Suite.GetAlarmList_Max_Limit
+Ending test: Testcases.Release6.CORBA NBI Alarm IRP Test Suite.GetAlarmList_Max_Limit
+Starting test: Testcases.Release6.CORBA NBI Alarm IRP Test Suite.GetAlarmList_work_after_fail
+Ending test: Testcases.Release6.CORBA NBI Alarm IRP Test Suite.GetAlarmList_work_after_fail
+Starting test: Testcases.Release6.CORBA NBI Alarm IRP Test Suite.GetAlarmCountWithoutFilter
+Ending test: Testcases.Release6.CORBA NBI Alarm IRP Test Suite.GetAlarmCountWithoutFilter
+Starting test: Testcases.Release6.CORBA NBI Alarm IRP Test Suite.GetAlarmCountWithFilter
+Ending test: Testcases.Release6.CORBA NBI Alarm IRP Test Suite.GetAlarmCountWithFilter
+Starting test: Testcases.Release6.CORBA NBI Alarm IRP Test Suite.GetAlarmCountWithFilter_ErrorParameter
+Ending test: Testcases.Release6.CORBA NBI Alarm IRP Test Suite.GetAlarmCountWithFilter_ErrorParameter
+Starting test: Testcases.Release6.CORBA NBI Alarm IRP Test Suite.Get_IRP_versions
+Ending test: Testcases.Release6.CORBA NBI Alarm IRP Test Suite.Get_IRP_versions
+Starting test: Testcases.Release6.CORBA NBI Alarm IRP Test Suite.Get_notification_profile
+Ending test: Testcases.Release6.CORBA NBI Alarm IRP Test Suite.Get_notification_profile
+Starting test: Testcases.Release6.CORBA NBI Alarm IRP Test Suite.Get_notification_profile_excpetion
+Ending test: Testcases.Release6.CORBA NBI Alarm IRP Test Suite.Get_notification_profile_excpetion
+Starting test: Testcases.Release6.CORBA NBI Alarm IRP Test Suite.Get_operation_profile
+Ending test: Testcases.Release6.CORBA NBI Alarm IRP Test Suite.Get_operation_profile
+Starting test: Testcases.Release6.CORBA NBI Alarm IRP Test Suite.Get_operation_profile_exception
+Ending test: Testcases.Release6.CORBA NBI Alarm IRP Test Suite.Get_operation_profile_exception
+Test Suite End: CORBA NBI Alarm IRP Test Suite, attrs: {'status': 'FAIL', 'suites': [], 'tests': [u'Alarm_Upload_RebuildList', u'Ack_alarmid_not_exist', u'Ack_reack_alarm', u'Ack_muti_ack_success', u'Ack_muti_ack_with_severity_success', u'Ack_id_length_limitation_success', u'Ack_particial_success', u'Unack_not_acked_alarm', u'Unack_muti_success', u'Unack_partial_alarm_invalid', u'Unack_invalid_alarm_information_id_list', u'Clear_already_cleared', u'Clear_nonexist_alarm_information_id', u'Clear_mix_success', u'Ack_Unack_Clear_null_userid', u'Setup_getAlarmListAndCount', u'GetAlarmListWithoutFilter', u'GetAlarmListWithFilter_h', u'GetAlarmListWithFilter_n', u'GetAlarmListWithFilter_i', u'GetAlarmListWithFilter_d', u'GetAlarmListWithFilter_error_h', u'getAlarmListWithFilter_Multi_Filter', u'GetAlarmList', u'GetAlarmList_null_b', u'GetAlarmList_wrong_b', u'GetAlarmList_FirstTime_after_NBI_restart', u'GetAlarmList_Max_Limit', u'GetAlarmList_work_after_fail', u'GetAlarmCountWithoutFilter', u'GetAlarmCountWithFilter', u'GetAlarmCountWithFilter_ErrorParameter', u'Get_IRP_versions', u'Get_notification_profile', u'Get_notification_profile_excpetion', u'Get_operation_profile', u'Get_operation_profile_exception'], 'statistics': '37 critical tests, 0 passed, 37 failed\n37 tests total, 0 passed, 37 failed', 'doc': u'', 'elapsedtime': 46, 'source': u'F:\\Study\\Nokia\\scripts\\remote-test\\src\\testcases\\Release6\\CORBA_NBI_Alarm_IRP_Test_Suite.html', 'totaltests': 37, 'starttime': '20150314 22:03:39.875', 'longname': u'Testcases.Release6.CORBA NBI Alarm IRP Test Suite', 'message': u"Parent suite setup failed:\nNo keyword with name 'Open Connection' found.", 'endtime': '20150314 22:03:39.921', 'id': 's1-s3-s1', 'metadata': {u'Author': u'danny.ma@nsn.com'}}
+Test Suite Start: CORBA NBI BCM IRP Test Suite, attrs: {'suites': [], 'tests': [u'find_mo_with_point_in_object_name', u'find_mo_with_more_than_100_base_objects', u'find_mo_baseonly', u'find_mo_nth_level_L0', u'find_mo_nth_level_L_wronglevel', u'FindMo_nth_level_L5_exception', u'FindMo_nth_level_L1', u'FindMo_nth_level_onsubtree', u'FindMo_base_subtree_L5', u'FindMo_base_subtree_L2_onsubtree', u'FindMo_subtree_without_leaves', u'findMo_base_all_with_root_level_ignored', u'FindMo_base_all_with_root', u'FindMo_base_all_with_middle_tree', u'Find_mo_mo_isnot_existed', u'Find_MO_TIEAL', u'Find_MO_null_b', u'Get_irp_versions', u'Get_notification_profile', u'Get_notification_profile_exception', u'Get_operation_profile', u'Get_operation_profile_exception', u'Find_MO_base_all_with_root_allattributes', u'Find_MO_in_NASDA_allattributes', u'Find_MO_in_Configurator_allattributes', u'Find_MO_in_NASDA_and_Configurator_allattributes', u'BCM_flex_mapping_rule_file_exception'], 'doc': u'', 'source': u'F:\\Study\\Nokia\\scripts\\remote-test\\src\\testcases\\Release6\\CORBA_NBI_BCM_IRP_Test_Suite.html', 'totaltests': 27, 'starttime': '20150314 22:03:39.921', 'longname': u'Testcases.Release6.CORBA NBI BCM IRP Test Suite', 'id': 's1-s3-s2', 'metadata': {u'Author': u'danny.ma@nsn.com'}}
+Starting test: Testcases.Release6.CORBA NBI BCM IRP Test Suite.find_mo_with_point_in_object_name
+Ending test: Testcases.Release6.CORBA NBI BCM IRP Test Suite.find_mo_with_point_in_object_name
+Starting test: Testcases.Release6.CORBA NBI BCM IRP Test Suite.find_mo_with_more_than_100_base_objects
+Ending test: Testcases.Release6.CORBA NBI BCM IRP Test Suite.find_mo_with_more_than_100_base_objects
+Starting test: Testcases.Release6.CORBA NBI BCM IRP Test Suite.find_mo_baseonly
+Ending test: Testcases.Release6.CORBA NBI BCM IRP Test Suite.find_mo_baseonly
+Starting test: Testcases.Release6.CORBA NBI BCM IRP Test Suite.find_mo_nth_level_L0
+Ending test: Testcases.Release6.CORBA NBI BCM IRP Test Suite.find_mo_nth_level_L0
+Starting test: Testcases.Release6.CORBA NBI BCM IRP Test Suite.find_mo_nth_level_L_wronglevel
+Ending test: Testcases.Release6.CORBA NBI BCM IRP Test Suite.find_mo_nth_level_L_wronglevel
+Starting test: Testcases.Release6.CORBA NBI BCM IRP Test Suite.FindMo_nth_level_L5_exception
+Ending test: Testcases.Release6.CORBA NBI BCM IRP Test Suite.FindMo_nth_level_L5_exception
+Starting test: Testcases.Release6.CORBA NBI BCM IRP Test Suite.FindMo_nth_level_L1
+Ending test: Testcases.Release6.CORBA NBI BCM IRP Test Suite.FindMo_nth_level_L1
+Starting test: Testcases.Release6.CORBA NBI BCM IRP Test Suite.FindMo_nth_level_onsubtree
+Ending test: Testcases.Release6.CORBA NBI BCM IRP Test Suite.FindMo_nth_level_onsubtree
+Starting test: Testcases.Release6.CORBA NBI BCM IRP Test Suite.FindMo_base_subtree_L5
+Ending test: Testcases.Release6.CORBA NBI BCM IRP Test Suite.FindMo_base_subtree_L5
+Starting test: Testcases.Release6.CORBA NBI BCM IRP Test Suite.FindMo_base_subtree_L2_onsubtree
+Ending test: Testcases.Release6.CORBA NBI BCM IRP Test Suite.FindMo_base_subtree_L2_onsubtree
+Starting test: Testcases.Release6.CORBA NBI BCM IRP Test Suite.FindMo_subtree_without_leaves
+Ending test: Testcases.Release6.CORBA NBI BCM IRP Test Suite.FindMo_subtree_without_leaves
+Starting test: Testcases.Release6.CORBA NBI BCM IRP Test Suite.findMo_base_all_with_root_level_ignored
+Ending test: Testcases.Release6.CORBA NBI BCM IRP Test Suite.findMo_base_all_with_root_level_ignored
+Starting test: Testcases.Release6.CORBA NBI BCM IRP Test Suite.FindMo_base_all_with_root
+Ending test: Testcases.Release6.CORBA NBI BCM IRP Test Suite.FindMo_base_all_with_root
+Starting test: Testcases.Release6.CORBA NBI BCM IRP Test Suite.FindMo_base_all_with_middle_tree
+Ending test: Testcases.Release6.CORBA NBI BCM IRP Test Suite.FindMo_base_all_with_middle_tree
+Starting test: Testcases.Release6.CORBA NBI BCM IRP Test Suite.Find_mo_mo_isnot_existed
+Ending test: Testcases.Release6.CORBA NBI BCM IRP Test Suite.Find_mo_mo_isnot_existed
+Starting test: Testcases.Release6.CORBA NBI BCM IRP Test Suite.Find_MO_TIEAL
+Ending test: Testcases.Release6.CORBA NBI BCM IRP Test Suite.Find_MO_TIEAL
+Starting test: Testcases.Release6.CORBA NBI BCM IRP Test Suite.Find_MO_null_b
+Ending test: Testcases.Release6.CORBA NBI BCM IRP Test Suite.Find_MO_null_b
+Starting test: Testcases.Release6.CORBA NBI BCM IRP Test Suite.Get_irp_versions
+Ending test: Testcases.Release6.CORBA NBI BCM IRP Test Suite.Get_irp_versions
+Starting test: Testcases.Release6.CORBA NBI BCM IRP Test Suite.Get_notification_profile
+Ending test: Testcases.Release6.CORBA NBI BCM IRP Test Suite.Get_notification_profile
+Starting test: Testcases.Release6.CORBA NBI BCM IRP Test Suite.Get_notification_profile_exception
+Ending test: Testcases.Release6.CORBA NBI BCM IRP Test Suite.Get_notification_profile_exception
+Starting test: Testcases.Release6.CORBA NBI BCM IRP Test Suite.Get_operation_profile
+Ending test: Testcases.Release6.CORBA NBI BCM IRP Test Suite.Get_operation_profile
+Starting test: Testcases.Release6.CORBA NBI BCM IRP Test Suite.Get_operation_profile_exception
+Ending test: Testcases.Release6.CORBA NBI BCM IRP Test Suite.Get_operation_profile_exception
+Starting test: Testcases.Release6.CORBA NBI BCM IRP Test Suite.Find_MO_base_all_with_root_allattributes
+Ending test: Testcases.Release6.CORBA NBI BCM IRP Test Suite.Find_MO_base_all_with_root_allattributes
+Starting test: Testcases.Release6.CORBA NBI BCM IRP Test Suite.Find_MO_in_NASDA_allattributes
+Ending test: Testcases.Release6.CORBA NBI BCM IRP Test Suite.Find_MO_in_NASDA_allattributes
+Starting test: Testcases.Release6.CORBA NBI BCM IRP Test Suite.Find_MO_in_Configurator_allattributes
+Ending test: Testcases.Release6.CORBA NBI BCM IRP Test Suite.Find_MO_in_Configurator_allattributes
+Starting test: Testcases.Release6.CORBA NBI BCM IRP Test Suite.Find_MO_in_NASDA_and_Configurator_allattributes
+Ending test: Testcases.Release6.CORBA NBI BCM IRP Test Suite.Find_MO_in_NASDA_and_Configurator_allattributes
+Starting test: Testcases.Release6.CORBA NBI BCM IRP Test Suite.BCM_flex_mapping_rule_file_exception
+Ending test: Testcases.Release6.CORBA NBI BCM IRP Test Suite.BCM_flex_mapping_rule_file_exception
+Test Suite End: CORBA NBI BCM IRP Test Suite, attrs: {'status': 'FAIL', 'suites': [], 'tests': [u'find_mo_with_point_in_object_name', u'find_mo_with_more_than_100_base_objects', u'find_mo_baseonly', u'find_mo_nth_level_L0', u'find_mo_nth_level_L_wronglevel', u'FindMo_nth_level_L5_exception', u'FindMo_nth_level_L1', u'FindMo_nth_level_onsubtree', u'FindMo_base_subtree_L5', u'FindMo_base_subtree_L2_onsubtree', u'FindMo_subtree_without_leaves', u'findMo_base_all_with_root_level_ignored', u'FindMo_base_all_with_root', u'FindMo_base_all_with_middle_tree', u'Find_mo_mo_isnot_existed', u'Find_MO_TIEAL', u'Find_MO_null_b', u'Get_irp_versions', u'Get_notification_profile', u'Get_notification_profile_exception', u'Get_operation_profile', u'Get_operation_profile_exception', u'Find_MO_base_all_with_root_allattributes', u'Find_MO_in_NASDA_allattributes', u'Find_MO_in_Configurator_allattributes', u'Find_MO_in_NASDA_and_Configurator_allattributes', u'BCM_flex_mapping_rule_file_exception'], 'statistics': '27 critical tests, 0 passed, 27 failed\n27 tests total, 0 passed, 27 failed', 'doc': u'', 'elapsedtime': 32, 'source': u'F:\\Study\\Nokia\\scripts\\remote-test\\src\\testcases\\Release6\\CORBA_NBI_BCM_IRP_Test_Suite.html', 'totaltests': 27, 'starttime': '20150314 22:03:39.921', 'longname': u'Testcases.Release6.CORBA NBI BCM IRP Test Suite', 'message': u"Parent suite setup failed:\nNo keyword with name 'Open Connection' found.", 'endtime': '20150314 22:03:39.953', 'id': 's1-s3-s2', 'metadata': {u'Author': u'danny.ma@nsn.com'}}
+Test Suite Start: CORBA NBI CS IRP Test Suite, attrs: {'suites': [], 'tests': [u'Set_heartbeat_0', u'Set_heartbeat_exception', u'Set_heartbeat_5_60', u'Get_heartbeat', u'Get_irp_versions', u'Get_notification_profile', u'Get_notification_profile_exception', u'Get_operation_profile', u'Get_operation_profile_exception', u'Trigger_heart_beat', u'Trigger_heart_beat_managerIOR', u'Trigger_heart_beat_manager_wrong_IOR'], 'doc': u'', 'source': u'F:\\Study\\Nokia\\scripts\\remote-test\\src\\testcases\\Release6\\CORBA_NBI_CS_IRP_Test_Suite.txt', 'totaltests': 12, 'starttime': '20150314 22:03:39.953', 'longname': u'Testcases.Release6.CORBA NBI CS IRP Test Suite', 'id': 's1-s3-s3', 'metadata': {u'Author': u'danny.ma@nsn.com'}}
+Starting test: Testcases.Release6.CORBA NBI CS IRP Test Suite.Set_heartbeat_0
+Ending test: Testcases.Release6.CORBA NBI CS IRP Test Suite.Set_heartbeat_0
+Starting test: Testcases.Release6.CORBA NBI CS IRP Test Suite.Set_heartbeat_exception
+Ending test: Testcases.Release6.CORBA NBI CS IRP Test Suite.Set_heartbeat_exception
+Starting test: Testcases.Release6.CORBA NBI CS IRP Test Suite.Set_heartbeat_5_60
+Ending test: Testcases.Release6.CORBA NBI CS IRP Test Suite.Set_heartbeat_5_60
+Starting test: Testcases.Release6.CORBA NBI CS IRP Test Suite.Get_heartbeat
+Ending test: Testcases.Release6.CORBA NBI CS IRP Test Suite.Get_heartbeat
+Starting test: Testcases.Release6.CORBA NBI CS IRP Test Suite.Get_irp_versions
+Ending test: Testcases.Release6.CORBA NBI CS IRP Test Suite.Get_irp_versions
+Starting test: Testcases.Release6.CORBA NBI CS IRP Test Suite.Get_notification_profile
+Ending test: Testcases.Release6.CORBA NBI CS IRP Test Suite.Get_notification_profile
+Starting test: Testcases.Release6.CORBA NBI CS IRP Test Suite.Get_notification_profile_exception
+Ending test: Testcases.Release6.CORBA NBI CS IRP Test Suite.Get_notification_profile_exception
+Starting test: Testcases.Release6.CORBA NBI CS IRP Test Suite.Get_operation_profile
+Ending test: Testcases.Release6.CORBA NBI CS IRP Test Suite.Get_operation_profile
+Starting test: Testcases.Release6.CORBA NBI CS IRP Test Suite.Get_operation_profile_exception
+Ending test: Testcases.Release6.CORBA NBI CS IRP Test Suite.Get_operation_profile_exception
+Starting test: Testcases.Release6.CORBA NBI CS IRP Test Suite.Trigger_heart_beat
+Ending test: Testcases.Release6.CORBA NBI CS IRP Test Suite.Trigger_heart_beat
+Starting test: Testcases.Release6.CORBA NBI CS IRP Test Suite.Trigger_heart_beat_managerIOR
+Ending test: Testcases.Release6.CORBA NBI CS IRP Test Suite.Trigger_heart_beat_managerIOR
+Starting test: Testcases.Release6.CORBA NBI CS IRP Test Suite.Trigger_heart_beat_manager_wrong_IOR
+Ending test: Testcases.Release6.CORBA NBI CS IRP Test Suite.Trigger_heart_beat_manager_wrong_IOR
+Test Suite End: CORBA NBI CS IRP Test Suite, attrs: {'status': 'FAIL', 'suites': [], 'tests': [u'Set_heartbeat_0', u'Set_heartbeat_exception', u'Set_heartbeat_5_60', u'Get_heartbeat', u'Get_irp_versions', u'Get_notification_profile', u'Get_notification_profile_exception', u'Get_operation_profile', u'Get_operation_profile_exception', u'Trigger_heart_beat', u'Trigger_heart_beat_managerIOR', u'Trigger_heart_beat_manager_wrong_IOR'], 'statistics': '12 critical tests, 0 passed, 12 failed\n12 tests total, 0 passed, 12 failed', 'doc': u'', 'elapsedtime': 15, 'source': u'F:\\Study\\Nokia\\scripts\\remote-test\\src\\testcases\\Release6\\CORBA_NBI_CS_IRP_Test_Suite.txt', 'totaltests': 12, 'starttime': '20150314 22:03:39.953', 'longname': u'Testcases.Release6.CORBA NBI CS IRP Test Suite', 'message': u"Parent suite setup failed:\nNo keyword with name 'Open Connection' found.", 'endtime': '20150314 22:03:39.968', 'id': 's1-s3-s3', 'metadata': {u'Author': u'danny.ma@nsn.com'}}
+Test Suite Start: CORBA NBI DCA Security Test Suite, attrs: {'suites': [], 'tests': [u'Non_root_account', u'DCA_checking', u'File_permission'], 'doc': u'', 'source': u'F:\\Study\\Nokia\\scripts\\remote-test\\src\\testcases\\Release6\\CORBA_NBI_DCA_Security_Test_Suite.html', 'totaltests': 3, 'starttime': '20150314 22:03:39.968', 'longname': u'Testcases.Release6.CORBA NBI DCA Security Test Suite', 'id': 's1-s3-s4', 'metadata': {u'Author': u'danny.ma@nsn.com'}}
+Starting test: Testcases.Release6.CORBA NBI DCA Security Test Suite.Non_root_account
+Ending test: Testcases.Release6.CORBA NBI DCA Security Test Suite.Non_root_account
+Starting test: Testcases.Release6.CORBA NBI DCA Security Test Suite.DCA_checking
+Ending test: Testcases.Release6.CORBA NBI DCA Security Test Suite.DCA_checking
+Starting test: Testcases.Release6.CORBA NBI DCA Security Test Suite.File_permission
+Ending test: Testcases.Release6.CORBA NBI DCA Security Test Suite.File_permission
+Test Suite End: CORBA NBI DCA Security Test Suite, attrs: {'status': 'FAIL', 'suites': [], 'tests': [u'Non_root_account', u'DCA_checking', u'File_permission'], 'statistics': '3 critical tests, 0 passed, 3 failed\n3 tests total, 0 passed, 3 failed', 'doc': u'', 'elapsedtime': 0, 'source': u'F:\\Study\\Nokia\\scripts\\remote-test\\src\\testcases\\Release6\\CORBA_NBI_DCA_Security_Test_Suite.html', 'totaltests': 3, 'starttime': '20150314 22:03:39.968', 'longname': u'Testcases.Release6.CORBA NBI DCA Security Test Suite', 'message': u"Parent suite setup failed:\nNo keyword with name 'Open Connection' found.", 'endtime': '20150314 22:03:39.968', 'id': 's1-s3-s4', 'metadata': {u'Author': u'danny.ma@nsn.com'}}
+Test Suite Start: CORBA NBI EP IRP Test Suite, attrs: {'suites': [], 'tests': [u'EPIRP_IOR_request_by_HTTP', u'Invoke_epirp_get_IRP_reference_through_epirp', u'Invoke_alarmirp_get_IRP_IOR_through_epirp', u'Invoke_NotificationIRP_get_IRP_IOR_through_epirp', u'Invoke_CSIRP_get_IRP_IOR_through_epirp', u'Invoke_KernelCM_get_IRP_IOR_through_epirp', u'Invoke_BasicCMIRP_get_IRP_IOR_through_epirp', u'Get_irp_outline', u'Get_notification_profile', u'Get_notification_profile_exception', u'Get_operation_profile', u'Get_operation_profile_exception'], 'doc': u'', 'source': u'F:\\Study\\Nokia\\scripts\\remote-test\\src\\testcases\\Release6\\CORBA_NBI_EP_IRP_Test_Suite.html', 'totaltests': 12, 'starttime': '20150314 22:03:39.968', 'longname': u'Testcases.Release6.CORBA NBI EP IRP Test Suite', 'id': 's1-s3-s5', 'metadata': {u'Author': u'danny.ma@nsn.com'}}
+Starting test: Testcases.Release6.CORBA NBI EP IRP Test Suite.EPIRP_IOR_request_by_HTTP
+Ending test: Testcases.Release6.CORBA NBI EP IRP Test Suite.EPIRP_IOR_request_by_HTTP
+Starting test: Testcases.Release6.CORBA NBI EP IRP Test Suite.Invoke_epirp_get_IRP_reference_through_epirp
+Ending test: Testcases.Release6.CORBA NBI EP IRP Test Suite.Invoke_epirp_get_IRP_reference_through_epirp
+Starting test: Testcases.Release6.CORBA NBI EP IRP Test Suite.Invoke_alarmirp_get_IRP_IOR_through_epirp
+Ending test: Testcases.Release6.CORBA NBI EP IRP Test Suite.Invoke_alarmirp_get_IRP_IOR_through_epirp
+Starting test: Testcases.Release6.CORBA NBI EP IRP Test Suite.Invoke_NotificationIRP_get_IRP_IOR_through_epirp
+Ending test: Testcases.Release6.CORBA NBI EP IRP Test Suite.Invoke_NotificationIRP_get_IRP_IOR_through_epirp
+Starting test: Testcases.Release6.CORBA NBI EP IRP Test Suite.Invoke_CSIRP_get_IRP_IOR_through_epirp
+Ending test: Testcases.Release6.CORBA NBI EP IRP Test Suite.Invoke_CSIRP_get_IRP_IOR_through_epirp
+Starting test: Testcases.Release6.CORBA NBI EP IRP Test Suite.Invoke_KernelCM_get_IRP_IOR_through_epirp
+Ending test: Testcases.Release6.CORBA NBI EP IRP Test Suite.Invoke_KernelCM_get_IRP_IOR_through_epirp
+Starting test: Testcases.Release6.CORBA NBI EP IRP Test Suite.Invoke_BasicCMIRP_get_IRP_IOR_through_epirp
+Ending test: Testcases.Release6.CORBA NBI EP IRP Test Suite.Invoke_BasicCMIRP_get_IRP_IOR_through_epirp
+Starting test: Testcases.Release6.CORBA NBI EP IRP Test Suite.Get_irp_outline
+Ending test: Testcases.Release6.CORBA NBI EP IRP Test Suite.Get_irp_outline
+Starting test: Testcases.Release6.CORBA NBI EP IRP Test Suite.Get_notification_profile
+Ending test: Testcases.Release6.CORBA NBI EP IRP Test Suite.Get_notification_profile
+Starting test: Testcases.Release6.CORBA NBI EP IRP Test Suite.Get_notification_profile_exception
+Ending test: Testcases.Release6.CORBA NBI EP IRP Test Suite.Get_notification_profile_exception
+Starting test: Testcases.Release6.CORBA NBI EP IRP Test Suite.Get_operation_profile
+Ending test: Testcases.Release6.CORBA NBI EP IRP Test Suite.Get_operation_profile
+Starting test: Testcases.Release6.CORBA NBI EP IRP Test Suite.Get_operation_profile_exception
+Ending test: Testcases.Release6.CORBA NBI EP IRP Test Suite.Get_operation_profile_exception
+Test Suite End: CORBA NBI EP IRP Test Suite, attrs: {'status': 'FAIL', 'suites': [], 'tests': [u'EPIRP_IOR_request_by_HTTP', u'Invoke_epirp_get_IRP_reference_through_epirp', u'Invoke_alarmirp_get_IRP_IOR_through_epirp', u'Invoke_NotificationIRP_get_IRP_IOR_through_epirp', u'Invoke_CSIRP_get_IRP_IOR_through_epirp', u'Invoke_KernelCM_get_IRP_IOR_through_epirp', u'Invoke_BasicCMIRP_get_IRP_IOR_through_epirp', u'Get_irp_outline', u'Get_notification_profile', u'Get_notification_profile_exception', u'Get_operation_profile', u'Get_operation_profile_exception'], 'statistics': '12 critical tests, 0 passed, 12 failed\n12 tests total, 0 passed, 12 failed', 'doc': u'', 'elapsedtime': 16, 'source': u'F:\\Study\\Nokia\\scripts\\remote-test\\src\\testcases\\Release6\\CORBA_NBI_EP_IRP_Test_Suite.html', 'totaltests': 12, 'starttime': '20150314 22:03:39.968', 'longname': u'Testcases.Release6.CORBA NBI EP IRP Test Suite', 'message': u"Parent suite setup failed:\nNo keyword with name 'Open Connection' found.", 'endtime': '20150314 22:03:39.984', 'id': 's1-s3-s5', 'metadata': {u'Author': u'danny.ma@nsn.com'}}
+Test Suite Start: CORBA NBI KCM IRP Test Suite, attrs: {'suites': [], 'tests': [u'Get_nrm_version', u'Get_irp_versions', u'Get_notification_profile', u'Get_notification_profile_exception', u'Get_operation_profile', u'Get_operation_profile_exception', u'Create_Delete_MO_in_NASDA_notsyn_Configurator', u'Create_Delete_MO_in_NASDA_syn_Configurator', u'Create_MO_in_Configurator', u'Delete_MO_in_Configurator', u'Create_MO_in_NASDA_and_Configurator', u'Delete_MO_in_NASDA_and_Configurator', u'Delete_inexistent_MO_in_NASDA', u'Operate_MultiLayer_MO_In_NASDA_And_CM'], 'doc': u'', 'source': u'F:\\Study\\Nokia\\scripts\\remote-test\\src\\testcases\\Release6\\CORBA_NBI_KCM_IRP_Test_Suite.html', 'totaltests': 14, 'starttime': '20150314 22:03:39.984', 'longname': u'Testcases.Release6.CORBA NBI KCM IRP Test Suite', 'id': 's1-s3-s6', 'metadata': {u'Author': u'danny.ma@nsn.com'}}
+Starting test: Testcases.Release6.CORBA NBI KCM IRP Test Suite.Get_nrm_version
+Ending test: Testcases.Release6.CORBA NBI KCM IRP Test Suite.Get_nrm_version
+Starting test: Testcases.Release6.CORBA NBI KCM IRP Test Suite.Get_irp_versions
+Ending test: Testcases.Release6.CORBA NBI KCM IRP Test Suite.Get_irp_versions
+Starting test: Testcases.Release6.CORBA NBI KCM IRP Test Suite.Get_notification_profile
+Ending test: Testcases.Release6.CORBA NBI KCM IRP Test Suite.Get_notification_profile
+Starting test: Testcases.Release6.CORBA NBI KCM IRP Test Suite.Get_notification_profile_exception
+Ending test: Testcases.Release6.CORBA NBI KCM IRP Test Suite.Get_notification_profile_exception
+Starting test: Testcases.Release6.CORBA NBI KCM IRP Test Suite.Get_operation_profile
+Ending test: Testcases.Release6.CORBA NBI KCM IRP Test Suite.Get_operation_profile
+Starting test: Testcases.Release6.CORBA NBI KCM IRP Test Suite.Get_operation_profile_exception
+Ending test: Testcases.Release6.CORBA NBI KCM IRP Test Suite.Get_operation_profile_exception
+Starting test: Testcases.Release6.CORBA NBI KCM IRP Test Suite.Create_Delete_MO_in_NASDA_notsyn_Configurator
+Ending test: Testcases.Release6.CORBA NBI KCM IRP Test Suite.Create_Delete_MO_in_NASDA_notsyn_Configurator
+Starting test: Testcases.Release6.CORBA NBI KCM IRP Test Suite.Create_Delete_MO_in_NASDA_syn_Configurator
+Ending test: Testcases.Release6.CORBA NBI KCM IRP Test Suite.Create_Delete_MO_in_NASDA_syn_Configurator
+Starting test: Testcases.Release6.CORBA NBI KCM IRP Test Suite.Create_MO_in_Configurator
+Ending test: Testcases.Release6.CORBA NBI KCM IRP Test Suite.Create_MO_in_Configurator
+Starting test: Testcases.Release6.CORBA NBI KCM IRP Test Suite.Delete_MO_in_Configurator
+Ending test: Testcases.Release6.CORBA NBI KCM IRP Test Suite.Delete_MO_in_Configurator
+Starting test: Testcases.Release6.CORBA NBI KCM IRP Test Suite.Create_MO_in_NASDA_and_Configurator
+Ending test: Testcases.Release6.CORBA NBI KCM IRP Test Suite.Create_MO_in_NASDA_and_Configurator
+Starting test: Testcases.Release6.CORBA NBI KCM IRP Test Suite.Delete_MO_in_NASDA_and_Configurator
+Ending test: Testcases.Release6.CORBA NBI KCM IRP Test Suite.Delete_MO_in_NASDA_and_Configurator
+Starting test: Testcases.Release6.CORBA NBI KCM IRP Test Suite.Delete_inexistent_MO_in_NASDA
+Ending test: Testcases.Release6.CORBA NBI KCM IRP Test Suite.Delete_inexistent_MO_in_NASDA
+Starting test: Testcases.Release6.CORBA NBI KCM IRP Test Suite.Operate_MultiLayer_MO_In_NASDA_And_CM
+Ending test: Testcases.Release6.CORBA NBI KCM IRP Test Suite.Operate_MultiLayer_MO_In_NASDA_And_CM
+Test Suite End: CORBA NBI KCM IRP Test Suite, attrs: {'status': 'FAIL', 'suites': [], 'tests': [u'Get_nrm_version', u'Get_irp_versions', u'Get_notification_profile', u'Get_notification_profile_exception', u'Get_operation_profile', u'Get_operation_profile_exception', u'Create_Delete_MO_in_NASDA_notsyn_Configurator', u'Create_Delete_MO_in_NASDA_syn_Configurator', u'Create_MO_in_Configurator', u'Delete_MO_in_Configurator', u'Create_MO_in_NASDA_and_Configurator', u'Delete_MO_in_NASDA_and_Configurator', u'Delete_inexistent_MO_in_NASDA', u'Operate_MultiLayer_MO_In_NASDA_And_CM'], 'statistics': '14 critical tests, 0 passed, 14 failed\n14 tests total, 0 passed, 14 failed', 'doc': u'', 'elapsedtime': 31, 'source': u'F:\\Study\\Nokia\\scripts\\remote-test\\src\\testcases\\Release6\\CORBA_NBI_KCM_IRP_Test_Suite.html', 'totaltests': 14, 'starttime': '20150314 22:03:39.984', 'longname': u'Testcases.Release6.CORBA NBI KCM IRP Test Suite', 'message': u"Parent suite setup failed:\nNo keyword with name 'Open Connection' found.", 'endtime': '20150314 22:03:40.015', 'id': 's1-s3-s6', 'metadata': {u'Author': u'danny.ma@nsn.com'}}
+Test Suite Start: CORBA NBI Notification IRP Test Suite, attrs: {'suites': [], 'tests': [u'Get_IRP_versions', u'Get_subscription_ids', u'Get_subscription_status', u'Get_notification_categories', u'Get_notification_profile', u'Get_notification_profile_exception', u'Get_operation_profile', u'Get_operation_profile_exception', u'CS_default_heartbeat_notification', u'CS_without_heartbeat', u'Attach_Push_Notification', u'MO_Create_Notification', u'MO_Delete_Notification', u'New_alarm_notification', u'New_alarm_control_object_address', u'New_alarm_notification_lift', u'Ack_alarm_notification', u'Auto_Ack_and_Clear_Notfication', u'Unack_alarm_notification', u'ChangeAlarmServerity', u'Change_DN_filter_notification', u'Change_H_filter_notification', u'Change_N_filter_notification', u'No_Registration_WithoutNMS', u'AttachPush_TimeTicket_NotZero', u'TriggerHeartbeat_To_Specific_NMS', u'categories_irpname_notification', u'New_alarm_notification_with_allattributes', u'Ack_alarm_notification_with_allattributes', u'Unack_alarm_notification_with_allattributes', u'Auto_Ack_Clear_alarm_notfication_with_allattributes', u'Alarm_notification_from_OFaS', u'FM_flex_mapping_rule_file_exception'], 'doc': u'', 'source': u'F:\\Study\\Nokia\\scripts\\remote-test\\src\\testcases\\Release6\\CORBA_NBI_Notification_IRP_Test_Suite.html', 'totaltests': 33, 'starttime': '20150314 22:03:40.015', 'longname': u'Testcases.Release6.CORBA NBI Notification IRP Test Suite', 'id': 's1-s3-s7', 'metadata': {u'Author': u'danny.ma@nsn.com'}}
+Starting test: Testcases.Release6.CORBA NBI Notification IRP Test Suite.Get_IRP_versions
+Ending test: Testcases.Release6.CORBA NBI Notification IRP Test Suite.Get_IRP_versions
+Starting test: Testcases.Release6.CORBA NBI Notification IRP Test Suite.Get_subscription_ids
+Ending test: Testcases.Release6.CORBA NBI Notification IRP Test Suite.Get_subscription_ids
+Starting test: Testcases.Release6.CORBA NBI Notification IRP Test Suite.Get_subscription_status
+Ending test: Testcases.Release6.CORBA NBI Notification IRP Test Suite.Get_subscription_status
+Starting test: Testcases.Release6.CORBA NBI Notification IRP Test Suite.Get_notification_categories
+Ending test: Testcases.Release6.CORBA NBI Notification IRP Test Suite.Get_notification_categories
+Starting test: Testcases.Release6.CORBA NBI Notification IRP Test Suite.Get_notification_profile
+Ending test: Testcases.Release6.CORBA NBI Notification IRP Test Suite.Get_notification_profile
+Starting test: Testcases.Release6.CORBA NBI Notification IRP Test Suite.Get_notification_profile_exception
+Ending test: Testcases.Release6.CORBA NBI Notification IRP Test Suite.Get_notification_profile_exception
+Starting test: Testcases.Release6.CORBA NBI Notification IRP Test Suite.Get_operation_profile
+Ending test: Testcases.Release6.CORBA NBI Notification IRP Test Suite.Get_operation_profile
+Starting test: Testcases.Release6.CORBA NBI Notification IRP Test Suite.Get_operation_profile_exception
+Ending test: Testcases.Release6.CORBA NBI Notification IRP Test Suite.Get_operation_profile_exception
+Starting test: Testcases.Release6.CORBA NBI Notification IRP Test Suite.CS_default_heartbeat_notification
+Ending test: Testcases.Release6.CORBA NBI Notification IRP Test Suite.CS_default_heartbeat_notification
+Starting test: Testcases.Release6.CORBA NBI Notification IRP Test Suite.CS_without_heartbeat
+Ending test: Testcases.Release6.CORBA NBI Notification IRP Test Suite.CS_without_heartbeat
+Starting test: Testcases.Release6.CORBA NBI Notification IRP Test Suite.Attach_Push_Notification
+Ending test: Testcases.Release6.CORBA NBI Notification IRP Test Suite.Attach_Push_Notification
+Starting test: Testcases.Release6.CORBA NBI Notification IRP Test Suite.MO_Create_Notification
+Ending test: Testcases.Release6.CORBA NBI Notification IRP Test Suite.MO_Create_Notification
+Starting test: Testcases.Release6.CORBA NBI Notification IRP Test Suite.MO_Delete_Notification
+Ending test: Testcases.Release6.CORBA NBI Notification IRP Test Suite.MO_Delete_Notification
+Starting test: Testcases.Release6.CORBA NBI Notification IRP Test Suite.New_alarm_notification
+Ending test: Testcases.Release6.CORBA NBI Notification IRP Test Suite.New_alarm_notification
+Starting test: Testcases.Release6.CORBA NBI Notification IRP Test Suite.New_alarm_control_object_address
+Ending test: Testcases.Release6.CORBA NBI Notification IRP Test Suite.New_alarm_control_object_address
+Starting test: Testcases.Release6.CORBA NBI Notification IRP Test Suite.New_alarm_notification_lift
+Ending test: Testcases.Release6.CORBA NBI Notification IRP Test Suite.New_alarm_notification_lift
+Starting test: Testcases.Release6.CORBA NBI Notification IRP Test Suite.Ack_alarm_notification
+Ending test: Testcases.Release6.CORBA NBI Notification IRP Test Suite.Ack_alarm_notification
+Starting test: Testcases.Release6.CORBA NBI Notification IRP Test Suite.Auto_Ack_and_Clear_Notfication
+Ending test: Testcases.Release6.CORBA NBI Notification IRP Test Suite.Auto_Ack_and_Clear_Notfication
+Starting test: Testcases.Release6.CORBA NBI Notification IRP Test Suite.Unack_alarm_notification
+Ending test: Testcases.Release6.CORBA NBI Notification IRP Test Suite.Unack_alarm_notification
+Starting test: Testcases.Release6.CORBA NBI Notification IRP Test Suite.ChangeAlarmServerity
+Ending test: Testcases.Release6.CORBA NBI Notification IRP Test Suite.ChangeAlarmServerity
+Starting test: Testcases.Release6.CORBA NBI Notification IRP Test Suite.Change_DN_filter_notification
+Ending test: Testcases.Release6.CORBA NBI Notification IRP Test Suite.Change_DN_filter_notification
+Starting test: Testcases.Release6.CORBA NBI Notification IRP Test Suite.Change_H_filter_notification
+Ending test: Testcases.Release6.CORBA NBI Notification IRP Test Suite.Change_H_filter_notification
+Starting test: Testcases.Release6.CORBA NBI Notification IRP Test Suite.Change_N_filter_notification
+Ending test: Testcases.Release6.CORBA NBI Notification IRP Test Suite.Change_N_filter_notification
+Starting test: Testcases.Release6.CORBA NBI Notification IRP Test Suite.No_Registration_WithoutNMS
+Ending test: Testcases.Release6.CORBA NBI Notification IRP Test Suite.No_Registration_WithoutNMS
+Starting test: Testcases.Release6.CORBA NBI Notification IRP Test Suite.AttachPush_TimeTicket_NotZero
+Ending test: Testcases.Release6.CORBA NBI Notification IRP Test Suite.AttachPush_TimeTicket_NotZero
+Starting test: Testcases.Release6.CORBA NBI Notification IRP Test Suite.TriggerHeartbeat_To_Specific_NMS
+Ending test: Testcases.Release6.CORBA NBI Notification IRP Test Suite.TriggerHeartbeat_To_Specific_NMS
+Starting test: Testcases.Release6.CORBA NBI Notification IRP Test Suite.categories_irpname_notification
+Ending test: Testcases.Release6.CORBA NBI Notification IRP Test Suite.categories_irpname_notification
+Starting test: Testcases.Release6.CORBA NBI Notification IRP Test Suite.New_alarm_notification_with_allattributes
+Ending test: Testcases.Release6.CORBA NBI Notification IRP Test Suite.New_alarm_notification_with_allattributes
+Starting test: Testcases.Release6.CORBA NBI Notification IRP Test Suite.Ack_alarm_notification_with_allattributes
+Ending test: Testcases.Release6.CORBA NBI Notification IRP Test Suite.Ack_alarm_notification_with_allattributes
+Starting test: Testcases.Release6.CORBA NBI Notification IRP Test Suite.Unack_alarm_notification_with_allattributes
+Ending test: Testcases.Release6.CORBA NBI Notification IRP Test Suite.Unack_alarm_notification_with_allattributes
+Starting test: Testcases.Release6.CORBA NBI Notification IRP Test Suite.Auto_Ack_Clear_alarm_notfication_with_allattributes
+Ending test: Testcases.Release6.CORBA NBI Notification IRP Test Suite.Auto_Ack_Clear_alarm_notfication_with_allattributes
+Starting test: Testcases.Release6.CORBA NBI Notification IRP Test Suite.Alarm_notification_from_OFaS
+Ending test: Testcases.Release6.CORBA NBI Notification IRP Test Suite.Alarm_notification_from_OFaS
+Starting test: Testcases.Release6.CORBA NBI Notification IRP Test Suite.FM_flex_mapping_rule_file_exception
+Ending test: Testcases.Release6.CORBA NBI Notification IRP Test Suite.FM_flex_mapping_rule_file_exception
+Test Suite End: CORBA NBI Notification IRP Test Suite, attrs: {'status': 'FAIL', 'suites': [], 'tests': [u'Get_IRP_versions', u'Get_subscription_ids', u'Get_subscription_status', u'Get_notification_categories', u'Get_notification_profile', u'Get_notification_profile_exception', u'Get_operation_profile', u'Get_operation_profile_exception', u'CS_default_heartbeat_notification', u'CS_without_heartbeat', u'Attach_Push_Notification', u'MO_Create_Notification', u'MO_Delete_Notification', u'New_alarm_notification', u'New_alarm_control_object_address', u'New_alarm_notification_lift', u'Ack_alarm_notification', u'Auto_Ack_and_Clear_Notfication', u'Unack_alarm_notification', u'ChangeAlarmServerity', u'Change_DN_filter_notification', u'Change_H_filter_notification', u'Change_N_filter_notification', u'No_Registration_WithoutNMS', u'AttachPush_TimeTicket_NotZero', u'TriggerHeartbeat_To_Specific_NMS', u'categories_irpname_notification', u'New_alarm_notification_with_allattributes', u'Ack_alarm_notification_with_allattributes', u'Unack_alarm_notification_with_allattributes', u'Auto_Ack_Clear_alarm_notfication_with_allattributes', u'Alarm_notification_from_OFaS', u'FM_flex_mapping_rule_file_exception'], 'statistics': '33 critical tests, 0 passed, 33 failed\n33 tests total, 0 passed, 33 failed', 'doc': u'', 'elapsedtime': 31, 'source': u'F:\\Study\\Nokia\\scripts\\remote-test\\src\\testcases\\Release6\\CORBA_NBI_Notification_IRP_Test_Suite.html', 'totaltests': 33, 'starttime': '20150314 22:03:40.015', 'longname': u'Testcases.Release6.CORBA NBI Notification IRP Test Suite', 'message': u"Parent suite setup failed:\nNo keyword with name 'Open Connection' found.", 'endtime': '20150314 22:03:40.046', 'id': 's1-s3-s7', 'metadata': {u'Author': u'danny.ma@nsn.com'}}
+Test Suite Start: NBI 3GPP CORBA FM Configurable Filter Test Suite, attrs: {'suites': [], 'tests': [u'Filter All Alarm For DN', u'The Relationship Between Filter Rule Is OR', u'No Alarm Forwarded To NMS When No Filter Rule', u'All Alarm Forwarded To NMS When Filter Disabled', u'Filter All Alarms For DN And Alarm Number', u'Filter Alarm For FM filter and IPR filter', u'Filter Probable Cause And Change Filter', u'Relationship Between FM Filter And NMS Filter', u'Invalid Filter Rule File', u'Invalid Filter Enable File', u'Filter Rule File missing', u'valid Filter Rule File with $e', u'Alarm Notification For Multi-proxies', u'Alarm Operation For Multi-proxies', u'Alarm Upload For Multi-proxies'], 'doc': u'', 'source': u'F:\\Study\\Nokia\\scripts\\remote-test\\src\\testcases\\Release6\\NBI_3GPP_CORBA_FM_Configurable_Filter_Test_Suite.txt', 'totaltests': 15, 'starttime': '20150314 22:03:40.046', 'longname': u'Testcases.Release6.NBI 3GPP CORBA FM Configurable Filter Test Suite', 'id': 's1-s3-s8', 'metadata': {}}
+Starting test: Testcases.Release6.NBI 3GPP CORBA FM Configurable Filter Test Suite.Filter All Alarm For DN
+Ending test: Testcases.Release6.NBI 3GPP CORBA FM Configurable Filter Test Suite.Filter All Alarm For DN
+Starting test: Testcases.Release6.NBI 3GPP CORBA FM Configurable Filter Test Suite.The Relationship Between Filter Rule Is OR
+Ending test: Testcases.Release6.NBI 3GPP CORBA FM Configurable Filter Test Suite.The Relationship Between Filter Rule Is OR
+Starting test: Testcases.Release6.NBI 3GPP CORBA FM Configurable Filter Test Suite.No Alarm Forwarded To NMS When No Filter Rule
+Ending test: Testcases.Release6.NBI 3GPP CORBA FM Configurable Filter Test Suite.No Alarm Forwarded To NMS When No Filter Rule
+Starting test: Testcases.Release6.NBI 3GPP CORBA FM Configurable Filter Test Suite.All Alarm Forwarded To NMS When Filter Disabled
+Ending test: Testcases.Release6.NBI 3GPP CORBA FM Configurable Filter Test Suite.All Alarm Forwarded To NMS When Filter Disabled
+Starting test: Testcases.Release6.NBI 3GPP CORBA FM Configurable Filter Test Suite.Filter All Alarms For DN And Alarm Number
+Ending test: Testcases.Release6.NBI 3GPP CORBA FM Configurable Filter Test Suite.Filter All Alarms For DN And Alarm Number
+Starting test: Testcases.Release6.NBI 3GPP CORBA FM Configurable Filter Test Suite.Filter Alarm For FM filter and IPR filter
+Ending test: Testcases.Release6.NBI 3GPP CORBA FM Configurable Filter Test Suite.Filter Alarm For FM filter and IPR filter
+Starting test: Testcases.Release6.NBI 3GPP CORBA FM Configurable Filter Test Suite.Filter Probable Cause And Change Filter
+Ending test: Testcases.Release6.NBI 3GPP CORBA FM Configurable Filter Test Suite.Filter Probable Cause And Change Filter
+Starting test: Testcases.Release6.NBI 3GPP CORBA FM Configurable Filter Test Suite.Relationship Between FM Filter And NMS Filter
+Ending test: Testcases.Release6.NBI 3GPP CORBA FM Configurable Filter Test Suite.Relationship Between FM Filter And NMS Filter
+Starting test: Testcases.Release6.NBI 3GPP CORBA FM Configurable Filter Test Suite.Invalid Filter Rule File
+Ending test: Testcases.Release6.NBI 3GPP CORBA FM Configurable Filter Test Suite.Invalid Filter Rule File
+Starting test: Testcases.Release6.NBI 3GPP CORBA FM Configurable Filter Test Suite.Invalid Filter Enable File
+Ending test: Testcases.Release6.NBI 3GPP CORBA FM Configurable Filter Test Suite.Invalid Filter Enable File
+Starting test: Testcases.Release6.NBI 3GPP CORBA FM Configurable Filter Test Suite.Filter Rule File missing
+Ending test: Testcases.Release6.NBI 3GPP CORBA FM Configurable Filter Test Suite.Filter Rule File missing
+Starting test: Testcases.Release6.NBI 3GPP CORBA FM Configurable Filter Test Suite.valid Filter Rule File with $e
+Ending test: Testcases.Release6.NBI 3GPP CORBA FM Configurable Filter Test Suite.valid Filter Rule File with $e
+Starting test: Testcases.Release6.NBI 3GPP CORBA FM Configurable Filter Test Suite.Alarm Notification For Multi-proxies
+Ending test: Testcases.Release6.NBI 3GPP CORBA FM Configurable Filter Test Suite.Alarm Notification For Multi-proxies
+Starting test: Testcases.Release6.NBI 3GPP CORBA FM Configurable Filter Test Suite.Alarm Operation For Multi-proxies
+Ending test: Testcases.Release6.NBI 3GPP CORBA FM Configurable Filter Test Suite.Alarm Operation For Multi-proxies
+Starting test: Testcases.Release6.NBI 3GPP CORBA FM Configurable Filter Test Suite.Alarm Upload For Multi-proxies
+Ending test: Testcases.Release6.NBI 3GPP CORBA FM Configurable Filter Test Suite.Alarm Upload For Multi-proxies
+Test Suite End: NBI 3GPP CORBA FM Configurable Filter Test Suite, attrs: {'status': 'FAIL', 'suites': [], 'tests': [u'Filter All Alarm For DN', u'The Relationship Between Filter Rule Is OR', u'No Alarm Forwarded To NMS When No Filter Rule', u'All Alarm Forwarded To NMS When Filter Disabled', u'Filter All Alarms For DN And Alarm Number', u'Filter Alarm For FM filter and IPR filter', u'Filter Probable Cause And Change Filter', u'Relationship Between FM Filter And NMS Filter', u'Invalid Filter Rule File', u'Invalid Filter Enable File', u'Filter Rule File missing', u'valid Filter Rule File with $e', u'Alarm Notification For Multi-proxies', u'Alarm Operation For Multi-proxies', u'Alarm Upload For Multi-proxies'], 'statistics': '15 critical tests, 0 passed, 15 failed\n15 tests total, 0 passed, 15 failed', 'doc': u'', 'elapsedtime': 47, 'source': u'F:\\Study\\Nokia\\scripts\\remote-test\\src\\testcases\\Release6\\NBI_3GPP_CORBA_FM_Configurable_Filter_Test_Suite.txt', 'totaltests': 15, 'starttime': '20150314 22:03:40.046', 'longname': u'Testcases.Release6.NBI 3GPP CORBA FM Configurable Filter Test Suite', 'message': u"Parent suite setup failed:\nNo keyword with name 'Open Connection' found.", 'endtime': '20150314 22:03:40.093', 'id': 's1-s3-s8', 'metadata': {}}
+Test Suite Start: NBI 3GPP CORBA FT IRP Test Suite, attrs: {'suites': [], 'tests': [u'FTIRP_list_available_files_all', u'FTIRP_list_available_files_with_beginTime', u'FTIRP_list_available_files_with_endTime', u'FTIRP_list_available_files_with_begin_and_endTime', u'FTIRP_EPIRP_get_reference', u'FTIRP_EPIRP_get_outline', u'FTIRP_get_IRP_version', u'FTIRP_get_operation_profile', u'FTIRP_get_notification_categories', u'FTIRP_get_notification_profile', u'FTIRP_get_information_with_invalid_irp_version', u'FTIRP_get_reference_from_NS', u'FTIRP_get_persistent_reference'], 'doc': u'', 'source': u'F:\\Study\\Nokia\\scripts\\remote-test\\src\\testcases\\Release6\\NBI_3GPP_CORBA_FT_IRP_Test_Suite.tsv', 'totaltests': 13, 'starttime': '20150314 22:03:40.093', 'longname': u'Testcases.Release6.NBI 3GPP CORBA FT IRP Test Suite', 'id': 's1-s3-s9', 'metadata': {u'Author': u'Eagle.liu@nsn.com'}}
+Starting test: Testcases.Release6.NBI 3GPP CORBA FT IRP Test Suite.FTIRP_list_available_files_all
+Ending test: Testcases.Release6.NBI 3GPP CORBA FT IRP Test Suite.FTIRP_list_available_files_all
+Starting test: Testcases.Release6.NBI 3GPP CORBA FT IRP Test Suite.FTIRP_list_available_files_with_beginTime
+Ending test: Testcases.Release6.NBI 3GPP CORBA FT IRP Test Suite.FTIRP_list_available_files_with_beginTime
+Starting test: Testcases.Release6.NBI 3GPP CORBA FT IRP Test Suite.FTIRP_list_available_files_with_endTime
+Ending test: Testcases.Release6.NBI 3GPP CORBA FT IRP Test Suite.FTIRP_list_available_files_with_endTime
+Starting test: Testcases.Release6.NBI 3GPP CORBA FT IRP Test Suite.FTIRP_list_available_files_with_begin_and_endTime
+Ending test: Testcases.Release6.NBI 3GPP CORBA FT IRP Test Suite.FTIRP_list_available_files_with_begin_and_endTime
+Starting test: Testcases.Release6.NBI 3GPP CORBA FT IRP Test Suite.FTIRP_EPIRP_get_reference
+Ending test: Testcases.Release6.NBI 3GPP CORBA FT IRP Test Suite.FTIRP_EPIRP_get_reference
+Starting test: Testcases.Release6.NBI 3GPP CORBA FT IRP Test Suite.FTIRP_EPIRP_get_outline
+Ending test: Testcases.Release6.NBI 3GPP CORBA FT IRP Test Suite.FTIRP_EPIRP_get_outline
+Starting test: Testcases.Release6.NBI 3GPP CORBA FT IRP Test Suite.FTIRP_get_IRP_version
+Ending test: Testcases.Release6.NBI 3GPP CORBA FT IRP Test Suite.FTIRP_get_IRP_version
+Starting test: Testcases.Release6.NBI 3GPP CORBA FT IRP Test Suite.FTIRP_get_operation_profile
+Ending test: Testcases.Release6.NBI 3GPP CORBA FT IRP Test Suite.FTIRP_get_operation_profile
+Starting test: Testcases.Release6.NBI 3GPP CORBA FT IRP Test Suite.FTIRP_get_notification_categories
+Ending test: Testcases.Release6.NBI 3GPP CORBA FT IRP Test Suite.FTIRP_get_notification_categories
+Starting test: Testcases.Release6.NBI 3GPP CORBA FT IRP Test Suite.FTIRP_get_notification_profile
+Ending test: Testcases.Release6.NBI 3GPP CORBA FT IRP Test Suite.FTIRP_get_notification_profile
+Starting test: Testcases.Release6.NBI 3GPP CORBA FT IRP Test Suite.FTIRP_get_information_with_invalid_irp_version
+Ending test: Testcases.Release6.NBI 3GPP CORBA FT IRP Test Suite.FTIRP_get_information_with_invalid_irp_version
+Starting test: Testcases.Release6.NBI 3GPP CORBA FT IRP Test Suite.FTIRP_get_reference_from_NS
+Ending test: Testcases.Release6.NBI 3GPP CORBA FT IRP Test Suite.FTIRP_get_reference_from_NS
+Starting test: Testcases.Release6.NBI 3GPP CORBA FT IRP Test Suite.FTIRP_get_persistent_reference
+Ending test: Testcases.Release6.NBI 3GPP CORBA FT IRP Test Suite.FTIRP_get_persistent_reference
+Test Suite End: NBI 3GPP CORBA FT IRP Test Suite, attrs: {'status': 'FAIL', 'suites': [], 'tests': [u'FTIRP_list_available_files_all', u'FTIRP_list_available_files_with_beginTime', u'FTIRP_list_available_files_with_endTime', u'FTIRP_list_available_files_with_begin_and_endTime', u'FTIRP_EPIRP_get_reference', u'FTIRP_EPIRP_get_outline', u'FTIRP_get_IRP_version', u'FTIRP_get_operation_profile', u'FTIRP_get_notification_categories', u'FTIRP_get_notification_profile', u'FTIRP_get_information_with_invalid_irp_version', u'FTIRP_get_reference_from_NS', u'FTIRP_get_persistent_reference'], 'statistics': '13 critical tests, 0 passed, 13 failed\n13 tests total, 0 passed, 13 failed', 'doc': u'', 'elapsedtime': 16, 'source': u'F:\\Study\\Nokia\\scripts\\remote-test\\src\\testcases\\Release6\\NBI_3GPP_CORBA_FT_IRP_Test_Suite.tsv', 'totaltests': 13, 'starttime': '20150314 22:03:40.093', 'longname': u'Testcases.Release6.NBI 3GPP CORBA FT IRP Test Suite', 'message': u"Parent suite setup failed:\nNo keyword with name 'Open Connection' found.", 'endtime': '20150314 22:03:40.109', 'id': 's1-s3-s9', 'metadata': {u'Author': u'Eagle.liu@nsn.com'}}
+Test Suite Start: NBI 3GPP CORBA IUM Test Suite, attrs: {'suites': [], 'tests': [u'Install_script_add_ftirpuser_on_was.sh', u'Install_script_add_ftpuser_to_repository.sh', u'Install_script_copy_to_runtime.sh', u'Install_script_createNSContext.sh', u'Install_script_install_nbi_mf.sh', u'Install_script_modify_permission.sh', u'Install_script_post_install_script.sh', u'Install_script_update_cf.sh'], 'doc': u'Installation Upgrade Migration\n\nOSS_FC_012117 - NetAct 15 P8 Scratch installation\nUS_69591 - As an installation engineer I want to install subsystem artifact, because I must deliver new software to NSN customer.', 'source': u'F:\\Study\\Nokia\\scripts\\remote-test\\src\\testcases\\Release6\\NBI_3GPP_CORBA_IUM_Test_Suite.html', 'totaltests': 8, 'starttime': '20150314 22:03:40.109', 'longname': u'Testcases.Release6.NBI 3GPP CORBA IUM Test Suite', 'id': 's1-s3-s10', 'metadata': {u'Author': u'Walker Wang'}}
+Starting test: Testcases.Release6.NBI 3GPP CORBA IUM Test Suite.Install_script_add_ftirpuser_on_was.sh
+Ending test: Testcases.Release6.NBI 3GPP CORBA IUM Test Suite.Install_script_add_ftirpuser_on_was.sh
+Starting test: Testcases.Release6.NBI 3GPP CORBA IUM Test Suite.Install_script_add_ftpuser_to_repository.sh
+Ending test: Testcases.Release6.NBI 3GPP CORBA IUM Test Suite.Install_script_add_ftpuser_to_repository.sh
+Starting test: Testcases.Release6.NBI 3GPP CORBA IUM Test Suite.Install_script_copy_to_runtime.sh
+Ending test: Testcases.Release6.NBI 3GPP CORBA IUM Test Suite.Install_script_copy_to_runtime.sh
+Starting test: Testcases.Release6.NBI 3GPP CORBA IUM Test Suite.Install_script_createNSContext.sh
+Ending test: Testcases.Release6.NBI 3GPP CORBA IUM Test Suite.Install_script_createNSContext.sh
+Starting test: Testcases.Release6.NBI 3GPP CORBA IUM Test Suite.Install_script_install_nbi_mf.sh
+Ending test: Testcases.Release6.NBI 3GPP CORBA IUM Test Suite.Install_script_install_nbi_mf.sh
+Starting test: Testcases.Release6.NBI 3GPP CORBA IUM Test Suite.Install_script_modify_permission.sh
+Ending test: Testcases.Release6.NBI 3GPP CORBA IUM Test Suite.Install_script_modify_permission.sh
+Starting test: Testcases.Release6.NBI 3GPP CORBA IUM Test Suite.Install_script_post_install_script.sh
+Ending test: Testcases.Release6.NBI 3GPP CORBA IUM Test Suite.Install_script_post_install_script.sh
+Starting test: Testcases.Release6.NBI 3GPP CORBA IUM Test Suite.Install_script_update_cf.sh
+Ending test: Testcases.Release6.NBI 3GPP CORBA IUM Test Suite.Install_script_update_cf.sh
+Test Suite End: NBI 3GPP CORBA IUM Test Suite, attrs: {'status': 'FAIL', 'suites': [], 'tests': [u'Install_script_add_ftirpuser_on_was.sh', u'Install_script_add_ftpuser_to_repository.sh', u'Install_script_copy_to_runtime.sh', u'Install_script_createNSContext.sh', u'Install_script_install_nbi_mf.sh', u'Install_script_modify_permission.sh', u'Install_script_post_install_script.sh', u'Install_script_update_cf.sh'], 'statistics': '8 critical tests, 0 passed, 8 failed\n8 tests total, 0 passed, 8 failed', 'doc': u'Installation Upgrade Migration\n\nOSS_FC_012117 - NetAct 15 P8 Scratch installation\nUS_69591 - As an installation engineer I want to install subsystem artifact, because I must deliver new software to NSN customer.', 'elapsedtime': 16, 'source': u'F:\\Study\\Nokia\\scripts\\remote-test\\src\\testcases\\Release6\\NBI_3GPP_CORBA_IUM_Test_Suite.html', 'totaltests': 8, 'starttime': '20150314 22:03:40.109', 'longname': u'Testcases.Release6.NBI 3GPP CORBA IUM Test Suite', 'message': u"Parent suite setup failed:\nNo keyword with name 'Open Connection' found.", 'endtime': '20150314 22:03:40.125', 'id': 's1-s3-s10', 'metadata': {u'Author': u'Walker Wang'}}
+Test Suite Start: NBI 3GPP CORBA Self Monitoring Test Suite, attrs: {'suites': [], 'tests': [u'Create_Clear_Alarm20005_DN_mapping_file_syntax_from_wrong_to_right', u'Create_Clear_Alarm20005_DN_mapping_file_permission_from_wrong_to_right', u'Create_Clear_Alarm20005_more_DN_mapping_file_from_wrong_to_right', u'Create_Alarm20005_flex_mapping_file_wrong_syntax', u'Clear_Alarm20005_flex_mapping_file_recover_right_syntax', u'Create_Alarm20005_flex_mapping_file_wrong_permission', u'Clear_Alarm20005_flex_mapping_file_recover_right_permission', u'Create_Alarm20005_flex_mapping_file_wrong_name', u'Clear_Alarm20005_flex_mapping_file_recover_right_name', u'Create_Alarm20005_BCM_flex_mapping_file_wrong_content', u'Clear_Alarm20005_BCM_flex_mapping_file_recover_right_content', u'Create_Alarm20005_FM_flex_mapping_file_wrong_content', u'Clear_Alarm20005_FM_flex_mapping_file_recover_right_content', u'Create_Clear_Alarm20004_find_MO_from_failure_to_success', u'Create_Clear_Alarm20004_get_alarm_count_from_failure_to_success', u'Create_Clear_Alarm20004_get_alarm_list_from_failure_to_success', u'Create_Clear_Alarm20004_ack_alarm_from_failure_to_success', u'Create_Clear_Alarm20004_unack_alarm_from_failure_to_success', u'Create_Clear_Alarm20004_clear_alarm_from_failure_to_success', u'Create_Clear_Alarm20004_attach_registration_from_failure_to_success', u'Create_Clear_Alarm20004_attach_NMS_from_unliving_to_living', u'Create_Clear_Alarm20004_detach_registration_from_failure_to_success', u'Create_Clear_Alarm20004_detach_NMS_from_unliving_to_living', u'Create_Clear_Alarm20004_get_naming_service_IOR_from_failure_to_success', u'Create_Clear_Alarm20007_ICF_registration_from_failure_to_success', u'Create_Clear_Alarm20007_notification_service_buffer_from_overflow_to_normal'], 'doc': u'', 'source': u'F:\\Study\\Nokia\\scripts\\remote-test\\src\\testcases\\Release6\\NBI_3GPP_CORBA_Self_Monitoring_Test_Suite.html', 'totaltests': 26, 'starttime': '20150314 22:03:40.125', 'longname': u'Testcases.Release6.NBI 3GPP CORBA Self Monitoring Test Suite', 'id': 's1-s3-s11', 'metadata': {u'Author': u'Walker Wang'}}
+Starting test: Testcases.Release6.NBI 3GPP CORBA Self Monitoring Test Suite.Create_Clear_Alarm20005_DN_mapping_file_syntax_from_wrong_to_right
+Ending test: Testcases.Release6.NBI 3GPP CORBA Self Monitoring Test Suite.Create_Clear_Alarm20005_DN_mapping_file_syntax_from_wrong_to_right
+Starting test: Testcases.Release6.NBI 3GPP CORBA Self Monitoring Test Suite.Create_Clear_Alarm20005_DN_mapping_file_permission_from_wrong_to_right
+Ending test: Testcases.Release6.NBI 3GPP CORBA Self Monitoring Test Suite.Create_Clear_Alarm20005_DN_mapping_file_permission_from_wrong_to_right
+Starting test: Testcases.Release6.NBI 3GPP CORBA Self Monitoring Test Suite.Create_Clear_Alarm20005_more_DN_mapping_file_from_wrong_to_right
+Ending test: Testcases.Release6.NBI 3GPP CORBA Self Monitoring Test Suite.Create_Clear_Alarm20005_more_DN_mapping_file_from_wrong_to_right
+Starting test: Testcases.Release6.NBI 3GPP CORBA Self Monitoring Test Suite.Create_Alarm20005_flex_mapping_file_wrong_syntax
+Ending test: Testcases.Release6.NBI 3GPP CORBA Self Monitoring Test Suite.Create_Alarm20005_flex_mapping_file_wrong_syntax
+Starting test: Testcases.Release6.NBI 3GPP CORBA Self Monitoring Test Suite.Clear_Alarm20005_flex_mapping_file_recover_right_syntax
+Ending test: Testcases.Release6.NBI 3GPP CORBA Self Monitoring Test Suite.Clear_Alarm20005_flex_mapping_file_recover_right_syntax
+Starting test: Testcases.Release6.NBI 3GPP CORBA Self Monitoring Test Suite.Create_Alarm20005_flex_mapping_file_wrong_permission
+Ending test: Testcases.Release6.NBI 3GPP CORBA Self Monitoring Test Suite.Create_Alarm20005_flex_mapping_file_wrong_permission
+Starting test: Testcases.Release6.NBI 3GPP CORBA Self Monitoring Test Suite.Clear_Alarm20005_flex_mapping_file_recover_right_permission
+Ending test: Testcases.Release6.NBI 3GPP CORBA Self Monitoring Test Suite.Clear_Alarm20005_flex_mapping_file_recover_right_permission
+Starting test: Testcases.Release6.NBI 3GPP CORBA Self Monitoring Test Suite.Create_Alarm20005_flex_mapping_file_wrong_name
+Ending test: Testcases.Release6.NBI 3GPP CORBA Self Monitoring Test Suite.Create_Alarm20005_flex_mapping_file_wrong_name
+Starting test: Testcases.Release6.NBI 3GPP CORBA Self Monitoring Test Suite.Clear_Alarm20005_flex_mapping_file_recover_right_name
+Ending test: Testcases.Release6.NBI 3GPP CORBA Self Monitoring Test Suite.Clear_Alarm20005_flex_mapping_file_recover_right_name
+Starting test: Testcases.Release6.NBI 3GPP CORBA Self Monitoring Test Suite.Create_Alarm20005_BCM_flex_mapping_file_wrong_content
+Ending test: Testcases.Release6.NBI 3GPP CORBA Self Monitoring Test Suite.Create_Alarm20005_BCM_flex_mapping_file_wrong_content
+Starting test: Testcases.Release6.NBI 3GPP CORBA Self Monitoring Test Suite.Clear_Alarm20005_BCM_flex_mapping_file_recover_right_content
+Ending test: Testcases.Release6.NBI 3GPP CORBA Self Monitoring Test Suite.Clear_Alarm20005_BCM_flex_mapping_file_recover_right_content
+Starting test: Testcases.Release6.NBI 3GPP CORBA Self Monitoring Test Suite.Create_Alarm20005_FM_flex_mapping_file_wrong_content
+Ending test: Testcases.Release6.NBI 3GPP CORBA Self Monitoring Test Suite.Create_Alarm20005_FM_flex_mapping_file_wrong_content
+Starting test: Testcases.Release6.NBI 3GPP CORBA Self Monitoring Test Suite.Clear_Alarm20005_FM_flex_mapping_file_recover_right_content
+Ending test: Testcases.Release6.NBI 3GPP CORBA Self Monitoring Test Suite.Clear_Alarm20005_FM_flex_mapping_file_recover_right_content
+Starting test: Testcases.Release6.NBI 3GPP CORBA Self Monitoring Test Suite.Create_Clear_Alarm20004_find_MO_from_failure_to_success
+Ending test: Testcases.Release6.NBI 3GPP CORBA Self Monitoring Test Suite.Create_Clear_Alarm20004_find_MO_from_failure_to_success
+Starting test: Testcases.Release6.NBI 3GPP CORBA Self Monitoring Test Suite.Create_Clear_Alarm20004_get_alarm_count_from_failure_to_success
+Ending test: Testcases.Release6.NBI 3GPP CORBA Self Monitoring Test Suite.Create_Clear_Alarm20004_get_alarm_count_from_failure_to_success
+Starting test: Testcases.Release6.NBI 3GPP CORBA Self Monitoring Test Suite.Create_Clear_Alarm20004_get_alarm_list_from_failure_to_success
+Ending test: Testcases.Release6.NBI 3GPP CORBA Self Monitoring Test Suite.Create_Clear_Alarm20004_get_alarm_list_from_failure_to_success
+Starting test: Testcases.Release6.NBI 3GPP CORBA Self Monitoring Test Suite.Create_Clear_Alarm20004_ack_alarm_from_failure_to_success
+Ending test: Testcases.Release6.NBI 3GPP CORBA Self Monitoring Test Suite.Create_Clear_Alarm20004_ack_alarm_from_failure_to_success
+Starting test: Testcases.Release6.NBI 3GPP CORBA Self Monitoring Test Suite.Create_Clear_Alarm20004_unack_alarm_from_failure_to_success
+Ending test: Testcases.Release6.NBI 3GPP CORBA Self Monitoring Test Suite.Create_Clear_Alarm20004_unack_alarm_from_failure_to_success
+Starting test: Testcases.Release6.NBI 3GPP CORBA Self Monitoring Test Suite.Create_Clear_Alarm20004_clear_alarm_from_failure_to_success
+Ending test: Testcases.Release6.NBI 3GPP CORBA Self Monitoring Test Suite.Create_Clear_Alarm20004_clear_alarm_from_failure_to_success
+Starting test: Testcases.Release6.NBI 3GPP CORBA Self Monitoring Test Suite.Create_Clear_Alarm20004_attach_registration_from_failure_to_success
+Ending test: Testcases.Release6.NBI 3GPP CORBA Self Monitoring Test Suite.Create_Clear_Alarm20004_attach_registration_from_failure_to_success
+Starting test: Testcases.Release6.NBI 3GPP CORBA Self Monitoring Test Suite.Create_Clear_Alarm20004_attach_NMS_from_unliving_to_living
+Ending test: Testcases.Release6.NBI 3GPP CORBA Self Monitoring Test Suite.Create_Clear_Alarm20004_attach_NMS_from_unliving_to_living
+Starting test: Testcases.Release6.NBI 3GPP CORBA Self Monitoring Test Suite.Create_Clear_Alarm20004_detach_registration_from_failure_to_success
+Ending test: Testcases.Release6.NBI 3GPP CORBA Self Monitoring Test Suite.Create_Clear_Alarm20004_detach_registration_from_failure_to_success
+Starting test: Testcases.Release6.NBI 3GPP CORBA Self Monitoring Test Suite.Create_Clear_Alarm20004_detach_NMS_from_unliving_to_living
+Ending test: Testcases.Release6.NBI 3GPP CORBA Self Monitoring Test Suite.Create_Clear_Alarm20004_detach_NMS_from_unliving_to_living
+Starting test: Testcases.Release6.NBI 3GPP CORBA Self Monitoring Test Suite.Create_Clear_Alarm20004_get_naming_service_IOR_from_failure_to_success
+Ending test: Testcases.Release6.NBI 3GPP CORBA Self Monitoring Test Suite.Create_Clear_Alarm20004_get_naming_service_IOR_from_failure_to_success
+Starting test: Testcases.Release6.NBI 3GPP CORBA Self Monitoring Test Suite.Create_Clear_Alarm20007_ICF_registration_from_failure_to_success
+Ending test: Testcases.Release6.NBI 3GPP CORBA Self Monitoring Test Suite.Create_Clear_Alarm20007_ICF_registration_from_failure_to_success
+Starting test: Testcases.Release6.NBI 3GPP CORBA Self Monitoring Test Suite.Create_Clear_Alarm20007_notification_service_buffer_from_overflow_to_normal
+Ending test: Testcases.Release6.NBI 3GPP CORBA Self Monitoring Test Suite.Create_Clear_Alarm20007_notification_service_buffer_from_overflow_to_normal
+Test Suite End: NBI 3GPP CORBA Self Monitoring Test Suite, attrs: {'status': 'FAIL', 'suites': [], 'tests': [u'Create_Clear_Alarm20005_DN_mapping_file_syntax_from_wrong_to_right', u'Create_Clear_Alarm20005_DN_mapping_file_permission_from_wrong_to_right', u'Create_Clear_Alarm20005_more_DN_mapping_file_from_wrong_to_right', u'Create_Alarm20005_flex_mapping_file_wrong_syntax', u'Clear_Alarm20005_flex_mapping_file_recover_right_syntax', u'Create_Alarm20005_flex_mapping_file_wrong_permission', u'Clear_Alarm20005_flex_mapping_file_recover_right_permission', u'Create_Alarm20005_flex_mapping_file_wrong_name', u'Clear_Alarm20005_flex_mapping_file_recover_right_name', u'Create_Alarm20005_BCM_flex_mapping_file_wrong_content', u'Clear_Alarm20005_BCM_flex_mapping_file_recover_right_content', u'Create_Alarm20005_FM_flex_mapping_file_wrong_content', u'Clear_Alarm20005_FM_flex_mapping_file_recover_right_content', u'Create_Clear_Alarm20004_find_MO_from_failure_to_success', u'Create_Clear_Alarm20004_get_alarm_count_from_failure_to_success', u'Create_Clear_Alarm20004_get_alarm_list_from_failure_to_success', u'Create_Clear_Alarm20004_ack_alarm_from_failure_to_success', u'Create_Clear_Alarm20004_unack_alarm_from_failure_to_success', u'Create_Clear_Alarm20004_clear_alarm_from_failure_to_success', u'Create_Clear_Alarm20004_attach_registration_from_failure_to_success', u'Create_Clear_Alarm20004_attach_NMS_from_unliving_to_living', u'Create_Clear_Alarm20004_detach_registration_from_failure_to_success', u'Create_Clear_Alarm20004_detach_NMS_from_unliving_to_living', u'Create_Clear_Alarm20004_get_naming_service_IOR_from_failure_to_success', u'Create_Clear_Alarm20007_ICF_registration_from_failure_to_success', u'Create_Clear_Alarm20007_notification_service_buffer_from_overflow_to_normal'], 'statistics': '26 critical tests, 0 passed, 26 failed\n26 tests total, 0 passed, 26 failed', 'doc': u'', 'elapsedtime': 31, 'source': u'F:\\Study\\Nokia\\scripts\\remote-test\\src\\testcases\\Release6\\NBI_3GPP_CORBA_Self_Monitoring_Test_Suite.html', 'totaltests': 26, 'starttime': '20150314 22:03:40.125', 'longname': u'Testcases.Release6.NBI 3GPP CORBA Self Monitoring Test Suite', 'message': u"Parent suite setup failed:\nNo keyword with name 'Open Connection' found.", 'endtime': '20150314 22:03:40.156', 'id': 's1-s3-s11', 'metadata': {u'Author': u'Walker Wang'}}
+20150314 22:03:40.171 :  INFO : ${process_id} = None
+20150314 22:03:40.187 :  INFO : ${ret} = None
+20150314 22:03:40.187 :  INFO : ${err} = None
+20150314 22:03:40.203 :  INFO : ${ret} = None
+20150314 22:03:40.203 :  INFO : ${err} = None
+20150314 22:03:40.203 :  INFO : ${ret} = None
+20150314 22:03:40.203 :  INFO : ${err} = None
+20150314 22:03:40.203 :  INFO : ${ret} = None
+20150314 22:03:40.203 :  INFO : ${err} = None
+Test Suite End: Release6, attrs: {'status': 'FAIL', 'suites': [u'CORBA NBI Alarm IRP Test Suite', u'CORBA NBI BCM IRP Test Suite', u'CORBA NBI CS IRP Test Suite', u'CORBA NBI DCA Security Test Suite', u'CORBA NBI EP IRP Test Suite', u'CORBA NBI KCM IRP Test Suite', u'CORBA NBI Notification IRP Test Suite', u'NBI 3GPP CORBA FM Configurable Filter Test Suite', u'NBI 3GPP CORBA FT IRP Test Suite', u'NBI 3GPP CORBA IUM Test Suite', u'NBI 3GPP CORBA Self Monitoring Test Suite'], 'tests': [], 'statistics': '200 critical tests, 0 passed, 200 failed\n200 tests total, 0 passed, 200 failed', 'doc': u'NBI testcase init', 'elapsedtime': 500, 'source': u'F:\\Study\\Nokia\\scripts\\remote-test\\src\\testcases\\Release6', 'totaltests': 200, 'starttime': '20150314 22:03:39.718', 'longname': u'Testcases.Release6', 'message': u"Suite setup failed:\nNo keyword with name 'Open Connection' found.\n\nAlso suite teardown failed:\nSeveral failures occurred:\n\n1) No keyword with name 'Switch Connection' found.\n\n2) No keyword with name 'Execute Command' found.\n\n3) No keyword with name 'NasdaOperations.deleteMo' found.\n\n4) No keyword with name 'NasdaOperations.deleteMo' found.\n\n5) No keyword with name 'Execute command' found.\n\n6) No keyword with name 'Execute command' found.\n\n7) No keyword with name 'Execute command' found.\n\n8) No keyword with name 'Execute command' found.\n\n9) No keyword with name 'Execute command' found.\n\n10) No keyword with name 'Close All Connections' found.", 'endtime': '20150314 22:03:40.218', 'id': 's1-s3', 'metadata': {}}
+Test Suite End: Testcases, attrs: {'status': 'FAIL', 'suites': [u'Aibcontent-Remote-Test', u'Corba PET', u'Release6'], 'tests': [], 'statistics': '213 critical tests, 1 passed, 212 failed\n213 tests total, 1 passed, 212 failed', 'doc': u'', 'elapsedtime': 766, 'source': u'F:\\Study\\Nokia\\scripts\\remote-test\\src\\testcases', 'totaltests': 213, 'starttime': '20150314 22:03:39.468', 'longname': u'Testcases', 'message': '', 'endtime': '20150314 22:03:40.234', 'id': 's1', 'metadata': {}}

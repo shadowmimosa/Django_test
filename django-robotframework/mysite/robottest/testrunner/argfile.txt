@@ -1,0 +1,2 @@
+--outputdir
+C:\Users\ShadowMimosa\Documents\STU\Top\ForDjango\django-robotframework\mysite\robottest\logs\reports

@@ -275,7 +275,7 @@
                 $('#select_env').modal({
                     relatedTarget: this,
                     onConfirm: function () {
-                        post('run_test/', {
+                        post('/run_test/', {
                             'id': index,
                             'env_name': $('#env_name').val()
                         })

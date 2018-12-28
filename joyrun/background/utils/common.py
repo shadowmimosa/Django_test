@@ -53,8 +53,8 @@ def newly_testcase(tests_all, path):
                     folder_path=folder)
             mod = ModuleInfo.objects.get(module_name=keys)
             for index in values:
-                files = os.path.join(path, index)
-                if TestCaseInfo.objects.filter(belong_project=pro.id).filter(
+                files = os.path.join(folder, index)
+                if TestCaseInfo.objects.filter(belong_project=pro.project_name).filter(
                         belong_module_id=mod
                 ).filter(name=index).count(
                 ) < 1 and 'init' not in index and 'git' not in index and '.txt' in index:
@@ -422,6 +422,7 @@ def case_info_logic(type=True, **kwargs):
 
         kwargs.setdefault('test', test)
         return add_case_data(type, **kwargs)
+
 
 def get_ajax_msg(msg, success):
     """

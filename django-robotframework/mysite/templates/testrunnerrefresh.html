@@ -1,0 +1,186 @@
+
+<h2>Summary Information</h2>
+
+<table border="1">
+	<thead>
+		<tr>
+			<th class="details-col-times" title="Test Round">
+			  <div class='details-col-header'>Test Round</div>
+			</th>
+			<th class="details-col-times" title="statistics">
+			  <div class='details-col-header'>statistics</div>
+			</th>
+			<th class="details-col-msg" title="Start Time">
+			  <div class='details-col-header'>Start Time</div>
+			</th>
+			<th class="details-col-msg" title="End Time">
+			  <div class='details-col-header'>End Time</div>
+			</th>
+			<th class="details-col-times" title="Elapsed Time">
+			  <div class='details-col-header'>Elapsed Time</div>
+			</th>
+			<th class="details-col-times" title="Report File">
+			  <div class='details-col-header'>Report File</div>
+			</th>
+		</tr>
+	</thead>
+	<tbody>
+		{%if summary_list %}
+			{% for summary in summary_list %}
+				<tr>
+					<td class="stats-col-stat">{{ summary.test_round }}</td>
+					{%if summary.fail_num or summary.pass_num %}
+						{%if summary.fail_num %}
+							<td class="fail">Pass: {{ summary.pass_num }},    Fail: {{ summary.fail_num }} </td>
+						{% else %}
+							<td class="pass">Pass: {{ summary.pass_num }},    Fail: {{ summary.fail_num }} </td>
+						{% endif %}
+					{% else %}
+						<td class="pass"> NOT RUN </td>
+					{% endif %}
+					<td class="stats-col-stat">{{ summary.starttime }}</td>
+					<td class="stats-col-stat">{{ summary.endtime }}</td>
+					<td class="stats-col-stat">{{ summary.elapsedtime }}</td>
+					{% if summary.reportfile %}
+						<td class="stats-col-stat"><a href="/report/{{ summary.test_round }}/">log.html</a></td>
+					{% endif %}
+				</tr>
+			{%endfor%}
+		{% endif %}
+	</tbody>
+</table>
+
+<form action="" name="form1" method="post">
+	<h3>Select Test Suite</h3>
+	<table border="1">
+		<thead>
+			<tr>
+				<th class="center">
+					<label>
+						<input type="checkbox" class="ace" />
+							<span class="lbl"></span>
+					</label>
+				</th>
+				<th class="details-col-name" title="Name">
+				  <div class='details-col-header'>Name</div>
+				</th>
+				<th class="details-col-status" title="Status">
+				  <div class='details-col-header'>Status</div>
+				</th>
+				<th class="details-col-times" title="Total RUN">
+				  <div class='details-col-header'>Total RUN</div>
+				</th>
+				<th class="details-col-times" title="Pass Num">
+				  <div class='details-col-header'>Pass Num</div>
+				</th>
+				<th class="details-col-times" title="End Time">
+				  <div class='details-col-header'>Fail Num</div>
+				</th>
+				<th class="details-col-times" title="Fail Round">
+				  <div class='details-col-header'>Fail Round</div>
+				</th>
+				<th class="details-col-times" title="Elapsed Time">
+				  <div class='details-col-header'>Elapsed Time</div>
+				</th>
+			</tr>
+		</thead>
+		<tbody>
+		{% for suite in suite_list %}
+			<tr>
+				<td class="center">
+					<label>
+						{% ifnotequal suite.status 'NORUN' %}
+							<input type="checkbox" class="ace" checked ='checked' value="{{ suite.name }}" name="suite"/>
+						{% else %}
+							<input type="checkbox" class="ace" value="{{ suite.name }}" name="suite"/>
+						{% endifnotequal %}
+						<span class="lbl"></span>
+					</label>
+				</td>
+				<td class="details-col-name"><div class="parent-name">{{ suite.name }}</div></td>
+				<td class="details-col-status"><div class="{{ suite.status|lower }}">{{ suite.status }}</div></td>
+				<td class="stats-col-stat">{{ suite.total_run }}</td>
+				<td class="stats-col-stat">{{ suite.pass_num }}</td>
+				<td class="stats-col-stat">{{ suite.fail_num }}</td>
+				<td class="stats-col-stat">{{ suite.fail_round }}</td>
+				<td class="stats-col-elapsed">{{ suite.elapsedtime }}</td>
+			</tr>
+		{%endfor%}
+		</tbody>
+	</table>
+	
+	<h3>Select Test Case</h3>
+	<table border="1">
+		<thead>
+			<tr>
+				<th class="center">
+					<label>
+						<input type="checkbox" class="ace" />
+							<span class="lbl"></span>
+					</label>
+				</th>
+				<th class="details-col-name" title="Name">
+				  <div class='details-col-header'>Name</div>
+				</th>
+				<th class="details-col-name" title="Parent">
+				  <div class='details-col-header'>Parent</div>
+				</th>
+				<th class="details-col-status" title="Status">
+				  <div class='details-col-header'>Status</div>
+				</th>
+				<th class="details-col-times" title="Pass Num">
+				  <div class='details-col-header'>Pass Num</div>
+				</th>
+				<th class="details-col-times" title="Fail Num">
+				  <div class='details-col-header'>Fail Num</div>
+				</th>
+				<th class="details-col-times" title="Fail Round">
+				  <div class='details-col-header'>Fail Round</div>
+				</th>
+				<th class="details-col-times" title="Elapsed Time">
+				  <div class='details-col-header'>Elapsed Time</div>
+				</th>
+			</tr>
+		</thead>
+		<tbody>
+		{% for case in case_list %}
+			<tr>
+				<td class="center">
+					<label>
+						{% ifnotequal case.status 'NORUN' %}
+							<input type="checkbox" class="ace" checked ='checked' value="{{ case.name }}|{{ case.parent }}" name="case"/>
+						{% else %}
+							<input type="checkbox" class="ace" value="{{ case.name }}|{{ case.parent }}" name="case"/>
+						{% endifnotequal %}
+						<span class="lbl"></span>
+					</label>
+				</td>
+				<td class="details-col-name"><div class="parent-name">{{ case.name }}</div></td>
+				<td class="details-col-name"><div class="doc details-limited">{{ case.parent }}</div></td>
+				<td class="details-col-status"><div class="{{ case.status|lower }}">{{ case.status }}</div></td>
+				<td class="details-col-times"><div>{{ case.pass_num }}</div></td>
+				<td class="details-col-times"><div>{{ case.fail_num }}</div></td>
+				<td class="details-col-times"><div>{{ case.fail_round }}</div></td>
+				<td class="details-col-times"><div>{{ case.elapsedtime }}</div></td>
+			</tr>
+		{%endfor%}
+		</tbody>
+	</table>
+	<div class="top-right-select">
+		<p>
+			Select Run Mode:
+		</p>
+		<select id="suite-detail-selector", name="Run Mode">
+			{% for run_mode in run_mode_list %}
+				{%if run_mode.selected %}
+					<option value="{{ run_mode.mode}}", selected="selected">{{ run_mode.mode}}</option>
+				{% else %}
+					<option value="{{ run_mode.mode}}">{{ run_mode.mode}}</option>
+				{% endif %}
+			{% endfor %}
+		</select>
+	</div>
+	<div class="top-right-header">
+		<input class="btn btn-sm btn-success" type="submit", value="STOP"/>
+	</div>
+</form>

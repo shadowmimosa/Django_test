@@ -1,0 +1,643 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+    <head>
+		<link href="/static/css/bootstrap.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="/static/css/font-awesome.min.css" />
+		<link rel="stylesheet" href="/static/css/ace.min.css" />
+		<link rel="stylesheet" href="/static/css/ace-rtl.min.css" />
+		<link rel="stylesheet" href="/static/css/ace-skins.min.css" />
+		<style media="all" type="text/css">
+			/* Generic and misc styles */
+			body {
+				font-family: Helvetica, sans-serif;
+				font-size: 1.0em;
+				color: black;
+				padding: 6px;
+				background: white;
+			}
+			table {
+				table-layout: fixed;
+				word-wrap: break-word;
+				empty-cells: show;
+				font-size: 1em;
+			}
+			th, td {
+				vertical-align: top;
+			}
+			br {
+				mso-data-placement: same-cell; /* maintain line breaks in Excel */
+			}
+			a, a:link, a:visited {
+				text-decoration: none;
+				color: blue;
+			}
+			a > img {
+				border: 1px solid blue !important;
+			}
+			a:hover, a:active {
+				text-decoration: underline;
+				color: purple;
+			}
+			.parent-name {
+				color: #00F;
+			}
+			.message {
+				white-space: pre-wrap;
+			}
+			/* Headers */
+			#header {
+				width: 65em;
+				height: 3em;
+				margin: 6px 0;
+			}
+			h1 {
+				float: left;
+				margin: 0 0 0.5em 0;
+				width: 75%;
+			}
+			h2 {
+				clear: left;
+			}
+			#generated {
+				float: right;
+				text-align: right;
+				font-size: 0.9em;
+				white-space: nowrap;
+			}
+			/* Documentation headers */
+			.doc > h2 {
+				font-size: 1.2em;
+			}
+			.doc > h3 {
+				font-size: 1.1em;
+			}
+			.doc > h4 {
+				font-size: 1.0em;
+			}
+			/* Status text colors -- !important allows using them in links */
+			.error, .fail {
+				color: red !important;
+				font-weight: bold;
+			}
+			.pass {
+				color: #009900 !important;
+			}
+			.running {
+				color: #FFCC00 !important;
+				font-weight: bold;
+			}
+			.select {
+				color: #E59729 !important;
+				font-weight: bold;
+			}
+			.norun {
+				color: #444444 !important;
+			}
+			/* Top right header */
+			.top-right-header {
+				font-size: 6.0em;
+				z-index: 301;
+				position: absolute;
+				right: 100px;
+				top: 35px;
+				margin: 21px 9px 5px 0px;
+			}
+			.top-right-select {
+				position: absolute;
+				right: 20px;
+				top: 0px;
+				margin: 21px 9px 5px 0px;
+			}
+			#report-or-log-link a {
+				display: block;
+				background: black;
+				color: white;
+				text-decoration: none;
+				letter-spacing: 0.1em;
+				padding: 0.3em 0;
+				border-bottom-left-radius: 4px;
+			}
+			#report-or-log-link a:hover {
+				color: yellow;
+			}
+			#log-level-selector {
+				padding: 0.3em 0;
+				font-size: 0.9em;
+				border-bottom-left-radius: 4px;
+				background: lightgray;
+			}
+			/* Statistics table */
+			.statistics {
+				width: 65em;
+				border-collapse: collapse;
+				empty-cells: show;
+				margin-bottom: 1em;
+			}
+			.statistics tr:hover {
+				background: #ECECF7;
+				cursor: pointer;
+			}
+			.statistics th, .statistics td {
+				border: 1px solid black;
+				padding: 0.1em 0.3em;
+			}
+			.statistics th {
+				background-color: #DCDCF0;
+				padding: 0.2em 0.3em;
+			}
+			.statistics td {
+				vertical-align: middle;
+			}
+			.stats-col-stat {
+				width: 4.5em;
+				text-align: center;
+			}
+			.stats-col-elapsed {
+				width: 5.5em;
+				text-align: center;
+			}
+			.stats-col-graph {
+				width: 9em;
+			}
+			th.stats-col-graph:hover {
+				cursor: default;
+			}
+			.stat-name {
+				float: left;
+			}
+			.stat-name a, .stat-name span {
+				font-weight: bold;
+			}
+			.tag-links {
+				font-size: 0.9em;
+				float: right;
+				margin-top: 0.05em;
+			}
+			.tag-links span {
+				margin-left: 0.2em;
+			}
+			/* Statistics graph */
+			.graph, .empty-graph {
+				border: 1px solid black;
+				width: auto;
+				height: 7px;
+				padding: 0;
+				background: red;
+			}
+			.empty-graph {
+				background: #E9E9E9;
+			}
+			.pass-bar, .fail-bar {
+				float: left;
+				height: 100%;
+			}
+			.pass-bar {
+				background: #00F000;
+			}
+			/* Tablesorter - adapted from provided Blue Skin */
+			.tablesorter-header {
+				background-image: url(data:image/gif;base64,R0lGODlhCwAJAIAAAH9/fwAAACH5BAEAAAEALAAAAAALAAkAAAIRjAOnBr3cnIr0WUjTrC9e9BQAOw==);
+				background-repeat: no-repeat;
+				background-position: center right;
+				cursor: pointer;
+			}
+			.tablesorter-header:hover {
+				background-color: #B8C8E3;
+			}
+			.tablesorter-headerAsc {
+				background-image: url(data:image/gif;base64,R0lGODlhCwAJAKEAAAAAAH9/fwAAAAAAACH5BAEAAAIALAAAAAALAAkAAAIUlBWnFr3cnIr0WQOyBmvzp13CpxQAOw==);
+				background-color: #B8C8E3 !important;
+			}
+			.tablesorter-headerDesc {
+				background-image: url(data:image/gif;base64,R0lGODlhCwAJAKEAAAAAAH9/fwAAAAAAACH5BAEAAAIALAAAAAALAAkAAAIUlAWnBr3cnIr0WROyDmvzp13CpxQAOw==);
+				background-color: #B8C8E3 !important;
+			}
+			.sorter-false {
+				background-image: none;
+				cursor: default;
+			}
+			.sorter-false:hover {
+				background-color: #DCDCF0;
+			}
+		</style>
+		<style media="all" type="text/css">
+			/* Generic table styles */
+			table {
+				margin: 0 1px;
+				background: white;
+			}
+			tr {
+				background: white;
+			}
+			th {
+				background: #DCDCF0;
+				color: black;
+			}
+			/* Summary and total/tag/suite details */
+			.details {
+				border: 1px solid black;
+				border-collapse: collapse;
+				clear: both;
+				width: 65em;
+				margin-bottom: 1em;
+			}
+			.details th {
+				background: white;
+				width: 10em;
+				white-space: nowrap;
+				text-align: left;
+				vertical-align: top;
+				padding: 0.2em 0.4em;
+			}
+			.details td {
+				vertical-align: top;
+				padding: 0.2em 0.4em;
+			}
+			.selector th, .selector td {
+				padding-top: 0.5em;
+				padding-bottom: 0.5em;
+				white-space: normal;
+			}
+			.first-selector th, .first-selector td{
+				padding-bottom: 0.2em;
+			}
+			.middle-selector th, .middle-selector td {
+				padding-top: 0.2em;
+				padding-bottom: 0.2em;
+			}
+			.last-selector th, .last-selector td{
+				padding-top: 0.2em;
+			}
+			#print-selector {
+				display: none;
+			}
+			/* Search */
+			#search-suite, #search-test, #search-include, #search-exclude {
+				width: 25em;
+			}
+			#search a:hover {
+				text-decoration: none;
+			}
+			#search-help div {
+				margin: 0.5em 0.5em 0.7em 0;
+				padding: 0.7em;
+				background: #ECECF7;
+				border: 1px solid #BCBCD7;
+				border-radius: 3px;
+			}
+			#search-help h3, #search-help p {
+				margin: 0 0 0.7em 0;
+			}
+			.search-help-examples {
+				table-layout: auto;
+				width: 100%;
+			}
+			.search-help-examples, .search-help-examples tr,
+			.search-help-examples th, .search-help-examples td {
+				background: transparent;
+				margin: 0;
+			}
+			.search-help-examples th, .search-help-examples td {
+				padding: 0.2em 0.7em 0.2em 0;
+			}
+			.help-item {
+				width: 10%;
+			}
+			.help-explanation {
+				width: 65%;
+			}
+			.help-examples {
+				width: 25%;
+			}
+			/* Tabs - adapted from http://www.htmldog.com/articles/tabs */
+			#detail-tabs {
+				list-style: none;
+				padding: 0;
+				margin: 0 1em;
+			}
+			.detail-tab {
+				float: left;
+				background: #DCDCF0;
+				border: 1px solid black;
+				border-bottom-width: 0;
+				margin: 0 0.5em 0 0;
+				padding-top: 0.1em;
+				border-radius: 3px 3px 0 0;
+			}
+			.detail-tab:hover {
+				background: yellow;
+			}
+			.detail-tab a {
+				color: black;
+				text-decoration: none;
+				font-weight: bold;
+				padding: 0 1em;
+			}
+			.detail-tab-selected {
+				position: relative;
+				top: 1px;
+				background: white;
+			}
+			.detail-tab-selected:hover {
+				background: white;
+			}
+			/* Test details table */
+			#test-details {
+				width: 100%;
+				border-spacing: 1px;
+				background-color: black;
+			}
+			#test-details > tbody > tr:hover {
+				background: #F4F4FF;
+				cursor: pointer;
+			}
+			#test-details th, #test-details td {
+				padding: 0.2em;
+			}
+			.details-limited {
+				max-height: 20em;
+				overflow: auto;
+			}
+			.details-col-header {
+				padding-right: 1em;
+			}
+			.details-col-toggle {
+				float: left;
+				color: #808080;
+				cursor: pointer;
+			}
+			.details-col-toggle:hover {
+				color: black;
+			}
+			.details-col-name {
+				min-width: 20em;
+				font-weight: bold;
+			}
+			.details-col-doc {
+				min-width: 10em;
+			}
+			.details-col-tags {
+				min-width: 10em;
+			}
+			.details-col-crit {
+				width: 3.5em;
+				text-align: center;
+			}
+			.details-col-status {
+				width: 4.5em;
+				text-align: center;
+			}
+			.details-col-msg {
+				width: 15em;
+				white-space: nowrap;
+				text-align: center;
+			}
+			.details-col-elapsed {
+				width: 7em;
+				text-align: center;
+			}
+			.details-col-times {
+				width: 11em;
+				white-space: nowrap;
+				text-align: center;
+			}
+			.hidden .details-col-header, td.hidden > div {
+				display: none;
+			}
+			.hidden {
+				width: 13px;
+				min-width: 0;
+				background-image: none;
+			}
+			th.hidden:hover {
+				background-color: #DCDCF0;
+			}
+		</style>
+    </head>
+    <body>
+		
+		<h2>Summary Information</h2>
+
+		<table border="1">
+			<thead>
+				<tr>
+					<th class="details-col-times" title="Test Round">
+					  <div class='details-col-header'>Test Round</div>
+					</th>
+					<th class="details-col-times" title="statistics">
+					  <div class='details-col-header'>statistics</div>
+					</th>
+					<th class="details-col-msg" title="Start Time">
+					  <div class='details-col-header'>Start Time</div>
+					</th>
+					<th class="details-col-msg" title="End Time">
+					  <div class='details-col-header'>End Time</div>
+					</th>
+					<th class="details-col-times" title="Elapsed Time">
+					  <div class='details-col-header'>Elapsed Time</div>
+					</th>
+					<th class="details-col-times" title="Report File">
+					  <div class='details-col-header'>Report File</div>
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				{%if summary_list %}
+					{% for summary in summary_list %}
+						<tr>
+							<td class="stats-col-stat">{{ summary.test_round }}</td>
+							{%if summary.fail_num or summary.pass_num %}
+								{%if summary.fail_num %}
+									<td class="fail">Pass: {{ summary.pass_num }},    Fail: {{ summary.fail_num }} </td>
+								{% else %}
+									<td class="pass">Pass: {{ summary.pass_num }},    Fail: {{ summary.fail_num }} </td>
+								{% endif %}
+							{% else %}
+								<td class="pass"> NOT RUN </td>
+							{% endif %}
+							<td class="stats-col-stat">{{ summary.starttime }}</td>
+							<td class="stats-col-stat">{{ summary.endtime }}</td>
+							<td class="stats-col-stat">{{ summary.elapsedtime }}</td>
+							{% if summary.reportfile %}
+								<td class="stats-col-stat"><a href="/report/{{ summary.test_round }}/">log.html</a></td>
+							{% endif %}
+						</tr>
+					{%endfor%}
+				{% endif %}
+			</tbody>
+		</table>
+
+		<form action="" name="form1" method="post">
+			<h3>Select Test Suite</h3>
+			<table border="1">
+				<thead>
+					<tr>
+						<th class="center">
+							<label>
+								<input type="checkbox" class="ace" />
+									<span class="lbl"></span>
+							</label>
+						</th>
+						<th class="details-col-name" title="Name">
+						  <div class='details-col-header'>Name</div>
+						</th>
+						<th class="details-col-status" title="Status">
+						  <div class='details-col-header'>Status</div>
+						</th>
+						<th class="details-col-times" title="Total RUN">
+						  <div class='details-col-header'>Total RUN</div>
+						</th>
+						<th class="details-col-times" title="Pass Num">
+						  <div class='details-col-header'>Pass Num</div>
+						</th>
+						<th class="details-col-times" title="End Time">
+						  <div class='details-col-header'>Fail Num</div>
+						</th>
+						<th class="details-col-times" title="Fail Round">
+						  <div class='details-col-header'>Fail Round</div>
+						</th>
+						<th class="details-col-times" title="Elapsed Time">
+						  <div class='details-col-header'>Elapsed Time</div>
+						</th>
+					</tr>
+				</thead>
+				<tbody>
+				{% for suite in suite_list %}
+					<tr>
+						<td class="center">
+							<label>
+								{% ifnotequal suite.status 'NORUN' %}
+									<input type="checkbox" class="ace" checked ='checked' value="{{ suite.name }}" name="suite"/>
+								{% else %}
+									<input type="checkbox" class="ace" value="{{ suite.name }}" name="suite"/>
+								{% endifnotequal %}
+								<span class="lbl"></span>
+							</label>
+						</td>
+						<td class="details-col-name"><div class="parent-name">{{ suite.name }}</div></td>
+						<td class="details-col-status"><div class="{{ suite.status|lower }}">{{ suite.status }}</div></td>
+						<td class="stats-col-stat">{{ suite.total_run }}</td>
+						<td class="stats-col-stat">{{ suite.pass_num }}</td>
+						<td class="stats-col-stat">{{ suite.fail_num }}</td>
+						<td class="stats-col-stat">{{ suite.fail_round }}</td>
+						<td class="stats-col-elapsed">{{ suite.elapsedtime }}</td>
+					</tr>
+				{%endfor%}
+				</tbody>
+			</table>
+			
+			<h3>Select Test Case</h3>
+			<table border="1">
+				<thead>
+					<tr>
+						<th class="center">
+							<label>
+								<input type="checkbox" class="ace" />
+									<span class="lbl"></span>
+							</label>
+						</th>
+						<th class="details-col-name" title="Name">
+						  <div class='details-col-header'>Name</div>
+						</th>
+						<th class="details-col-name" title="Parent">
+						  <div class='details-col-header'>Parent</div>
+						</th>
+						<th class="details-col-status" title="Status">
+						  <div class='details-col-header'>Status</div>
+						</th>
+						<th class="details-col-times" title="Pass Num">
+						  <div class='details-col-header'>Pass Num</div>
+						</th>
+						<th class="details-col-times" title="Fail Num">
+						  <div class='details-col-header'>Fail Num</div>
+						</th>
+						<th class="details-col-times" title="Fail Round">
+						  <div class='details-col-header'>Fail Round</div>
+						</th>
+						<th class="details-col-times" title="Elapsed Time">
+						  <div class='details-col-header'>Elapsed Time</div>
+						</th>
+					</tr>
+				</thead>
+				<tbody>
+				{% for case in case_list %}
+					<tr>
+						<td class="center">
+							<label>
+								{% ifnotequal case.status 'NORUN' %}
+									<input type="checkbox" class="ace" checked ='checked' value="{{ case.name }}|{{ case.parent }}" name="case"/>
+								{% else %}
+									<input type="checkbox" class="ace" value="{{ case.name }}|{{ case.parent }}" name="case"/>
+								{% endifnotequal %}
+								<span class="lbl"></span>
+							</label>
+						</td>
+						<td class="details-col-name"><div class="parent-name">{{ case.name }}</div></td>
+						<td class="details-col-name"><div class="doc details-limited">{{ case.parent }}</div></td>
+						<td class="details-col-status"><div class="{{ case.status|lower }}">{{ case.status }}</div></td>
+						<td class="details-col-times"><div>{{ case.pass_num }}</div></td>
+						<td class="details-col-times"><div>{{ case.fail_num }}</div></td>
+						<td class="details-col-times"><div>{{ case.fail_round }}</div></td>
+						<td class="details-col-times"><div>{{ case.elapsedtime }}</div></td>
+					</tr>
+				{%endfor%}
+				</tbody>
+			</table>
+			
+			<div class="top-right-select">
+				<p>
+					Select Run Mode:
+				</p>
+				<select id="suite-detail-selector", name="Run Mode">
+					{% for run_mode in run_mode_list %}
+						{%if run_mode.selected %}
+							<option value="{{ run_mode.mode}}", selected="selected">{{ run_mode.mode}}</option>
+						{% else %}
+							<option value="{{ run_mode.mode}}">{{ run_mode.mode}}</option>
+						{% endif %}
+					{% endfor %}
+				</select>
+			</div>
+			
+			<div class="top-right-header">
+				<input class="btn btn-sm btn-success" type="submit", value="START"/>
+			</div>
+			
+		</form>
+		
+		<script type="text/javascript">
+			window.jQuery || document.write("<script src='/static/js/jquery-2.0.3.min.js'>"+"<"+"/script>");
+		</script>
+
+		<script type="text/javascript">
+			if("ontouchend" in document) document.write("<script src='/static/js/jquery.mobile.custom.min.js'>"+"<"+"/script>");
+		</script>
+		<script src="/static/js/bootstrap.min.js"></script>
+		<script src="/static/js/typeahead-bs2.min.js"></script>
+
+		<!-- page specific plugin scripts -->
+
+		<script src="/static/js/jquery.dataTables.min.js"></script>
+		<script src="/static/js/jquery.dataTables.bootstrap.js"></script>
+
+		<!-- ace scripts -->
+
+		<script src="/static/js/ace-elements.min.js"></script>
+		<script src="/static/js/ace.min.js"></script>
+
+		<!-- inline scripts related to this page -->
+
+		<script type="text/javascript">
+			jQuery(function($) {
+				$('table th input:checkbox').on('click' , function(){
+					var that = this;
+					$(this).closest('table').find('tr > td:first-child input:checkbox')
+					.each(function(){
+						this.checked = that.checked;
+						$(this).closest('tr').toggleClass('selected');
+					});	
+				});
+			})
+		</script>
+    </body>
+</html>

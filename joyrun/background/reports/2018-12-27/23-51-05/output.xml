@@ -1,0 +1,1462 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.0.4 (Python 3.7.1 on win32)" generated="20181227 23:51:06.130">
+<suite id="s1" name="user-shoe-retire Get" source="D:\test\JoyrunTestOA\thejoyrunTestcode\wearapi\user-shoe-retire_Get.txt">
+<test id="s1-t1" name="Class_01">
+<kw name="user-shoe-retire_Get_Keywords">
+<doc>user-shoe-retire 接口用例的Keywords关健字</doc>
+<arguments>
+<arg>622147</arg>
+<arg>0</arg>
+<arg>成功</arg>
+</arguments>
+<kw name="thejoyrun_Keywords" library="public_lib">
+<doc>*thejoyrun通用关健字*</doc>
+<arguments>
+<arg>${wear_URL}</arg>
+<arg>/user-shoe-list</arg>
+<arg>${userName}</arg>
+<arg>${pwd}</arg>
+<arg>Post</arg>
+</arguments>
+<assign>
+<var>${con}</var>
+</assign>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>thejoyrun_Keywords Start ......</arg>
+</arguments>
+<msg timestamp="20181227 23:51:06.520" level="INFO">thejoyrun_Keywords Start ......</msg>
+<status status="PASS" starttime="20181227 23:51:06.519" endtime="20181227 23:51:06.520"></status>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<assign>
+<var>${maps1}</var>
+</assign>
+<msg timestamp="20181227 23:51:06.521" level="INFO">${maps1} = {}</msg>
+<status status="PASS" starttime="20181227 23:51:06.520" endtime="20181227 23:51:06.521"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${Retry_order}'=='None'</arg>
+<arg>set variable</arg>
+<arg>${Retry_Pub}</arg>
+<arg>ELSE</arg>
+<arg>set variable</arg>
+<arg>${Retry_order}</arg>
+</arguments>
+<assign>
+<var>${Retry_order}</var>
+</assign>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>${Retry_Pub}</arg>
+</arguments>
+<status status="PASS" starttime="20181227 23:51:06.521" endtime="20181227 23:51:06.522"></status>
+</kw>
+<msg timestamp="20181227 23:51:06.522" level="INFO">${Retry_order} = 3</msg>
+<status status="PASS" starttime="20181227 23:51:06.521" endtime="20181227 23:51:06.522"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${values}'=='Joyrun_null'</arg>
+<arg>Create List</arg>
+<arg>0</arg>
+<arg>ELSE</arg>
+<arg>Split String</arg>
+<arg>${fields}</arg>
+<arg>,</arg>
+</arguments>
+<assign>
+<var>@{fieldsList}</var>
+</assign>
+<kw name="Split String" library="String">
+<doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
+<arguments>
+<arg>${fields}</arg>
+<arg>,</arg>
+</arguments>
+<status status="PASS" starttime="20181227 23:51:06.523" endtime="20181227 23:51:06.523"></status>
+</kw>
+<msg timestamp="20181227 23:51:06.523" level="INFO">@{fieldsList} = [ None ]</msg>
+<status status="PASS" starttime="20181227 23:51:06.522" endtime="20181227 23:51:06.523"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${values}'=='Joyrun_null'</arg>
+<arg>Create List</arg>
+<arg>0</arg>
+<arg>ELSE</arg>
+<arg>Split String</arg>
+<arg>${values}</arg>
+<arg>,</arg>
+</arguments>
+<assign>
+<var>@{ValueList}</var>
+</assign>
+<kw name="Split String" library="String">
+<doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
+<arguments>
+<arg>${values}</arg>
+<arg>,</arg>
+</arguments>
+<status status="PASS" starttime="20181227 23:51:06.524" endtime="20181227 23:51:06.525"></status>
+</kw>
+<msg timestamp="20181227 23:51:06.525" level="INFO">@{ValueList} = [ None ]</msg>
+<status status="PASS" starttime="20181227 23:51:06.524" endtime="20181227 23:51:06.525"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>len(${fieldsList})</arg>
+</arguments>
+<assign>
+<var>${Len}</var>
+</assign>
+<msg timestamp="20181227 23:51:06.526" level="INFO">${Len} = 1</msg>
+<status status="PASS" starttime="20181227 23:51:06.525" endtime="20181227 23:51:06.526"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${Len}==1</arg>
+<arg>Get From List</arg>
+<arg>${fieldsList}</arg>
+<arg>0</arg>
+<arg>ELSE</arg>
+<arg>Set Variable</arg>
+<arg>0</arg>
+</arguments>
+<assign>
+<var>${fildstart}</var>
+</assign>
+<kw name="Get From List" library="Collections">
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<arguments>
+<arg>${fieldsList}</arg>
+<arg>0</arg>
+</arguments>
+<status status="PASS" starttime="20181227 23:51:06.526" endtime="20181227 23:51:06.527"></status>
+</kw>
+<msg timestamp="20181227 23:51:06.527" level="INFO">${fildstart} = None</msg>
+<status status="PASS" starttime="20181227 23:51:06.526" endtime="20181227 23:51:06.527"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${Len}==1 and '${fildstart}'=='None'</arg>
+<arg>Set Variable</arg>
+<arg>0</arg>
+<arg>ELSE</arg>
+<arg>Set Variable</arg>
+<arg>${Len}</arg>
+</arguments>
+<assign>
+<var>${Len}</var>
+</assign>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>0</arg>
+</arguments>
+<status status="PASS" starttime="20181227 23:51:06.528" endtime="20181227 23:51:06.529"></status>
+</kw>
+<msg timestamp="20181227 23:51:06.529" level="INFO">${Len} = 0</msg>
+<status status="PASS" starttime="20181227 23:51:06.528" endtime="20181227 23:51:06.529"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${Len}&lt;1 and '${values}'!='Joyrun_null'</arg>
+<arg>Set Variable</arg>
+<arg>${maps1}</arg>
+<arg>ELSE IF</arg>
+<arg>'${values}'=='Joyrun_null'</arg>
+<arg>create dictionary</arg>
+<arg>&amp;{fields}</arg>
+<arg>ELSE</arg>
+<arg>thejoyrun_Maps</arg>
+<arg>${fieldsList}</arg>
+<arg>${ValueList}</arg>
+</arguments>
+<assign>
+<var>${maps}</var>
+</assign>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>${maps1}</arg>
+</arguments>
+<status status="PASS" starttime="20181227 23:51:06.530" endtime="20181227 23:51:06.531"></status>
+</kw>
+<msg timestamp="20181227 23:51:06.531" level="INFO">${maps} = {}</msg>
+<status status="PASS" starttime="20181227 23:51:06.529" endtime="20181227 23:51:06.531"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>===输出测试地址:${BaseURL}${path}====</arg>
+</arguments>
+<msg timestamp="20181227 23:51:06.532" level="INFO">===输出测试地址:http://wear-test.api.thejoyrun.com/user-shoe-list====</msg>
+<status status="PASS" starttime="20181227 23:51:06.531" endtime="20181227 23:51:06.532"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>===请求方法及用户:method=${method},userName:${userName},pwd:${pwd}====</arg>
+</arguments>
+<msg timestamp="20181227 23:51:06.532" level="INFO">===请求方法及用户:method=Post,userName:18011884709,pwd:123321====</msg>
+<status status="PASS" starttime="20181227 23:51:06.532" endtime="20181227 23:51:06.533"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>===请求的字段及值为：fields:${fields},values:${values}========</arg>
+</arguments>
+<msg timestamp="20181227 23:51:06.533" level="INFO">===请求的字段及值为：fields:None,values:None========</msg>
+<status status="PASS" starttime="20181227 23:51:06.533" endtime="20181227 23:51:06.533"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>===请求的字段及值为：maps:${maps}========</arg>
+</arguments>
+<msg timestamp="20181227 23:51:06.534" level="INFO">===请求的字段及值为：maps:{}========</msg>
+<status status="PASS" starttime="20181227 23:51:06.534" endtime="20181227 23:51:06.534"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${method}'=='Postw'</arg>
+<arg>thejoyrun_postjson_wxminp</arg>
+<arg>${path}</arg>
+<arg>${maps}</arg>
+<arg>${BaseURL}</arg>
+<arg>ELSE IF</arg>
+<arg>'${method}'=='Get'</arg>
+<arg>thejoyrun_Getp</arg>
+<arg>${path}</arg>
+<arg>${maps}</arg>
+<arg>${userName}</arg>
+<arg>${BaseURL}</arg>
+<arg>${pwd}</arg>
+<arg>ELSE IF</arg>
+<arg>'${method}'=='Getw'</arg>
+<arg>thejoyrun_get_wxminp</arg>
+<arg>${path}</arg>
+<arg>${maps}</arg>
+<arg>${BaseURL}</arg>
+<arg>ELSE IF</arg>
+<arg>'${method}'=='Postns'</arg>
+<arg>thejoyrun_post_nosign</arg>
+<arg>${path}</arg>
+<arg>${maps}</arg>
+<arg>${userName}</arg>
+<arg>${BaseURL}</arg>
+<arg>${pwd}</arg>
+<arg>ELSE IF</arg>
+<arg>'${method}'=='Getns'</arg>
+<arg>thejoyrun_get_nosign</arg>
+<arg>${path}</arg>
+<arg>${maps}</arg>
+<arg>${userName}</arg>
+<arg>${BaseURL}</arg>
+<arg>${pwd}</arg>
+<arg>ELSE IF</arg>
+<arg>'${method}'=='Postnl'</arg>
+<arg>thejoyrun_postnl</arg>
+<arg>${path}</arg>
+<arg>${maps}</arg>
+<arg>${Base_URL}</arg>
+<arg>ELSE</arg>
+<arg>thejoyrun_postd</arg>
+<arg>${path}</arg>
+<arg>${maps}</arg>
+<arg>${userName}</arg>
+<arg>${BaseURL}</arg>
+<arg>${pwd}</arg>
+</arguments>
+<assign>
+<var>${resp}</var>
+</assign>
+<kw name="thejoyrun_postd" library="thejoyrun">
+<doc>*用于APP内部需要登录和签名Post场景：post请求data方式关键字*</doc>
+<arguments>
+<arg>${path}</arg>
+<arg>${maps}</arg>
+<arg>${userName}</arg>
+<arg>${BaseURL}</arg>
+<arg>${pwd}</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>thejoyrun_postd Start ......</arg>
+</arguments>
+<msg timestamp="20181227 23:51:06.537" level="INFO">thejoyrun_postd Start ......</msg>
+<status status="PASS" starttime="20181227 23:51:06.536" endtime="20181227 23:51:06.537"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${Retry}'=='None'</arg>
+<arg>set variable</arg>
+<arg>${RetryInti}</arg>
+<arg>ELSE</arg>
+<arg>set variable</arg>
+<arg>${Retry}</arg>
+</arguments>
+<assign>
+<var>${Retry}</var>
+</assign>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>${RetryInti}</arg>
+</arguments>
+<status status="PASS" starttime="20181227 23:51:06.538" endtime="20181227 23:51:06.539"></status>
+</kw>
+<msg timestamp="20181227 23:51:06.539" level="INFO">${Retry} = 3</msg>
+<status status="PASS" starttime="20181227 23:51:06.537" endtime="20181227 23:51:06.539"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${pwds}'=='None'</arg>
+<arg>set variable</arg>
+<arg>${pwd}</arg>
+<arg>ELSE</arg>
+<arg>set variable</arg>
+<arg>${pwds}</arg>
+</arguments>
+<assign>
+<var>${pwd}</var>
+</assign>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>${pwds}</arg>
+</arguments>
+<status status="PASS" starttime="20181227 23:51:06.540" endtime="20181227 23:51:06.540"></status>
+</kw>
+<msg timestamp="20181227 23:51:06.540" level="INFO">${pwd} = 123321</msg>
+<status status="PASS" starttime="20181227 23:51:06.539" endtime="20181227 23:51:06.540"></status>
+</kw>
+<kw name="Env_URL" library="thejoyrun">
+<doc>根据URL判断运行环境</doc>
+<arguments>
+<arg>${Base_URL}</arg>
+</arguments>
+<assign>
+<var>${env}</var>
+</assign>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Env_URL Start ......</arg>
+</arguments>
+<msg timestamp="20181227 23:51:06.542" level="INFO">Env_URL Start ......</msg>
+<status status="PASS" starttime="20181227 23:51:06.541" endtime="20181227 23:51:06.542"></status>
+</kw>
+<kw name="Get Lines Matching Pattern" library="String">
+<doc>Returns lines of the given ``string`` that match the ``pattern``.</doc>
+<arguments>
+<arg>${InputURL}</arg>
+<arg>*-test*</arg>
+</arguments>
+<assign>
+<var>${Testcount}</var>
+</assign>
+<msg timestamp="20181227 23:51:06.543" level="INFO">1 out of 1 lines matched</msg>
+<msg timestamp="20181227 23:51:06.543" level="INFO">${Testcount} = http://wear-test.api.thejoyrun.com</msg>
+<status status="PASS" starttime="20181227 23:51:06.542" endtime="20181227 23:51:06.543"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${Testcount}'=='${EMPTY}'</arg>
+<arg>set variable</arg>
+<arg>Online</arg>
+<arg>ELSE</arg>
+<arg>set variable</arg>
+<arg>Test</arg>
+</arguments>
+<assign>
+<var>${env_out}</var>
+</assign>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>Test</arg>
+</arguments>
+<status status="PASS" starttime="20181227 23:51:06.545" endtime="20181227 23:51:06.545"></status>
+</kw>
+<msg timestamp="20181227 23:51:06.545" level="INFO">${env_out} = Test</msg>
+<status status="PASS" starttime="20181227 23:51:06.544" endtime="20181227 23:51:06.545"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Env_URL End ......</arg>
+</arguments>
+<msg timestamp="20181227 23:51:06.546" level="INFO">Env_URL End ......</msg>
+<status status="PASS" starttime="20181227 23:51:06.546" endtime="20181227 23:51:06.547"></status>
+</kw>
+<msg timestamp="20181227 23:51:06.547" level="INFO">${env} = Test</msg>
+<status status="PASS" starttime="20181227 23:51:06.541" endtime="20181227 23:51:06.547"></status>
+</kw>
+<kw name="Get Dictionary Keys" library="Collections">
+<doc>Returns keys of the given ``dictionary``.</doc>
+<arguments>
+<arg>${usersinfo_dict}</arg>
+</arguments>
+<assign>
+<var>${userslist}</var>
+</assign>
+<msg timestamp="20181227 23:51:06.548" level="INFO">${userslist} = []</msg>
+<status status="PASS" starttime="20181227 23:51:06.547" endtime="20181227 23:51:06.548"></status>
+</kw>
+<kw name="Get Count" library="BuiltIn">
+<doc>Returns and logs how many times ``item2`` is found from ``item1``.</doc>
+<arguments>
+<arg>${userslist}</arg>
+<arg>${env}${userName}</arg>
+</arguments>
+<assign>
+<var>${user_is}</var>
+</assign>
+<msg timestamp="20181227 23:51:06.549" level="INFO">Item found from the first item 0 times</msg>
+<msg timestamp="20181227 23:51:06.549" level="INFO">${user_is} = 0</msg>
+<status status="PASS" starttime="20181227 23:51:06.548" endtime="20181227 23:51:06.549"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${user_is}&lt;=0</arg>
+<arg>joyrun_POST_heardsession</arg>
+<arg>${userName}</arg>
+<arg>${pwd}</arg>
+<arg>${Base_URL}</arg>
+<arg>ELSE</arg>
+<arg>Get From Dictionary</arg>
+<arg>${usersinfo_dict}</arg>
+<arg>${env}${userName}</arg>
+</arguments>
+<assign>
+<var>${heards}</var>
+</assign>
+<kw name="joyrun_POST_heardsession" library="http_request">
+<doc>Joyrun login</doc>
+<arguments>
+<arg>${userName}</arg>
+<arg>${pwd}</arg>
+<arg>${Base_URL}</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>-----------------cookies mothod is log start1;--------------------------</arg>
+</arguments>
+<msg timestamp="20181227 23:51:06.552" level="INFO">-----------------cookies mothod is log start1;--------------------------</msg>
+<status status="PASS" starttime="20181227 23:51:06.551" endtime="20181227 23:51:06.552"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>-----------------cookies mothod is log start2;--------------------------</arg>
+</arguments>
+<msg timestamp="20181227 23:51:06.553" level="INFO">-----------------cookies mothod is log start2;--------------------------</msg>
+<status status="PASS" starttime="20181227 23:51:06.552" endtime="20181227 23:51:06.553"></status>
+</kw>
+<kw name="Env_URL" library="thejoyrun">
+<doc>根据URL判断运行环境</doc>
+<arguments>
+<arg>${Base_URL}</arg>
+</arguments>
+<assign>
+<var>${env}</var>
+</assign>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Env_URL Start ......</arg>
+</arguments>
+<msg timestamp="20181227 23:51:06.554" level="INFO">Env_URL Start ......</msg>
+<status status="PASS" starttime="20181227 23:51:06.553" endtime="20181227 23:51:06.554"></status>
+</kw>
+<kw name="Get Lines Matching Pattern" library="String">
+<doc>Returns lines of the given ``string`` that match the ``pattern``.</doc>
+<arguments>
+<arg>${InputURL}</arg>
+<arg>*-test*</arg>
+</arguments>
+<assign>
+<var>${Testcount}</var>
+</assign>
+<msg timestamp="20181227 23:51:06.555" level="INFO">1 out of 1 lines matched</msg>
+<msg timestamp="20181227 23:51:06.555" level="INFO">${Testcount} = http://wear-test.api.thejoyrun.com</msg>
+<status status="PASS" starttime="20181227 23:51:06.554" endtime="20181227 23:51:06.555"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${Testcount}'=='${EMPTY}'</arg>
+<arg>set variable</arg>
+<arg>Online</arg>
+<arg>ELSE</arg>
+<arg>set variable</arg>
+<arg>Test</arg>
+</arguments>
+<assign>
+<var>${env_out}</var>
+</assign>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>Test</arg>
+</arguments>
+<status status="PASS" starttime="20181227 23:51:06.555" endtime="20181227 23:51:06.556"></status>
+</kw>
+<msg timestamp="20181227 23:51:06.556" level="INFO">${env_out} = Test</msg>
+<status status="PASS" starttime="20181227 23:51:06.555" endtime="20181227 23:51:06.556"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Env_URL End ......</arg>
+</arguments>
+<msg timestamp="20181227 23:51:06.557" level="INFO">Env_URL End ......</msg>
+<status status="PASS" starttime="20181227 23:51:06.556" endtime="20181227 23:51:06.557"></status>
+</kw>
+<msg timestamp="20181227 23:51:06.557" level="INFO">${env} = Test</msg>
+<status status="PASS" starttime="20181227 23:51:06.553" endtime="20181227 23:51:06.557"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${env}'=='Test'</arg>
+<arg>set variable</arg>
+<arg>${loginTest}</arg>
+<arg>ELSE</arg>
+<arg>set variable</arg>
+<arg>${loginOnline}</arg>
+</arguments>
+<assign>
+<var>${login_URL}</var>
+</assign>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>${loginTest}</arg>
+</arguments>
+<status status="PASS" starttime="20181227 23:51:06.558" endtime="20181227 23:51:06.558"></status>
+</kw>
+<msg timestamp="20181227 23:51:06.558" level="INFO">${login_URL} = http://api-test.thejoyrun.com</msg>
+<status status="PASS" starttime="20181227 23:51:06.557" endtime="20181227 23:51:06.558"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>运行环境是${login_URL}</arg>
+</arguments>
+<msg timestamp="20181227 23:51:06.559" level="INFO">运行环境是http://api-test.thejoyrun.com</msg>
+<status status="PASS" starttime="20181227 23:51:06.559" endtime="20181227 23:51:06.559"></status>
+</kw>
+<kw name="GetServertime" library="thejoyrun">
+<doc>获取服务端的时间</doc>
+<arguments>
+<arg>${login_URL}</arg>
+</arguments>
+<assign>
+<var>${timestamp}</var>
+</assign>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>GetServertime Start ......</arg>
+</arguments>
+<msg timestamp="20181227 23:51:06.560" level="INFO">GetServertime Start ......</msg>
+<status status="PASS" starttime="20181227 23:51:06.560" endtime="20181227 23:51:06.561"></status>
+</kw>
+<kw name="Get Time" library="BuiltIn">
+<doc>Returns the given time in the requested format.</doc>
+<arguments>
+<arg>epoch</arg>
+</arguments>
+<assign>
+<var>${time}</var>
+</assign>
+<msg timestamp="20181227 23:51:06.561" level="INFO">${time} = 1545925866</msg>
+<status status="PASS" starttime="20181227 23:51:06.561" endtime="20181227 23:51:06.561"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>time= ${time}</arg>
+</arguments>
+<msg timestamp="20181227 23:51:06.562" level="INFO">time= 1545925866</msg>
+<status status="PASS" starttime="20181227 23:51:06.562" endtime="20181227 23:51:06.562"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>int(${time})-${Goltimestamp}-280</arg>
+</arguments>
+<assign>
+<var>${isend}</var>
+</assign>
+<msg timestamp="20181227 23:51:06.563" level="INFO">${isend} = 1545925586</msg>
+<status status="PASS" starttime="20181227 23:51:06.563" endtime="20181227 23:51:06.563"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${isend}&gt;=0</arg>
+<arg>Create Session</arg>
+<arg>timestamp</arg>
+<arg>${login_URL}</arg>
+</arguments>
+<kw name="Create Session" library="RequestsLibrary">
+<doc>Create Session: create a HTTP session to a server</doc>
+<arguments>
+<arg>timestamp</arg>
+<arg>${login_URL}</arg>
+</arguments>
+<msg timestamp="20181227 23:51:06.565" level="INFO">Creating Session using : alias=timestamp, url=http://api-test.thejoyrun.com, headers={},                     cookies=None, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20181227 23:51:06.564" endtime="20181227 23:51:06.566"></status>
+</kw>
+<status status="PASS" starttime="20181227 23:51:06.564" endtime="20181227 23:51:06.566"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${isend}&gt;=0</arg>
+<arg>RequestsLibrary.Get Request</arg>
+<arg>timestamp</arg>
+<arg>/GetTimestamp.aspx</arg>
+</arguments>
+<assign>
+<var>${resptime}</var>
+</assign>
+<kw name="Get Request" library="RequestsLibrary">
+<doc>Send a GET request on the session object found using the</doc>
+<arguments>
+<arg>timestamp</arg>
+<arg>/GetTimestamp.aspx</arg>
+</arguments>
+<msg timestamp="20181227 23:51:06.946" level="INFO">Get Request using : alias=timestamp, uri=/GetTimestamp.aspx, headers=None json=None</msg>
+<status status="PASS" starttime="20181227 23:51:06.567" endtime="20181227 23:51:06.947"></status>
+</kw>
+<msg timestamp="20181227 23:51:06.947" level="INFO">${resptime} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20181227 23:51:06.566" endtime="20181227 23:51:06.947"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${isend}&gt;=0</arg>
+<arg>charconver</arg>
+<arg>${resptime.content}</arg>
+</arguments>
+<assign>
+<var>${contentime}</var>
+</assign>
+<kw name="Charconver" library="tools_library">
+<doc>Converts the utf-8 content to unicode </doc>
+<arguments>
+<arg>${resptime.content}</arg>
+</arguments>
+<msg timestamp="20181227 23:51:06.949" level="INFO">&lt;class 'bytes'&gt;
+b'{"ret":"0","sid":"","lasttime":1545925867,"msg":"\xe6\x88\x90\xe5\x8a\x9f"}'
+&lt;class 'str'&gt;
+{"ret":"0","sid":"","lasttime":1545925867,"msg":"成功"}</msg>
+<status status="PASS" starttime="20181227 23:51:06.948" endtime="20181227 23:51:06.949"></status>
+</kw>
+<msg timestamp="20181227 23:51:06.949" level="INFO">${contentime} = {"ret":"0","sid":"","lasttime":1545925867,"msg":"成功"}</msg>
+<status status="PASS" starttime="20181227 23:51:06.947" endtime="20181227 23:51:06.949"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${isend}&gt;=0</arg>
+<arg>get json value</arg>
+<arg>${contentime}</arg>
+<arg>/lasttime</arg>
+<arg>ELSE</arg>
+<arg>set variable</arg>
+<arg>${Goltimestamp}</arg>
+</arguments>
+<assign>
+<var>${timestamp}</var>
+</assign>
+<kw name="Get Json Value" library="method_private_forPy3">
+<arguments>
+<arg>${contentime}</arg>
+<arg>/lasttime</arg>
+</arguments>
+<msg timestamp="20181227 23:51:06.951" level="INFO">The doc's type is &lt;class 'str'&gt;
+The doc is {"ret":"0","sid":"","lasttime":1545925867,"msg":"成功"}
+The pointer' type is &lt;class 'str'&gt;
+The pointer is /lasttime
+The doc's type after change is &lt;class 'dict'&gt;
+The data's type after filtering is &lt;class 'int'&gt;
+The data's type after filtering is 1545925867
+The data's type after filtering and change is &lt;class 'str'&gt;
+The data finally is 1545925867</msg>
+<status status="PASS" starttime="20181227 23:51:06.950" endtime="20181227 23:51:06.951"></status>
+</kw>
+<msg timestamp="20181227 23:51:06.951" level="INFO">${timestamp} = 1545925867</msg>
+<status status="PASS" starttime="20181227 23:51:06.949" endtime="20181227 23:51:06.951"></status>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${Goltimestamp}</arg>
+<arg>${timestamp}</arg>
+</arguments>
+<msg timestamp="20181227 23:51:06.952" level="INFO">${Goltimestamp} = 1545925867</msg>
+<status status="PASS" starttime="20181227 23:51:06.951" endtime="20181227 23:51:06.952"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>GetServertime End ......</arg>
+</arguments>
+<msg timestamp="20181227 23:51:06.953" level="INFO">GetServertime End ......</msg>
+<status status="PASS" starttime="20181227 23:51:06.952" endtime="20181227 23:51:06.953"></status>
+</kw>
+<msg timestamp="20181227 23:51:06.953" level="INFO">${timestamp} = 1545925867</msg>
+<status status="PASS" starttime="20181227 23:51:06.560" endtime="20181227 23:51:06.953"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>${login_URL}</arg>
+</arguments>
+<assign>
+<var>${Url}</var>
+</assign>
+<msg timestamp="20181227 23:51:06.954" level="INFO">${Url} = http://api-test.thejoyrun.com</msg>
+<status status="PASS" starttime="20181227 23:51:06.953" endtime="20181227 23:51:06.954"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>/user/login/normal</arg>
+</arguments>
+<assign>
+<var>${loginUri}</var>
+</assign>
+<msg timestamp="20181227 23:51:06.955" level="INFO">${loginUri} = /user/login/normal</msg>
+<status status="PASS" starttime="20181227 23:51:06.954" endtime="20181227 23:51:06.955"></status>
+</kw>
+<kw name="Encrypt" library="tools_library">
+<doc>encrypt string, support md5, sha1, sha512, base64en, base64de present. md5 default 16bit.</doc>
+<arguments>
+<arg>${pwd}</arg>
+<arg>md5</arg>
+<arg>32</arg>
+</arguments>
+<assign>
+<var>${pwdmd5}</var>
+</assign>
+<msg timestamp="20181227 23:51:06.956" level="INFO">${pwdmd5} = c8837b23ff8aaa8a2dde915473ce0991</msg>
+<status status="PASS" starttime="20181227 23:51:06.955" endtime="20181227 23:51:06.956"></status>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<arguments>
+<arg>deviceToken=${deviceToken}</arg>
+</arguments>
+<assign>
+<var>${keydic}</var>
+</assign>
+<msg timestamp="20181227 23:51:06.957" level="INFO">${keydic} = {'deviceToken': 'cb9012fd0302813461884e4a3fcc382886b73f6518c1dbe1f031a3901ee72eb4'}</msg>
+<status status="PASS" starttime="20181227 23:51:06.956" endtime="20181227 23:51:06.957"></status>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
+<arguments>
+<arg>${keydic}</arg>
+<arg>username=${username}</arg>
+</arguments>
+<status status="PASS" starttime="20181227 23:51:06.957" endtime="20181227 23:51:06.958"></status>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
+<arguments>
+<arg>${keydic}</arg>
+<arg>pwd=${pwdmd5}</arg>
+</arguments>
+<status status="PASS" starttime="20181227 23:51:06.958" endtime="20181227 23:51:06.959"></status>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
+<arguments>
+<arg>${keydic}</arg>
+<arg>timestamp=${timestamp}</arg>
+</arguments>
+<status status="PASS" starttime="20181227 23:51:06.959" endtime="20181227 23:51:06.960"></status>
+</kw>
+<kw name="sorted_request_data" library="http_request">
+<doc>将map请求的参数转换为字符串或json格式,type为编码类型,默认为unicode编码，decode为unicode解码（用于中文展示）；</doc>
+<arguments>
+<arg>${keydic}</arg>
+</arguments>
+<assign>
+<var>${signparam}</var>
+</assign>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>sorted_request_data Start ......</arg>
+</arguments>
+<msg timestamp="20181227 23:51:06.961" level="INFO">sorted_request_data Start ......</msg>
+<status status="PASS" starttime="20181227 23:51:06.961" endtime="20181227 23:51:06.961"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Map原字符：</arg>
+</arguments>
+<msg timestamp="20181227 23:51:06.962" level="INFO">Map原字符：</msg>
+<status status="PASS" starttime="20181227 23:51:06.961" endtime="20181227 23:51:06.962"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>【${map}】</arg>
+</arguments>
+<msg timestamp="20181227 23:51:06.963" level="INFO">【{'deviceToken': 'cb9012fd0302813461884e4a3fcc382886b73f6518c1dbe1f031a3901ee72eb4', 'username': '18011884709', 'pwd': 'c8837b23ff8aaa8a2dde915473ce0991', 'timestamp': '1545925867'}】</msg>
+<status status="PASS" starttime="20181227 23:51:06.962" endtime="20181227 23:51:06.963"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>sorted(${map}.items())</arg>
+</arguments>
+<assign>
+<var>${map_list_before}</var>
+</assign>
+<msg timestamp="20181227 23:51:06.964" level="INFO">${map_list_before} = [('deviceToken', 'cb9012fd0302813461884e4a3fcc382886b73f6518c1dbe1f031a3901ee72eb4'), ('pwd', 'c8837b23ff8aaa8a2dde915473ce0991'), ('timestamp', '1545925867'), ('username', '18011884709')]</msg>
+<status status="PASS" starttime="20181227 23:51:06.963" endtime="20181227 23:51:06.964"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>排序后：</arg>
+</arguments>
+<msg timestamp="20181227 23:51:06.965" level="INFO">排序后：</msg>
+<status status="PASS" starttime="20181227 23:51:06.964" endtime="20181227 23:51:06.965"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>【${map_list_before}】</arg>
+</arguments>
+<msg timestamp="20181227 23:51:06.965" level="INFO">【[('deviceToken', 'cb9012fd0302813461884e4a3fcc382886b73f6518c1dbe1f031a3901ee72eb4'), ('pwd', 'c8837b23ff8aaa8a2dde915473ce0991'), ('timestamp', '1545925867'), ('username', '18011884709')]】</msg>
+<status status="PASS" starttime="20181227 23:51:06.965" endtime="20181227 23:51:06.966"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>urllib.parse.urlencode(${map_list_before})</arg>
+<arg>urllib</arg>
+</arguments>
+<assign>
+<var>${map_list_URL}</var>
+</assign>
+<msg timestamp="20181227 23:51:06.967" level="INFO">${map_list_URL} = deviceToken=cb9012fd0302813461884e4a3fcc382886b73f6518c1dbe1f031a3901ee72eb4&amp;pwd=c8837b23ff8aaa8a2dde915473ce0991&amp;timestamp=1545925867&amp;username=18011884709</msg>
+<status status="PASS" starttime="20181227 23:51:06.966" endtime="20181227 23:51:06.967"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>排序-&gt;URL编码后：</arg>
+</arguments>
+<msg timestamp="20181227 23:51:06.967" level="INFO">排序-&gt;URL编码后：</msg>
+<status status="PASS" starttime="20181227 23:51:06.967" endtime="20181227 23:51:06.967"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>【${map_list_URL}】</arg>
+</arguments>
+<msg timestamp="20181227 23:51:06.969" level="INFO">【deviceToken=cb9012fd0302813461884e4a3fcc382886b73f6518c1dbe1f031a3901ee72eb4&amp;pwd=c8837b23ff8aaa8a2dde915473ce0991&amp;timestamp=1545925867&amp;username=18011884709】</msg>
+<status status="PASS" starttime="20181227 23:51:06.968" endtime="20181227 23:51:06.969"></status>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<doc>Converts the given item to a Unicode string.</doc>
+<arguments>
+<arg>${map_list_URL}</arg>
+</arguments>
+<assign>
+<var>${data_out_Unicode}</var>
+</assign>
+<msg timestamp="20181227 23:51:06.970" level="INFO">${data_out_Unicode} = deviceToken=cb9012fd0302813461884e4a3fcc382886b73f6518c1dbe1f031a3901ee72eb4&amp;pwd=c8837b23ff8aaa8a2dde915473ce0991&amp;timestamp=1545925867&amp;username=18011884709</msg>
+<status status="PASS" starttime="20181227 23:51:06.969" endtime="20181227 23:51:06.970"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>排序-&gt;URL编码-&gt;unicode编码后：</arg>
+</arguments>
+<msg timestamp="20181227 23:51:06.971" level="INFO">排序-&gt;URL编码-&gt;unicode编码后：</msg>
+<status status="PASS" starttime="20181227 23:51:06.970" endtime="20181227 23:51:06.971"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>【${data_out_Unicode}】</arg>
+</arguments>
+<msg timestamp="20181227 23:51:06.972" level="INFO">【deviceToken=cb9012fd0302813461884e4a3fcc382886b73f6518c1dbe1f031a3901ee72eb4&amp;pwd=c8837b23ff8aaa8a2dde915473ce0991&amp;timestamp=1545925867&amp;username=18011884709】</msg>
+<status status="PASS" starttime="20181227 23:51:06.971" endtime="20181227 23:51:06.972"></status>
+</kw>
+<kw name="Charconver" library="tools_library">
+<doc>Converts the utf-8 content to unicode </doc>
+<arguments>
+<arg>${data_out_Unicode}</arg>
+</arguments>
+<assign>
+<var>${data_out_UTF8}</var>
+</assign>
+<msg timestamp="20181227 23:51:06.973" level="INFO">&lt;class 'str'&gt;
+deviceToken=cb9012fd0302813461884e4a3fcc382886b73f6518c1dbe1f031a3901ee72eb4&amp;pwd=c8837b23ff8aaa8a2dde915473ce0991&amp;timestamp=1545925867&amp;username=18011884709</msg>
+<msg timestamp="20181227 23:51:06.973" level="INFO">${data_out_UTF8} = deviceToken=cb9012fd0302813461884e4a3fcc382886b73f6518c1dbe1f031a3901ee72eb4&amp;pwd=c8837b23ff8aaa8a2dde915473ce0991&amp;timestamp=1545925867&amp;username=18011884709</msg>
+<status status="PASS" starttime="20181227 23:51:06.972" endtime="20181227 23:51:06.973"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>排序-&gt;URL编码-&gt;unicode编码-&gt;UTF-8解码后：</arg>
+</arguments>
+<msg timestamp="20181227 23:51:06.974" level="INFO">排序-&gt;URL编码-&gt;unicode编码-&gt;UTF-8解码后：</msg>
+<status status="PASS" starttime="20181227 23:51:06.974" endtime="20181227 23:51:06.975"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>【${data_out_UTF8}】</arg>
+</arguments>
+<msg timestamp="20181227 23:51:06.976" level="INFO">【deviceToken=cb9012fd0302813461884e4a3fcc382886b73f6518c1dbe1f031a3901ee72eb4&amp;pwd=c8837b23ff8aaa8a2dde915473ce0991&amp;timestamp=1545925867&amp;username=18011884709】</msg>
+<status status="PASS" starttime="20181227 23:51:06.975" endtime="20181227 23:51:06.976"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${tpye}'=='UTF8'</arg>
+<arg>set variable</arg>
+<arg>${data_out_UTF8}</arg>
+<arg>ELSE</arg>
+<arg>set variable</arg>
+<arg>${data_out_Unicode}</arg>
+</arguments>
+<assign>
+<var>${data_out}</var>
+</assign>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>${data_out_Unicode}</arg>
+</arguments>
+<status status="PASS" starttime="20181227 23:51:06.977" endtime="20181227 23:51:06.977"></status>
+</kw>
+<msg timestamp="20181227 23:51:06.977" level="INFO">${data_out} = deviceToken=cb9012fd0302813461884e4a3fcc382886b73f6518c1dbe1f031a3901ee72eb4&amp;pwd=c8837b23ff8aaa8a2dde915473ce0991&amp;timestamp=1545925867&amp;username=18011884709</msg>
+<status status="PASS" starttime="20181227 23:51:06.976" endtime="20181227 23:51:06.977"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>sorted_request_data End ......</arg>
+</arguments>
+<msg timestamp="20181227 23:51:06.978" level="INFO">sorted_request_data End ......</msg>
+<status status="PASS" starttime="20181227 23:51:06.977" endtime="20181227 23:51:06.978"></status>
+</kw>
+<msg timestamp="20181227 23:51:06.978" level="INFO">${signparam} = deviceToken=cb9012fd0302813461884e4a3fcc382886b73f6518c1dbe1f031a3901ee72eb4&amp;pwd=c8837b23ff8aaa8a2dde915473ce0991&amp;timestamp=1545925867&amp;username=18011884709</msg>
+<timeout value="30 seconds"></timeout>
+<status status="PASS" starttime="20181227 23:51:06.960" endtime="20181227 23:51:06.978"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>${signparam}${appkey1}</arg>
+</arguments>
+<assign>
+<var>${signkey1}</var>
+</assign>
+<msg timestamp="20181227 23:51:06.979" level="INFO">${signkey1} = deviceToken=cb9012fd0302813461884e4a3fcc382886b73f6518c1dbe1f031a3901ee72eb4&amp;pwd=c8837b23ff8aaa8a2dde915473ce0991&amp;timestamp=1545925867&amp;username=18011884709fb1931e425f84313bfae4b93ab3ccdc4</msg>
+<status status="PASS" starttime="20181227 23:51:06.978" endtime="20181227 23:51:06.979"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>${signparam}${appkey2}</arg>
+</arguments>
+<assign>
+<var>${signkey2}</var>
+</assign>
+<msg timestamp="20181227 23:51:06.980" level="INFO">${signkey2} = deviceToken=cb9012fd0302813461884e4a3fcc382886b73f6518c1dbe1f031a3901ee72eb4&amp;pwd=c8837b23ff8aaa8a2dde915473ce0991&amp;timestamp=1545925867&amp;username=180118847091fd6e28fd158406995f77727b35bf20a</msg>
+<status status="PASS" starttime="20181227 23:51:06.979" endtime="20181227 23:51:06.980"></status>
+</kw>
+<kw name="Encrypt" library="tools_library">
+<doc>encrypt string, support md5, sha1, sha512, base64en, base64de present. md5 default 16bit.</doc>
+<arguments>
+<arg>${signkey1}</arg>
+<arg>md5</arg>
+<arg>32</arg>
+</arguments>
+<assign>
+<var>${sign1}</var>
+</assign>
+<msg timestamp="20181227 23:51:06.981" level="INFO">${sign1} = c02887473cebf196520f853af41eec11</msg>
+<status status="PASS" starttime="20181227 23:51:06.980" endtime="20181227 23:51:06.981"></status>
+</kw>
+<kw name="Encrypt" library="tools_library">
+<doc>encrypt string, support md5, sha1, sha512, base64en, base64de present. md5 default 16bit.</doc>
+<arguments>
+<arg>${signkey2}</arg>
+<arg>md5</arg>
+<arg>32</arg>
+</arguments>
+<assign>
+<var>${sign2}</var>
+</assign>
+<msg timestamp="20181227 23:51:06.982" level="INFO">${sign2} = 0f74ced258f57f06e86790814c5a22ea</msg>
+<status status="PASS" starttime="20181227 23:51:06.981" endtime="20181227 23:51:06.982"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${env}'!='Online'</arg>
+<arg>set variable</arg>
+<arg>${signTest}</arg>
+<arg>ELSE</arg>
+<arg>set variable</arg>
+<arg>${signOnline}</arg>
+</arguments>
+<assign>
+<var>${sign1}</var>
+</assign>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>${signTest}</arg>
+</arguments>
+<status status="PASS" starttime="20181227 23:51:06.982" endtime="20181227 23:51:06.983"></status>
+</kw>
+<msg timestamp="20181227 23:51:06.983" level="INFO">${sign1} = a9ff6970eb814e6894389ca8b12f3030</msg>
+<status status="PASS" starttime="20181227 23:51:06.982" endtime="20181227 23:51:06.983"></status>
+</kw>
+<kw name="Convert To Uppercase" library="String">
+<doc>Converts string to uppercase.</doc>
+<arguments>
+<arg>${sign1}</arg>
+</arguments>
+<assign>
+<var>${_sign}</var>
+</assign>
+<msg timestamp="20181227 23:51:06.984" level="INFO">${_sign} = A9FF6970EB814E6894389CA8B12F3030</msg>
+<status status="PASS" starttime="20181227 23:51:06.983" endtime="20181227 23:51:06.984"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>通用签名：${_sign}</arg>
+</arguments>
+<msg timestamp="20181227 23:51:06.984" level="INFO">通用签名：A9FF6970EB814E6894389CA8B12F3030</msg>
+<status status="PASS" starttime="20181227 23:51:06.984" endtime="20181227 23:51:06.984"></status>
+</kw>
+<kw name="Convert To Uppercase" library="String">
+<doc>Converts string to uppercase.</doc>
+<arguments>
+<arg>${sign2}</arg>
+</arguments>
+<assign>
+<var>${signature}</var>
+</assign>
+<msg timestamp="20181227 23:51:06.985" level="INFO">${signature} = 0F74CED258F57F06E86790814C5A22EA</msg>
+<status status="PASS" starttime="20181227 23:51:06.984" endtime="20181227 23:51:06.985"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>业务签名：${signature}</arg>
+</arguments>
+<msg timestamp="20181227 23:51:06.986" level="INFO">业务签名：0F74CED258F57F06E86790814C5A22EA</msg>
+<status status="PASS" starttime="20181227 23:51:06.985" endtime="20181227 23:51:06.986"></status>
+</kw>
+<kw name="Replace String" library="String">
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<arguments>
+<arg>${APPDEVINFO}</arg>
+<arg>DeveiceId</arg>
+<arg>AutoTest_Joyrun_${username}</arg>
+</arguments>
+<assign>
+<var>${APPDEVINFO}</var>
+</assign>
+<msg timestamp="20181227 23:51:06.988" level="INFO">${APPDEVINFO} = iOS#4.4.1.AutoTest#iPhone 7X#11.2.Joyrun#AutoTest_Joyrun_18011884709#UserID#AppStore#E50BA530-7648-4F2F-BE00-4F9563FBCF6E</msg>
+<status status="PASS" starttime="20181227 23:51:06.987" endtime="20181227 23:51:06.988"></status>
+</kw>
+<kw name="Replace String" library="String">
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<arguments>
+<arg>${APPDEVINFO}</arg>
+<arg>UserID</arg>
+<arg>-1</arg>
+</arguments>
+<assign>
+<var>${APPDEVINFO}</var>
+</assign>
+<msg timestamp="20181227 23:51:06.988" level="INFO">${APPDEVINFO} = iOS#4.4.1.AutoTest#iPhone 7X#11.2.Joyrun#AutoTest_Joyrun_18011884709#-1#AppStore#E50BA530-7648-4F2F-BE00-4F9563FBCF6E</msg>
+<status status="PASS" starttime="20181227 23:51:06.988" endtime="20181227 23:51:06.989"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>APPDEVINFO=${APPDEVINFO}</arg>
+</arguments>
+<msg timestamp="20181227 23:51:06.990" level="INFO">APPDEVINFO=iOS#4.4.1.AutoTest#iPhone 7X#11.2.Joyrun#AutoTest_Joyrun_18011884709#-1#AppStore#E50BA530-7648-4F2F-BE00-4F9563FBCF6E</msg>
+<status status="PASS" starttime="20181227 23:51:06.989" endtime="20181227 23:51:06.990"></status>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<arguments>
+<arg>APPVERSION=${APPVERSION}</arg>
+</arguments>
+<assign>
+<var>${header}</var>
+</assign>
+<msg timestamp="20181227 23:51:06.991" level="INFO">${header} = {'APPVERSION': '100.4.1.0'}</msg>
+<status status="PASS" starttime="20181227 23:51:06.990" endtime="20181227 23:51:06.991"></status>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
+<arguments>
+<arg>${header}</arg>
+<arg>User-Agent=${UserAgent}</arg>
+</arguments>
+<status status="PASS" starttime="20181227 23:51:06.991" endtime="20181227 23:51:06.991"></status>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
+<arguments>
+<arg>${header}</arg>
+<arg>APP_DEV_INFO=${APPDEVINFO}</arg>
+</arguments>
+<status status="PASS" starttime="20181227 23:51:06.992" endtime="20181227 23:51:06.992"></status>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
+<arguments>
+<arg>${header}</arg>
+<arg>Content-Type=application/x-www-form-urlencoded</arg>
+</arguments>
+<status status="PASS" starttime="20181227 23:51:06.992" endtime="20181227 23:51:06.993"></status>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
+<arguments>
+<arg>${header}</arg>
+<arg>SYSVERSION=${SYSVERSION}</arg>
+</arguments>
+<status status="PASS" starttime="20181227 23:51:06.993" endtime="20181227 23:51:06.994"></status>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
+<arguments>
+<arg>${header}</arg>
+<arg>_sign=${_sign}</arg>
+</arguments>
+<status status="PASS" starttime="20181227 23:51:06.994" endtime="20181227 23:51:06.995"></status>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
+<arguments>
+<arg>${header}</arg>
+<arg>MODELTYPE=${MODELTYPE}</arg>
+</arguments>
+<status status="PASS" starttime="20181227 23:51:06.996" endtime="20181227 23:51:06.997"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>登录前传参url=${Url}${loginUri}</arg>
+</arguments>
+<msg timestamp="20181227 23:51:06.998" level="INFO">登录前传参url=http://api-test.thejoyrun.com/user/login/normal</msg>
+<status status="PASS" starttime="20181227 23:51:06.997" endtime="20181227 23:51:06.998"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>登录前的heard=${header}</arg>
+</arguments>
+<msg timestamp="20181227 23:51:06.999" level="INFO">登录前的heard={'APPVERSION': '100.4.1.0', 'User-Agent': 'joyRunner/4.1.0 (iPhone; iOS 11.2.1; Scale/3.00)', 'APP_DEV_INFO': 'iOS#4.4.1.AutoTest#iPhone 7X#11.2.Joyrun#AutoTest_Joyrun_18011884709#-1#AppStore#E50BA530-7648-4F2F-BE00-4F9563FBCF6E', 'Content-Type': 'application/x-www-form-urlencoded', 'SYSVERSION': '11.2.1', '_sign': 'A9FF6970EB814E6894389CA8B12F3030', 'MODELTYPE': 'iPhone 7 Plus'}</msg>
+<status status="PASS" starttime="20181227 23:51:06.998" endtime="20181227 23:51:06.999"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>登录前的body=data=pwd=${pwdmd5}&amp;timestamp=${timestamp}&amp;username=${username}</arg>
+</arguments>
+<msg timestamp="20181227 23:51:07.000" level="INFO">登录前的body=data=pwd=c8837b23ff8aaa8a2dde915473ce0991&amp;timestamp=1545925867&amp;username=18011884709</msg>
+<status status="PASS" starttime="20181227 23:51:06.999" endtime="20181227 23:51:07.000"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>deviceToken=${deviceToken}&amp;pwd=${pwdmd5}&amp;signature=${signature}&amp;timestamp=${timestamp}&amp;username=${username}</arg>
+</arguments>
+<assign>
+<var>${data}</var>
+</assign>
+<msg timestamp="20181227 23:51:07.001" level="INFO">${data} = deviceToken=cb9012fd0302813461884e4a3fcc382886b73f6518c1dbe1f031a3901ee72eb4&amp;pwd=c8837b23ff8aaa8a2dde915473ce0991&amp;signature=0F74CED258F57F06E86790814C5A22EA&amp;timestamp=1545925867&amp;username=18011884709</msg>
+<status status="PASS" starttime="20181227 23:51:07.000" endtime="20181227 23:51:07.001"></status>
+</kw>
+<kw name="Create Session" library="RequestsLibrary">
+<doc>Create Session: create a HTTP session to a server</doc>
+<arguments>
+<arg>joyrun</arg>
+<arg>${Url}</arg>
+<arg>headers=${header}</arg>
+</arguments>
+<msg timestamp="20181227 23:51:07.002" level="INFO">Creating Session using : alias=joyrun, url=http://api-test.thejoyrun.com, headers={'APPVERSION': '100.4.1.0', 'User-Agent': 'joyRunner/4.1.0 (iPhone; iOS 11.2.1; Scale/3.00)', 'APP_DEV_INFO': 'iOS#4.4.1.AutoTest#iPhone 7X#11.2.Joyrun#AutoTest_Joyrun_18011884709#-1#AppStore#E50BA530-7648-4F2F-BE00-4F9563FBCF6E', 'Content-Type': 'application/x-www-form-urlencoded', 'SYSVERSION': '11.2.1', '_sign': 'A9FF6970EB814E6894389CA8B12F3030', 'MODELTYPE': 'iPhone 7 Plus'},                     cookies=None, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20181227 23:51:07.001" endtime="20181227 23:51:07.002"></status>
+</kw>
+<kw name="Post Request" library="RequestsLibrary">
+<doc>Send a POST request on the session object found using the</doc>
+<arguments>
+<arg>joyrun</arg>
+<arg>${loginUri}</arg>
+<arg>data=${data}</arg>
+</arguments>
+<assign>
+<var>${resplogin}</var>
+</assign>
+<msg timestamp="20181227 23:51:07.266" level="INFO">Post Request using : alias=joyrun, uri=/user/login/normal, data=&lt;empty&gt;, headers=None, files=None, allow_redirects=True </msg>
+<msg timestamp="20181227 23:51:07.266" level="INFO">${resplogin} = &lt;Response [610]&gt;</msg>
+<status status="PASS" starttime="20181227 23:51:07.002" endtime="20181227 23:51:07.266"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${resplogin.headers}</arg>
+</arguments>
+<msg timestamp="20181227 23:51:07.267" level="INFO">{'Server': 'openresty/1.13.6.1', 'Date': 'Thu, 27 Dec 2018 15:51:08 GMT', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive'}</msg>
+<status status="PASS" starttime="20181227 23:51:07.266" endtime="20181227 23:51:07.267"></status>
+</kw>
+<kw name="Charconver" library="tools_library">
+<doc>Converts the utf-8 content to unicode </doc>
+<arguments>
+<arg>${resplogin.content}</arg>
+</arguments>
+<assign>
+<var>${login_content}</var>
+</assign>
+<msg timestamp="20181227 23:51:07.268" level="INFO">&lt;class 'bytes'&gt;
+b'{"ret":"102", "msg":"\xe8\xaf\xa5APP\xe7\x89\x88\xe6\x9c\xac\xe8\xbf\x87\xe6\x97\xa7\xef\xbc\x8c\xe8\xaf\xb7\xe6\x9b\xb4\xe6\x96\xb0\xe5\x88\xb0\xe6\x9c\x80\xe6\x96\xb0\xe7\x89\x88\xe6\x9c\xac\xe3\x80\x82"}\n'
+&lt;class 'str'&gt;
+{"ret":"102", "msg":"该APP版本过旧，请更新到最新版本。"}</msg>
+<msg timestamp="20181227 23:51:07.268" level="INFO">${login_content} = {"ret":"102", "msg":"该APP版本过旧，请更新到最新版本。"}
+</msg>
+<status status="PASS" starttime="20181227 23:51:07.267" endtime="20181227 23:51:07.268"></status>
+</kw>
+<kw name="Get Json Value" library="method_private_forPy3">
+<arguments>
+<arg>${login_content}</arg>
+<arg>/ret</arg>
+</arguments>
+<assign>
+<var>${login_ret}</var>
+</assign>
+<msg timestamp="20181227 23:51:07.269" level="INFO">The doc's type is &lt;class 'str'&gt;
+The doc is {"ret":"102", "msg":"该APP版本过旧，请更新到最新版本。"}
+
+The pointer' type is &lt;class 'str'&gt;
+The pointer is /ret
+The doc's type after change is &lt;class 'dict'&gt;
+The data's type after filtering is &lt;class 'str'&gt;
+The data's type after filtering is 102
+Change Python's string to Robot's string
+The pointer_in_doc is str and it's 102
+The pointer_in_doc is str and it's "102"
+The data's type after filtering and change is &lt;class 'str'&gt;
+The data finally is "102"</msg>
+<msg timestamp="20181227 23:51:07.269" level="INFO">${login_ret} = "102"</msg>
+<status status="PASS" starttime="20181227 23:51:07.268" endtime="20181227 23:51:07.269"></status>
+</kw>
+<kw name="Replace String" library="String">
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<arguments>
+<arg>${login_ret}</arg>
+<arg>"</arg>
+<arg>${EMPTY}</arg>
+</arguments>
+<assign>
+<var>${login_ret}</var>
+</assign>
+<msg timestamp="20181227 23:51:07.270" level="INFO">${login_ret} = 102</msg>
+<status status="PASS" starttime="20181227 23:51:07.269" endtime="20181227 23:51:07.270"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${login_ret}!=0</arg>
+<arg>Get Json Value</arg>
+<arg>${login_content}</arg>
+<arg>/msg</arg>
+</arguments>
+<assign>
+<var>${login_error}</var>
+</assign>
+<kw name="Get Json Value" library="method_private_forPy3">
+<arguments>
+<arg>${login_content}</arg>
+<arg>/msg</arg>
+</arguments>
+<msg timestamp="20181227 23:51:07.272" level="INFO">The doc's type is &lt;class 'str'&gt;
+The doc is {"ret":"102", "msg":"该APP版本过旧，请更新到最新版本。"}
+
+The pointer' type is &lt;class 'str'&gt;
+The pointer is /msg
+The doc's type after change is &lt;class 'dict'&gt;
+The data's type after filtering is &lt;class 'str'&gt;
+The data's type after filtering is 该APP版本过旧，请更新到最新版本。
+Change Python's string to Robot's string
+The pointer_in_doc is str and it's 该APP版本过旧，请更新到最新版本。
+The pointer_in_doc is str and it's "该APP版本过旧，请更新到最新版本。"
+The data's type after filtering and change is &lt;class 'str'&gt;
+The data finally is "该APP版本过旧，请更新到最新版本。"</msg>
+<status status="PASS" starttime="20181227 23:51:07.271" endtime="20181227 23:51:07.272"></status>
+</kw>
+<msg timestamp="20181227 23:51:07.272" level="INFO">${login_error} = "该APP版本过旧，请更新到最新版本。"</msg>
+<status status="PASS" starttime="20181227 23:51:07.271" endtime="20181227 23:51:07.272"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${login_ret}==0</arg>
+<arg>Joyrun_LoginResult</arg>
+<arg>${advert_URL}</arg>
+<arg>${username}</arg>
+<arg>${pwd}</arg>
+<arg>${header}</arg>
+<arg>${login_content}</arg>
+<arg>${timestamp}</arg>
+</arguments>
+<assign>
+<var>${heards_dict}</var>
+</assign>
+<msg timestamp="20181227 23:51:07.272" level="INFO">${heards_dict} = None</msg>
+<status status="PASS" starttime="20181227 23:51:07.272" endtime="20181227 23:51:07.272"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${login_ret}==0</arg>
+<arg>log</arg>
+<arg>${heards_dict}</arg>
+</arguments>
+<status status="PASS" starttime="20181227 23:51:07.272" endtime="20181227 23:51:07.273"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${login_ret}==0</arg>
+<arg>log</arg>
+<arg>${login_content}</arg>
+<arg>ELSE IF</arg>
+<arg>${login_ret}==41998</arg>
+<arg>log</arg>
+<arg>新设备需要用手机验证码登录</arg>
+<arg>ELSE</arg>
+<arg>log</arg>
+<arg>哈哈，在登录就出错了！！！！！失败原因:${login_error}</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>哈哈，在登录就出错了！！！！！失败原因:${login_error}</arg>
+</arguments>
+<msg timestamp="20181227 23:51:07.274" level="INFO">哈哈，在登录就出错了！！！！！失败原因:"该APP版本过旧，请更新到最新版本。"</msg>
+<status status="PASS" starttime="20181227 23:51:07.273" endtime="20181227 23:51:07.274"></status>
+</kw>
+<status status="PASS" starttime="20181227 23:51:07.273" endtime="20181227 23:51:07.274"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>-------------------------------heards_dict mothod is log End1 ---------</arg>
+</arguments>
+<msg timestamp="20181227 23:51:07.275" level="INFO">-------------------------------heards_dict mothod is log End1 ---------</msg>
+<status status="PASS" starttime="20181227 23:51:07.274" endtime="20181227 23:51:07.275"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>-------------------------------heards_dict mothod is log End2 ---------</arg>
+</arguments>
+<msg timestamp="20181227 23:51:07.275" level="INFO">-------------------------------heards_dict mothod is log End2 ---------</msg>
+<status status="PASS" starttime="20181227 23:51:07.275" endtime="20181227 23:51:07.276"></status>
+</kw>
+<timeout value="30 seconds"></timeout>
+<status status="PASS" starttime="20181227 23:51:06.550" endtime="20181227 23:51:07.276"></status>
+</kw>
+<msg timestamp="20181227 23:51:07.276" level="INFO">${heards} = None</msg>
+<status status="PASS" starttime="20181227 23:51:06.550" endtime="20181227 23:51:07.276"></status>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<arguments>
+<arg>${heards}</arg>
+<arg>uid</arg>
+</arguments>
+<assign>
+<var>${uid}</var>
+</assign>
+<msg timestamp="20181227 23:51:07.278" level="FAIL">TypeError: 'NoneType' object is not subscriptable</msg>
+<status status="FAIL" starttime="20181227 23:51:07.277" endtime="20181227 23:51:07.278"></status>
+</kw>
+<timeout value="30 seconds"></timeout>
+<status status="FAIL" starttime="20181227 23:51:06.535" endtime="20181227 23:51:07.278"></status>
+</kw>
+<status status="FAIL" starttime="20181227 23:51:06.534" endtime="20181227 23:51:07.278"></status>
+</kw>
+<timeout value="30 seconds"></timeout>
+<status status="FAIL" starttime="20181227 23:51:06.518" endtime="20181227 23:51:07.278"></status>
+</kw>
+<status status="FAIL" starttime="20181227 23:51:06.510" endtime="20181227 23:51:07.279"></status>
+</kw>
+<doc>user-shoe-retire TestCase测试用例</doc>
+<tags>
+<tag>gxy</tag>
+<tag>Online</tag>
+<tag>Test</tag>
+</tags>
+<status status="FAIL" starttime="20181227 23:51:06.508" endtime="20181227 23:51:07.279" critical="yes">TypeError: 'NoneType' object is not subscriptable</status>
+</test>
+<doc>user-shoe-retire 退役用户跑鞋</doc>
+<status status="FAIL" starttime="20181227 23:51:06.134" endtime="20181227 23:51:07.281"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1">Critical Tests</stat>
+<stat pass="0" fail="1">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="1">gxy</stat>
+<stat pass="0" fail="1">Online</stat>
+<stat pass="0" fail="1">Test</stat>
+</tag>
+<suite>
+<stat pass="0" fail="1" id="s1" name="user-shoe-retire Get">user-shoe-retire Get</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20181227 23:51:06.424" level="ERROR">Error in test library 'pymysql': Creating keyword 'Connect' failed: Keyword with same name defined multiple times.</msg>
+</errors>
+</robot>

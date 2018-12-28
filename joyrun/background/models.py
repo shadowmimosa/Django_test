@@ -2,7 +2,7 @@ from django.db import models
 from .managers import *
 
 class BaseTable(models.Model):
-    create_time = models.DateTimeField('创建时间', auto_now_add=True)
+    create_time = models.DateTimeField(verbose_name='创建时间', auto_now_add=True)
     update_time = models.DateTimeField('更新时间', auto_now=True)
 
     class Meta:
@@ -16,10 +16,10 @@ class UserInfo(BaseTable):
         verbose_name = '用户信息'
         db_table = 'UserInfo'
 
-    username = models.CharField('用户名', max_length=20, unique=True, null=False)
-    password = models.CharField('密码', max_length=20, null=False)
-    email = models.EmailField('邮箱', null=False, unique=True)
-    status = models.IntegerField('有效/无效', default=1)
+    username = models.CharField(verbose_name='用户名', max_length=20, unique=True, null=False)
+    password = models.CharField(verbose_name='密码', max_length=20, null=False)
+    email = models.EmailField(verbose_name='邮箱', null=False, unique=True)
+    status = models.IntegerField(verbose_name='有效/无效', default=1)
 
     objects = UserInfoManager()
 
@@ -37,7 +37,6 @@ class ProjectInfo(BaseTable):
     simple_desc = models.CharField('简要描述', max_length=120, null=True)
     root_path = models.CharField('项目路径', max_length=120, null=False)
 
-    
     objects = ProjectInfoManager()
 
 

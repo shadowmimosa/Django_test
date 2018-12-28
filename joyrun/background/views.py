@@ -288,7 +288,41 @@ def add_case(request):
 
 
 def run_test(request):
-    
+    if request.method == 'POST':
+        index = request.POST.get('id')
+
+        # try:
+        path = TestCaseInfo.objects.get(id=index).file_path
+        path="D:\\test\\JoyrunTestOA\\thejoyrunTestcode"
+        # path = path
+        # except:
+        #     return render(request, 'background/index.html')
+
+        import subprocess
+        import time
+
+        time = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()).split()
+        date_num = time[0]
+        clock_num = time[-1].replace(':', '-')
+        report_path = 'C:\\Users\\ShadowMimosa\\Documents\\STU\Top\\ForDjango\\joyrun\\background\\reports\\' + date_num + '\\' + clock_num
+        subprocess.call(
+            'pybot --include Test  --variable  JoyrunEvn:Test    -d ' +
+            report_path + '\t' + path,
+            shell=True)
+
+        def readFile(fn, buf_size=262144):
+            f = open(fn, "rb")
+            while True:
+                c = f.read(buf_size)
+                if c:
+                    yield c
+                else:
+                    break
+            f.close()
+
+        file_name = 'C:\\Users\\ShadowMimosa\\Desktop\\2018-12-27\\23-41-17\\report.html'
+        file_name="D:\\test\\JoyrunTestOA\\thejoyrunTestcode\\report.html"
+        return HttpResponse(readFile(file_name))
 
 
 def image(request):
