@@ -17,7 +17,7 @@ class UserInfo(BaseTable):
         db_table = 'UserInfo'
 
     username = models.CharField(verbose_name='用户名', max_length=20, unique=True, null=False)
-    password = models.CharField(verbose_name='密码', max_length=20, null=False)
+    password = models.CharField(verbose_name='密码', max_length=120, null=False)
     email = models.EmailField(verbose_name='邮箱', null=False, unique=True)
     status = models.IntegerField(verbose_name='有效/无效', default=1)
 
@@ -35,7 +35,7 @@ class ProjectInfo(BaseTable):
     # responsible_name = models.CharField('负责人', max_length=20, null=False)
     submitted_personnel = models.CharField('提交人员', max_length=20, null=False)
     simple_desc = models.CharField('简要描述', max_length=120, null=True)
-    root_path = models.CharField('项目路径', max_length=120, null=False)
+    file_path = models.CharField('项目路径', max_length=120, null=False)
 
     objects = ProjectInfoManager()
 
@@ -49,7 +49,7 @@ class ModuleInfo(BaseTable):
     module_name = models.CharField('模块名称', max_length=50, null=False)
     test_user = models.CharField('测试负责人', max_length=50, null=False)
     simple_desc = models.CharField('简要描述', max_length=100, null=True)
-    folder_path = models.CharField('模块路径', max_length=120, null=False)
+    file_path = models.CharField('模块路径', max_length=120, null=False)
 
 
     belong_project = models.ForeignKey(ProjectInfo, on_delete=models.CASCADE)
@@ -99,6 +99,8 @@ class TestReports(BaseTable):
     testsRun = models.IntegerField()
     successes = models.IntegerField()
     reports = models.TextField()
+
+    # objects = models.Manager()
 
 
 class EnvInfo(BaseTable):

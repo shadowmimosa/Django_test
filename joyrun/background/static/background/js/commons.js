@@ -226,7 +226,7 @@ function case_ajax(type, editor) {
     if (type === 'edit') {
         url = '/api/edit_case/';
     } else {
-        url = '/api/add_case/';
+        url = '/add_case/';
     }
     $.ajax({
         type: 'post',

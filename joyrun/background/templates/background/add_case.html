@@ -27,7 +27,7 @@
                                 <div class="input-group col-md-10 col-md-offset-1">
                                     <div class="input-group-addon" style="color: #0a628f">所属项目</div>
                                     <select id='project' name="project" class="form-control"
-                                            onchange="auto_load('#belong_message', '/api/add_case/', '#belong_module_id', 'module')">
+                                            onchange="auto_load('#belong_message', '/add_case/', '#belong_module_id', 'module')">
                                         <option value="请选择">请选择</option>
                                         {% for foo in project %}
                                             <option value="{{ foo.project_name }}">{{ foo.project_name }}</option>
@@ -40,8 +40,8 @@
                                 <div class="input-group col-md-10 col-md-offset-1">
                                     <div class="input-group-addon" style="color: #0a628f">可选模块</div>
                                     <select id="belong_module_id" name="module" class="form-control"
-                                            onchange="auto_load('#belong_message', '/api/add_case/', '#belong_case_id', 'case');
-                                        auto_load('#belong_message', '/api/add_case/', '#config', 'config')">
+                                            onchange="auto_load('#belong_message', '/add_case/', '#belong_case_id', 'case');
+                                        auto_load('#belong_message', '/add_case/', '#config', 'config')">
                                     </select>
                                 </div>
                             </div>

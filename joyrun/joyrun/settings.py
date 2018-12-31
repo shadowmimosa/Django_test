@@ -25,7 +25,7 @@ SECRET_KEY = ')=%(%qpipuv(q*i%@is$9p_^@9riym63qxb-8bye_*+ntl%z&c'
 DEBUG = True
 
 # ALLOWED_HOSTS = ['*']
-ALLOWED_HOSTS = ['10.99.1.221', '127.0.0.1']
+ALLOWED_HOSTS = ['10.99.1.221', '192.168.43.19', '127.0.0.1']
 
 # Application definition
 
@@ -36,7 +36,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
     'background',
 ]
 
@@ -95,7 +94,6 @@ else:
             'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
         }
     }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators

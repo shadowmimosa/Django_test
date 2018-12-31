@@ -1,15 +1,17 @@
-import logging, json
+import logging, json, os
 from django.shortcuts import render
 
 from django.http import HttpResponse, HttpResponseRedirect
 from django.urls import reverse
+from django.contrib.auth.hashers import make_password, check_password
 
 from django.views.decorators.csrf import csrf_exempt
 
 from background.models import UserInfo, ProjectInfo, ModuleInfo, TestCaseInfo, EnvInfo, TestReports, TestSuite
 from .utils.operation import add_project_data, del_project_data
-from .utils.common import project_info_logic, initial_testcase, set_filter_session, init_filter_session, case_info_logic, get_ajax_msg
+from .utils.common import project_info_logic, initial_testcase, set_filter_session, init_filter_session, case_info_logic, get_ajax_msg, judge_type
 from .utils.pagination import get_pager_info
+from .utils.runner import pybot_command
 
 logger = logging.getLogger()
 
@@ -34,22 +36,24 @@ def login(request):
     if request.method == 'POST':
         account = request.POST.get('account')
         password = request.POST.get('password')
+        check_status = 0
 
         if '@thejoyrun.com' in account:
-            check_status = UserInfo.objects.filter(
-                email__exact=account).filter(password__exact=password).count()
+            user = UserInfo.objects.get(email=account)
             account_type = 1
         else:
-            check_status = UserInfo.objects.filter(
-                username__exact=account).filter(
-                    password__exact=password).count()
+            user = UserInfo.objects.get(username=account)
             account_type = 0
+
+        if check_password(password, user.password):
+            if user.status:
+                check_status = 1
 
         if check_status == 1:
             logger.info('{username} 登录成功'.format(username=account))
             request.session["login_status"] = True
             if account_type == 1:
-                account = UserInfo.objects.query_account(account, password)
+                account = UserInfo.objects.get(email__exact=account).username
             request.session["now_account"] = account
             return HttpResponseRedirect(
                 reverse('background:function', kwargs={'function': 'index'}))
@@ -72,12 +76,6 @@ def logout(request):
     :return:
     """
 
-    return HttpResponseRedirect(
-        reverse(
-            'background:function', kwargs={
-                'function': 'login',
-                'index': '2'
-            }))
     if request.method == 'GET':
         logger.info(
             '{username}退出'.format(username=request.session['now_account']))
@@ -118,11 +116,14 @@ def register(request):
         elif password != repassword:
             msg = "两次输入的密码不相同！"
         else:
+            password = make_password(password, None, 'pbkdf2_sha256')
+
             UserInfo.objects.insert_user(account, password, email)
             request.session["login_status"] = True
             request.session["now_account"] = account
             return HttpResponseRedirect(
                 reverse('background:function', kwargs={'function': 'index'}))
+
         ret = {"msg": msg}
         return render(request, "background/register.html", ret)
     elif request.method == 'GET':
@@ -230,17 +231,52 @@ def index(request):
 
 
 @login_check
-def project_list(request, pagenum):
-    pass
+def project_list(request, pagenum=1):
+    account = request.session["now_account"]
 
+    filter_query = set_filter_session(request)
+    pro_list = get_pager_info(ProjectInfo, filter_query, '/project_list/',
+                              pagenum)
+    manage_info = {
+        'account': account,
+        'project': pro_list[1],
+        'page_list': pro_list[0],
+        'info': filter_query,
+        'sum': pro_list[2],
+        'env': EnvInfo.objects.all().order_by('-create_time'),
+        'project_all': ProjectInfo.objects.all().order_by('-update_time')
+    }
 
-def module_list(request, pagenum):
-    pass
+    return render(request, 'background/project_list.html', manage_info)
 
 
 @login_check
+def module_list(request, pagenum=1):
+    """
+    模块列表
+    :param request:
+    :param id: str or int：当前页
+    :return:
+    """
+    account = request.session["now_account"]
+
+    filter_query = set_filter_session(request)
+    module_list = get_pager_info(ModuleInfo, filter_query, '/module_list/',
+                                 pagenum)
+    manage_info = {
+        'account': account,
+        'module': module_list[1],
+        'page_list': module_list[0],
+        'info': filter_query,
+        'sum': module_list[2],
+        'env': EnvInfo.objects.all().order_by('-create_time'),
+        'project': ProjectInfo.objects.all().order_by('-update_time')
+    }
+    return render(request, 'background/module_list.html', manage_info)
+
+
 @login_check
-def testcase_list(request, pagenum):
+def testcase_list(request, pagenum=1):
     """
     用例列表
     :param request:
@@ -287,42 +323,126 @@ def add_case(request):
         return render(request, 'background/add_case.html', manage_info)
 
 
+@login_check
+def build_report():
+    pass
+
+
+@login_check
 def run_test(request):
     if request.method == 'POST':
-        index = request.POST.get('id')
 
-        # try:
-        path = TestCaseInfo.objects.get(id=index).file_path
-        path="D:\\test\\JoyrunTestOA\\thejoyrunTestcode"
-        # path = path
-        # except:
-        #     return render(request, 'background/index.html')
+        # env_name = request.POST.get('env_name')
+        # index = request.POST.get('id')
+        kwargs = judge_type(request.POST.copy())
 
-        import subprocess
-        import time
+        # testcase = TestCaseInfo.objects.get(id=index)
+        index = kwargs[0].get('id')
+        env_name = kwargs[1]
+        run_type = kwargs[2].get(id=index)
 
-        time = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()).split()
-        date_num = time[0]
-        clock_num = time[-1].replace(':', '-')
-        report_path = 'C:\\Users\\ShadowMimosa\\Documents\\STU\Top\\ForDjango\\joyrun\\background\\reports\\' + date_num + '\\' + clock_num
-        subprocess.call(
-            'pybot --include Test  --variable  JoyrunEvn:Test    -d ' +
-            report_path + '\t' + path,
-            shell=True)
+        # testcase_path = run_type.file_path
 
-        def readFile(fn, buf_size=262144):
-            f = open(fn, "rb")
-            while True:
-                c = f.read(buf_size)
-                if c:
-                    yield c
-                else:
-                    break
-            f.close()
+        pagenum = pybot_command(run_type.file_path, env=env_name)
 
-        file_name = 'C:\\Users\\ShadowMimosa\\Desktop\\2018-12-27\\23-41-17\\report.html'
-        file_name="D:\\test\\JoyrunTestOA\\thejoyrunTestcode\\report.html"
-        return HttpResponse(readFile(file_name))
+        return HttpResponseRedirect(
+            reverse(
+                'background:pagenum',
+                kwargs={
+                    'function': 'report_check',
+                    'pagenum': pagenum
+                }))
+
+
+@login_check
+def run_batch_test(request):
+
+    kwargs = request.POST.copy()
+    kwargs = judge_type(request.POST.copy())
+
+    obj = kwargs[0]
+    env_name = kwargs[1]
+    run_type = kwargs[2]
+
+    file_path = ''
+
+    for value in obj.values():
+
+        file_path += run_type.get(id=value).file_path
+        file_path += '\t'
+
+    pagenum = pybot_command(file_path, env=env_name)
+
+    return HttpResponseRedirect(
+        reverse(
+            'background:pagenum',
+            kwargs={
+                'function': 'report_check',
+                'pagenum': pagenum
+            }))
+
+
+@login_check
+def report_check(request, pagenum):
+
+    folder_name = TestReports.objects.get(id=pagenum).reports
+
+    if 'report_check' and 'log.html' in request.get_full_path():
+        file_name = folder_name + "\\log.html"
+    else:
+        file_name = folder_name + "\\report.html"
+
+    def readFile(fn, buf_size=262144):
+        print(os.getcwd())
+        f = open(fn, "rb")
+        while True:
+            c = f.read(buf_size)
+            if c:
+                yield c
+            else:
+                break
+        f.close()
+
+    return HttpResponse(readFile(file_name))
+
+
+# def add_test_reports(runner, report_name=None):
+#     """
+#     定时任务或者异步执行报告信息落地
+#     :param start_at: time: 开始时间
+#     :param report_name: str: 报告名称，为空默认时间戳命名
+#     :param kwargs: dict: 报告结果值
+#     :return:
+#     """
+#     time_stamp = int(runner.summary["time"]["start_at"])
+#     runner.summary['time']['start_datetime'] = datetime.datetime.fromtimestamp(
+#         time_stamp).strftime('%Y-%m-%d %H:%M:%S')
+#     report_name = report_name if report_name else runner.summary['time'][
+#         'start_datetime']
+#     runner.summary['html_report_name'] = report_name
+
+#     report_path = os.path.join(
+#         os.getcwd(), "reports{}{}.html".format(
+#             separator, int(runner.summary['time']['start_at'])))
+#     runner.gen_html_report(
+#         html_report_template=os.path.join(
+#             os.getcwd(), "templates{}extent_report_template.html".format(
+#                 separator)))
+
+#     with open(report_path, encoding='utf-8') as stream:
+#         reports = stream.read()
+
+#     test_reports = {
+#         'report_name': report_name,
+#         'status': runner.summary.get('success'),
+#         'successes': runner.summary.get('stat').get('successes'),
+#         'testsRun': runner.summary.get('stat').get('testsRun'),
+#         'start_at': runner.summary['time']['start_datetime'],
+#         'reports': reports
+#     }
+
+#     TestReports.objects.create(**test_reports)
+#     return report_path
 
 
 def image(request):

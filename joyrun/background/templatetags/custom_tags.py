@@ -24,6 +24,8 @@ def convert_eval(value):
     :param value:
     :return: the value which had been eval
     """
+    if value==None:
+        return None
     return update_include(eval(value))
 
 

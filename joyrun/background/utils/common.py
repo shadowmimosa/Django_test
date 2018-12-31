@@ -39,7 +39,7 @@ def newly_testcase(tests_all, path):
                 project_name=key,
                 submitted_personnel='Admin',
                 simple_desc='接口测试项目',
-                root_path=root)
+                file_path=root)
 
         pro = ProjectInfo.objects.get(project_name=key)
         for keys, values in tests_all[key].items():
@@ -50,13 +50,13 @@ def newly_testcase(tests_all, path):
                     test_user='Admin',
                     simple_desc='该模块测试用例集合',
                     belong_project=pro,
-                    folder_path=folder)
+                    file_path=folder)
             mod = ModuleInfo.objects.get(module_name=keys)
             for index in values:
                 files = os.path.join(folder, index)
-                if TestCaseInfo.objects.filter(belong_project=pro.project_name).filter(
-                        belong_module_id=mod
-                ).filter(name=index).count(
+                if TestCaseInfo.objects.filter(
+                        belong_project=pro.project_name
+                ).filter(belong_module_id=mod).filter(name=index).count(
                 ) < 1 and 'init' not in index and 'git' not in index and '.txt' in index:
                     TestCaseInfo.objects.create(
                         name=index,
@@ -432,3 +432,34 @@ def get_ajax_msg(msg, success):
     :return:
     """
     return success if msg is 'ok' else msg
+
+
+def judge_type(kwargs):
+
+    env_name = kwargs.pop('env_name').pop(0)
+    try:
+        run_type = kwargs.pop('type').pop(0)
+    except KeyError:
+        run_type = None
+
+    # 如果运行环境为空，则默认为 test
+    if not env_name:
+        env_name = 'test'
+    # 如果运行类型为空，则默认为 用例
+    if not run_type:
+        run_type = 'test'
+
+    run_type = obj_type(run_type)
+
+    L = [kwargs, env_name, run_type]
+    return L
+
+
+def obj_type(run_type):
+
+    if run_type == 'test':
+        return TestCaseInfo.objects
+    elif run_type == 'module':
+        return ModuleInfo.objects
+    elif run_type == 'project':
+        return ProjectInfo.objects

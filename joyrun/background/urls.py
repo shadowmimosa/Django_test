@@ -11,6 +11,7 @@ urlpatterns = [
          RedirectView.as_view(url='/static/background/images/favicon.ico')),
     path('<str:function>/', process, name='function'),
     path('<str:function>/<int:pagenum>/', process, name='pagenum'),
+    path('<str:function>/<int:pagenum>/<str:name>', process, name='pagenum'),
 
     # path('', views.index, name='index'),
     # path('index/', views.index, name='index'),

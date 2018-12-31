@@ -111,7 +111,7 @@ def get_pager_info(Model, filter_query, url, id, per_items=12):
     if 'project_list/' in url:
 
         obj = obj.filter(project_name__contains=belong_project) if belong_project != 'All' \
-            else obj.filter(responsible_name__contains=user)
+            else obj.filter(submitted_personnel__contains=user)
 
     elif 'module_list/' in url:
 
@@ -174,7 +174,7 @@ def get_pager_info(Model, filter_query, url, id, per_items=12):
     sum = {}
     page_list = ''
     if total != 0:
-        if url == '/api/project_list/':
+        if url == '/project_list/':
             for model in info:
                 pro_name = model.project_name
                 module_count = str(
@@ -193,7 +193,7 @@ def get_pager_info(Model, filter_query, url, id, per_items=12):
                     model.id, module_count + '/ ' + suite_count + '/' +
                     test_count + '/ ' + config_count)
 
-        elif url == '/api/module_list/':
+        elif url == '/module_list/':
             for model in info:
                 module_name = model.module_name
                 project_name = model.belong_project.project_name
@@ -207,7 +207,7 @@ def get_pager_info(Model, filter_query, url, id, per_items=12):
                         belong_module__module_name=module_name,
                         type__exact=2,
                         belong_project=project_name).count())
-                sum.setdefault(model.id, test_count + '/ ' + config_count)
+                sum.setdefault(model.id, test_count + ' / ' + config_count)
 
         elif url == '/api/suite_list/':
             for model in info:
