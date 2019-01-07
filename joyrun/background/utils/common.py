@@ -1,6 +1,7 @@
 import os
 
 from django.core.exceptions import ObjectDoesNotExist
+from django.shortcuts import render
 
 from .operation import add_project_data, add_case_data
 from ..models import ProjectInfo, ModuleInfo, TestCaseInfo
@@ -463,3 +464,12 @@ def obj_type(run_type):
         return ModuleInfo.objects
     elif run_type == 'project':
         return ProjectInfo.objects
+
+def return_msg(request,msg):
+
+        # logger.info('{username} 登录失败, 请检查用户名或者密码'.format(username=account))
+        request.session["login_status"] = False
+        ret = {"msg": msg}
+        return render(request, "background/login.html", ret)
+
+    

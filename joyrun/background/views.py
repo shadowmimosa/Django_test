@@ -4,12 +4,13 @@ from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
 from django.urls import reverse
 from django.contrib.auth.hashers import make_password, check_password
+from django.core.exceptions import ObjectDoesNotExist
 
 from django.views.decorators.csrf import csrf_exempt
 
 from background.models import UserInfo, ProjectInfo, ModuleInfo, TestCaseInfo, EnvInfo, TestReports, TestSuite
 from .utils.operation import add_project_data, del_project_data
-from .utils.common import project_info_logic, initial_testcase, set_filter_session, init_filter_session, case_info_logic, get_ajax_msg, judge_type
+from .utils.common import project_info_logic, initial_testcase, set_filter_session, init_filter_session, case_info_logic, get_ajax_msg, judge_type, return_msg
 from .utils.pagination import get_pager_info
 from .utils.runner import pybot_command
 
@@ -38,12 +39,17 @@ def login(request):
         password = request.POST.get('password')
         check_status = 0
 
-        if '@thejoyrun.com' in account:
-            user = UserInfo.objects.get(email=account)
-            account_type = 1
-        else:
-            user = UserInfo.objects.get(username=account)
-            account_type = 0
+        if account == '' or password == '':
+            return return_msg(request, '用户名或密码为空！')
+        try:
+            if '@thejoyrun.com' in account:
+                user = UserInfo.objects.get(email=account)
+                account_type = 1
+            else:
+                user = UserInfo.objects.get(username=account)
+                account_type = 0
+        except ObjectDoesNotExist:
+            return return_msg(request, '用户名或邮箱不存在！')
 
         if check_password(password, user.password):
             if user.status:
@@ -58,12 +64,8 @@ def login(request):
             return HttpResponseRedirect(
                 reverse('background:function', kwargs={'function': 'index'}))
 
-        logger.info('{username} 登录失败, 请检查用户名或者密码'.format(username=account))
-        request.session["login_status"] = False
-        msg = "用户名或密码错误！"
-        ret = {"msg": msg}
+        return return_msg(request, '用户名或密码错误！')
 
-        return render(request, "background/login.html", ret)
     if request.method == 'GET':
         return render(request, "background/login.html")
 
