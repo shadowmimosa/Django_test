@@ -1,10 +1,11 @@
 from django.http import HttpResponse
 from ..models import ProjectInfo, TestReports
+import os
 
 
 def pybot_command(file_path, env='test'):
     '''
-    生成 robot 命令  
+    生成 robot 命令
     ``env``: 'test' 代表测试环境，'production' 代表生产环境
     '''
 
@@ -26,8 +27,11 @@ def pybot_command(file_path, env='test'):
     start_time = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()).split()
     date_num = start_time[0]
     clock_num = start_time[-1].replace(':', '-')
+    print("0" + os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+    print("1" + os.path.abspath(__file__))
+    report_path = (os.path.dirname(os.path.dirname(os.path.abspath(__file__))) + '\\' + date_num + '\\' + clock_num).replace("\\", '/')
 
-    report_path = 'C:\\Users\\ShadowMimosa\\Documents\\STU\Top\\ForDjango\\joyrun\\background\\reports\\' + date_num + '\\' + clock_num
+    # report_path = 'C:\\Users\\ShadowMimosa\\Documents\\STU\Top\\ForDjango\\joyrun\\background\\reports\\' + date_num + '\\' + clock_num
     subprocess.call(command + report_path + '\t' + file_path, shell=True)
 
     reports = {

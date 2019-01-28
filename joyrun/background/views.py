@@ -395,7 +395,7 @@ def report_check(request, pagenum):
         file_name = folder_name + "\\report.html"
 
     def readFile(fn, buf_size=262144):
-        print(os.getcwd())
+        # print(os.getcwd())
         f = open(fn, "rb")
         while True:
             c = f.read(buf_size)
@@ -450,7 +450,8 @@ def report_check(request, pagenum):
 def image(request):
 
     return HttpResponse("You're in my heart")
-    return render(request, 'background/image.html')
+
+    # return render(request, 'background/image.html')
 
 
 path = 'D:\\test\\JoyrunTestOA\\thejoyrunTestcode'
